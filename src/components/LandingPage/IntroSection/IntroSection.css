@@ -1,0 +1,153 @@
+.intro-wrapper {
+    margin-top: 130px;
+    width: 85%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas: 'message image';
+}
+
+/* .intro-wrapper .image {
+    height: 300px;
+} */
+
+.intro-wrapper .message .top h5 {
+    /* padding: 5px; */
+    background-color: #ECF;
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    width: 370px;
+}
+
+.intro-wrapper .message .top .btn {
+    font-size: 0.6rem;
+    padding: 5px 10px;
+    margin-right: 10px;
+    margin-left: 0px;
+    color: white;
+    background-color: #55BC7E;
+    border-radius: 20px;
+}
+
+
+
+.intro-wrapper .message h1 {
+    font-size: 4rem;
+    font-weight: bolder;
+    line-height: 30px;
+}
+
+.intro-wrapper .message h4 {
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+.intro-wrapper .message .search-input input {
+    height: 40px;
+    border: 5px solid white;
+    border-radius: 5px;
+    width: 580px;
+}
+
+.intro-wrapper .message .search-input span {
+    background-color: #55BC7E;
+    height: 35px;
+    padding: 9px;
+    border: 5px solid white;
+    border-radius: 5px;
+    color: white;
+}
+
+.intro-wrapper .message .trust {
+    margin-top: 70px;
+}
+
+.intro-wrapper .message .trust h1 {
+    color: #37383D;
+}
+
+.intro-wrapper .message .trust .icons {
+    width: 200px;
+    height: 40px;
+    background-color: white;
+    border-radius: 5px;
+    border: none
+}
+
+.intro-wrapper .image .mail {
+    display: block;
+    z-index: 2;
+    margin-left: -100px;
+    height: 80px;
+    width: 250px;
+    background: white;
+    opacity: 0.8;
+    border-radius: 15px;
+    position: absolute;
+}
+
+.intro-wrapper .image .pdf {
+    display: block;
+    z-index: 2;
+    margin-left: 400px;
+    margin-top: 30px;
+    height: 50px;
+    width: 50px;
+    background: white;
+    opacity: 0.8;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.intro-wrapper .image .upload {
+    display: block;
+    z-index: 2;
+    margin-left: 420px;
+    margin-top: 70px;
+    height: 20px;
+    width: 50px;
+    background: white;
+    opacity: 0.8;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.intro-wrapper .image .job-holder {
+    display: block;
+    z-index: 2;
+    margin-left: 330px;
+    margin-top: 350px;
+    height: 100px;
+    width: 200px;
+    background: white;
+    opacity: 0.8;
+    border-radius: 15px;
+    position: absolute;
+}
+
+.intro-wrapper .image .mini {
+    display: block;
+    z-index: 2;
+    margin-left: -100px;
+    margin-top: 450px;
+    height: 90px;
+    width: 300px;
+    background: white;
+    opacity: 0.8;
+    border-radius: 15px;
+    position: absolute;
+}
+
+.intro-wrapper .image .thumb {
+    z-index: 1;
+    position: relative;
+}
+
+.intro-wrapper .image .thumb img {
+    margin-left: 20px;
+    /* z-index: 1; */
+}
+
+
+
+
