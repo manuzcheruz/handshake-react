@@ -1,0 +1,41 @@
+.job-wrapper {
+    width: 80%;
+    height: 750px;
+}
+
+.job-wrapper-title {
+    font-size: 2rem;
+    text-align: left;
+}
+
+.job-wrapper-title span {
+    color: #55BC7E;
+}
+
+.job-wrapper .jobs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.job-wrapper .pagination {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.job-wrapper .pagination .pagination-items {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    background-color: white;
+    margin-right: 10px;
+    margin-left: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.job-wrapper .pagination .pagination-items .pagination-item {
+    padding-top: 4px;
+    padding-left: 11px;
+}

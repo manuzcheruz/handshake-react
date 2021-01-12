@@ -127,11 +127,14 @@
     padding: 0;
     margin: 0;
 }
-.intro-wrapper .image .mail .text h4 {
+.intro-wrapper .image .mail .text .text-title {
     margin-top: 10px;
+    color: #55BC7E;
 }
-.intro-wrapper .image .mail .text h5 {
+.intro-wrapper .image .mail .text .text-cont {
     margin-top: 5px;
+    font-size: 0.8rem;
+    font-weight: 300;
 }
 
 .intro-wrapper .image .pdf {

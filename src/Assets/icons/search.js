@@ -4,7 +4,7 @@ function Search(props) {
     return (
     <svg 
         height={props.height}
-        color="white"
+        color={props.color}
         role="img" 
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 512 512"

@@ -31,7 +31,7 @@ function IntroSection() {
                             </div>
                             <span role="button">
                                 <div className="icon-search" style={{marginLeft: '16px', marginTop: '10px'}}>
-                                    <Search height={15} />
+                                    <Search color='white' height={15} />
                                 </div>
                             </span>
                         </div>
@@ -61,12 +61,12 @@ function IntroSection() {
                                 <Mail height={18} />
                             </div>
                             <div className="text">
-                                <h4 className="text-title">
-                                    Congrats
-                                </h4>
-                                <h5 className="text-cont">
+                                <div className="text-title">
+                                    Congrats!
+                                </div>
+                                <div className="text-cont">
                                     You have got an Email
-                                </h5>
+                                </div>
                             </div>
                             <div className="check-icon" style={{marginTop: '10px', marginLeft: '10px'}}>
                                 <Check height={25} />
@@ -94,15 +94,15 @@ function IntroSection() {
                         </div>
                         <div className="mini">
                             <div className="mini-content" style={{marginLeft: '30px', marginRight: '30px'}}>
-                                <p style={{padding: '0px', fontSize: '0.8rem'}}>
+                                <div style={{padding: '0px', fontSize: '0.8rem', marginTop: '15px'}}>
                                     Hi,
-                                </p>
-                                <p style={{paddingTop: '0px', fontSize: '0.8rem'}}>
+                                </div>
+                                <div style={{paddingTop: '0px', fontSize: '0.8rem'}}>
                                     I am looking for a job, could you explain more details?
-                                </p>
-                                <p style={{textAlign: 'right', fontSize: '0.8rem'}}>
+                                </div>
+                                <div style={{textAlign: 'right', fontSize: '0.8rem'}}>
                                     3.52 PM
-                                </p>
+                                </div>
                             </div>
                         </div>
                         <div className="mini-profile"></div>

@@ -37,3 +37,27 @@ export {
 export {
     default as Search
 } from './search'
+
+export {
+    default as Plug
+} from './plug'
+
+export {
+    default as Account
+} from './account'
+
+export {
+    default as Upload
+} from './upload'
+
+export {
+    default as ArrowRight
+} from './arrowRight'
+
+export {
+    default as Bookmark
+} from './bookmark'
+
+export {
+    default as Calendar
+} from './calendar'
