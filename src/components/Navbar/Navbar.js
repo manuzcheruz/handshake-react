@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { User } from '../../Assets/icons'
 import './Navbar.css'
 
 function Navbar() {
@@ -31,7 +32,7 @@ function Navbar() {
                             my account
                         </button>
                         <button className="create-acc">
-                            create account
+                            <span><User height={20} /></span>create account
                         </button>
                     </div>
                 </div>

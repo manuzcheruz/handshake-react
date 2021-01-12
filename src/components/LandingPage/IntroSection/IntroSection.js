@@ -2,6 +2,7 @@ import React from 'react'
 
 import './IntroSection.css'
 import handshake from '../../../Assets/Images/handshake2.png'
+import { Mail, Check, Pdf, Heart, Google, Be, Instagram, Microsoft, Search } from '../../../Assets/icons'
 
 function IntroSection() {
     return (
@@ -20,9 +21,18 @@ function IntroSection() {
                         <h4 className="sub-title">Your dream job is waiting for you</h4>
 
                         <div className="search-input">
-                            <input type="text" placeholder="Job title keywords" />
+                            <div className="main-search">
+                                <input type="text" placeholder="Job title keywords" />
+                            </div>
+                            <div className="select-search">
+                                <select>
+                                    <option>City or Zip code</option>
+                                </select>
+                            </div>
                             <span role="button">
-                                search
+                                <div className="icon-search" style={{marginLeft: '16px', marginTop: '10px'}}>
+                                    <Search height={15} />
+                                </div>
                             </span>
                         </div>
                         <div className="trust">
@@ -30,19 +40,72 @@ function IntroSection() {
                                 We are Trusted by:
                             </h5>
                             <div className="icons">
-
+                                <div className="icon-google" style={{paddingTop: '10px', marginLeft: '10px'}}>
+                                    <Google height={20} />
+                                </div>
+                                <div className="icon-google" style={{paddingTop: '10px', marginLeft: '10px'}}>
+                                    <Be height={20} />
+                                </div>
+                                <div className="icon-google" style={{paddingTop: '10px', marginLeft: '10px'}}>
+                                    <Instagram height={20} />
+                                </div>
+                                <div className="icon-google" style={{paddingTop: '10px', marginLeft: '10px'}}>
+                                    <Microsoft height={20} />
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div className="image">
                         <div className="mail">
+                            <div className="mail-icon" style={{marginLeft: '12px', marginRight: '10px', marginTop: '10px', padding: '5px', backgroundColor: '#ECF1FA', height: '17px', borderRadius: '5px'}}>
+                                <Mail height={18} />
+                            </div>
+                            <div className="text">
+                                <h4 className="text-title">
+                                    Congrats
+                                </h4>
+                                <h5 className="text-cont">
+                                    You have got an Email
+                                </h5>
+                            </div>
+                            <div className="check-icon" style={{marginTop: '10px', marginLeft: '10px'}}>
+                                <Check height={25} />
+                            </div>
+                        </div>
+                        <div className="upload">
+                            <h6>
+                                upload Cv
+                            </h6>
                         </div>
                         <div className="pdf">
+                            <div className="pdf-icon" style={{marginTop: '13px', marginLeft: '16px'}}>
+                                <Pdf height={25} />
+                            </div>
                         </div>
-                        <div className="upload"></div>
                         <div className="job-holder">
+                            <h5 className="job-holder-text" style={{marginLeft: '15px'}}>
+                                10k+ Jobholder Get job
+                            </h5>
                         </div>
-                        <div className="mini"></div>
+                        <div className="heart">
+                            <div className="heart-icon" style={{marginTop: '5px', marginLeft: '5px'}}>
+                                <Heart height={20} />
+                            </div>
+                        </div>
+                        <div className="mini">
+                            <div className="mini-content" style={{marginLeft: '30px', marginRight: '30px'}}>
+                                <p style={{padding: '0px', fontSize: '0.8rem'}}>
+                                    Hi,
+                                </p>
+                                <p style={{paddingTop: '0px', fontSize: '0.8rem'}}>
+                                    I am looking for a job, could you explain more details?
+                                </p>
+                                <p style={{textAlign: 'right', fontSize: '0.8rem'}}>
+                                    3.52 PM
+                                </p>
+                            </div>
+                        </div>
+                        <div className="mini-profile"></div>
                         <div className="thumb">
                             <img width="450px" src={handshake} alt="handshake" />
                         </div>
