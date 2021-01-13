@@ -81,3 +81,15 @@ export {
 export {
     default as Gears
 } from './gears'
+
+export {
+    default as Star
+} from './star'
+
+export {
+    default as Quotes
+} from './quotes'
+
+export {
+    default as Lock
+} from './lock'
