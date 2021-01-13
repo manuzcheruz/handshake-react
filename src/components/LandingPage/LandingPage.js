@@ -14,8 +14,8 @@ function LandingPage() {
             <IntroSection />
             <ProcessSection />
             <JobSection />
-            <CategorySection />
             <ExploreStudentSection />
+            <CategorySection />
             <Testimonials />
             <Subscribe />
         </div>

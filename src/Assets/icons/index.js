@@ -61,3 +61,19 @@ export {
 export {
     default as Calendar
 } from './calendar'
+
+export {
+    default as Message
+} from './message'
+
+export {
+    default as Menu
+} from './menu'
+
+export {
+    default as CheckSlim
+} from './checkSlim'
+
+export {
+    default as Marker
+} from './marker'
