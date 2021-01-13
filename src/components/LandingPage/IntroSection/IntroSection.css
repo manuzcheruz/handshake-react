@@ -46,32 +46,32 @@
     width: 680px;
     display: grid;
     grid-template-columns: 1fr 1fr 0.3fr;
-    height: 60px;
+    height: 70px;
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 7px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+    0 3px 10px 0 rgba(0, 0, 0, 0.05);
 }
 
 .intro-wrapper .message .search-input input {
-    margin-left: 10px;
+    margin-left: 8px;
     margin-top: 7px;
-    height: 43px;
+    height: 53px;
     background-color: grey;
     opacity: 0.2;
     border: none;
-    border-radius: 10px;
+    border-radius: 7px;
     width: 330px;
 }
 
 .intro-wrapper .message .search-input select {
     margin-left: 15px;
     margin-top: 7px;
-    height: 43px;
+    height: 53px;
     background-color: grey;
     opacity: 0.2;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     width: 220px;
 }
 
@@ -79,7 +79,7 @@
     background-color: #55BC7E;
     margin-top: 7px;
     margin-left: 20px;
-    height: 43px;
+    height: 53px;
     width: 50px;
     /* padding: 9px; */
     border-radius: 5px;
@@ -113,8 +113,8 @@
     opacity: 0.8;
     border-radius: 15px;
     position: absolute;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+    0 3px 10px 0 rgba(0, 0, 0, 0.05);
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
 }
@@ -148,8 +148,8 @@
     opacity: 0.8;
     border-radius: 10px;
     position: absolute;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+    0 3px 10px 0 rgba(0, 0, 0, 0.05);
 }
 
 .intro-wrapper .image .upload {
@@ -163,8 +163,8 @@
     opacity: 0.8;
     border-radius: 10px;
     position: absolute;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+    0 3px 10px 0 rgba(0, 0, 0, 0.05);
 }
 
 .intro-wrapper .image .upload h6 {
@@ -184,8 +184,8 @@
     opacity: 0.9;
     border-radius: 5px;
     position: absolute;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+    0 3px 10px 0 rgba(0, 0, 0, 0.05);
 }
 
 .intro-wrapper .image .job-holder {
@@ -199,8 +199,8 @@
     opacity: 0.9;
     border-radius: 15px;
     position: absolute;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+    0 3px 10px 0 rgba(0, 0, 0, 0.05);
 }
 
 .intro-wrapper .image .mini-profile {
@@ -214,8 +214,8 @@
     opacity: 0.9;
     border-radius: 10px;
     position: absolute;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+    0 3px 10px 0 rgba(0, 0, 0, 0.05);
 }
 
 .intro-wrapper .image .mini {
@@ -229,8 +229,8 @@
     opacity: 0.9;
     border-radius: 15px;
     position: absolute;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+    0 3px 10px 0 rgba(0, 0, 0, 0.05);
 }
 
 .intro-wrapper .image .thumb {

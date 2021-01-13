@@ -30,7 +30,7 @@ function IntroSection() {
                                 </select>
                             </div>
                             <span role="button">
-                                <div className="icon-search" style={{marginLeft: '16px', marginTop: '10px'}}>
+                                <div className="icon-search" style={{marginLeft: '18px', marginTop: '15px'}}>
                                     <Search color='white' height={15} />
                                 </div>
                             </span>

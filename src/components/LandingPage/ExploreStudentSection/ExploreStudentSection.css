@@ -11,7 +11,7 @@
 }
 
 .student-display .circle {
-    background-image: linear-gradient(#ECF1FA, white);
+    background-image: linear-gradient(#ECF1FA, #ECF1FA, white);
     margin-left: 100px;
     border-radius: 50%;
     width: 450px;
@@ -25,9 +25,9 @@
     margin-top: 30px;
     margin-left: 100px;
     border-radius: 10px;
+    border: none;
     position: absolute;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1)
 }
 
 .student-display .jobholders .title {
@@ -43,9 +43,9 @@
     height: 40px;
     margin-left: 400px;
     position: absolute;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    border: none;
     background-color: white;
     z-index: 2;
 }
@@ -66,8 +66,8 @@
     position: absolute;
     margin-top: 50px;
     z-index: 3;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+    0 3px 10px 0 rgba(0, 0, 0, 0.05);
 }
 
 .student-display .search-btn .icon-search {
@@ -84,8 +84,7 @@
     z-index: 3;
     position: absolute;
     margin-top: 130px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1)
 }
 
 .student-display .jobholder-profile .profile-wrapper .profile-top .profile-menu {
