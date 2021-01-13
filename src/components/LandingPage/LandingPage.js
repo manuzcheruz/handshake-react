@@ -1,5 +1,6 @@
 import React from 'react'
 import CategorySection from './CategorySection/CategorySection'
+import ExploreCompanySection from './ExploreCompanySection/ExploreCompanySection'
 import ExploreStudentSection from './ExploreStudentSection/ExploreStudentSection'
 
 import IntroSection from './IntroSection/IntroSection'
@@ -16,6 +17,7 @@ function LandingPage() {
             <JobSection />
             <ExploreStudentSection />
             <CategorySection />
+            <ExploreCompanySection />
             <Testimonials />
             <Subscribe />
         </div>
