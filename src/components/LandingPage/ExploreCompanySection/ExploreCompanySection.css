@@ -56,34 +56,135 @@
 }
 
 .company-wrapper .company-display .table {
-    height: 400px;
-    width: 450px;
+    height: 420px;
+    width: 500px;
     z-index: 2;
     position: absolute;
     margin-left: 160px;
     margin-top: 65px;
-    border-radius: 15px;
-    background-color: red;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.company-wrapper .company-display .table .table-head {
+    height: 30px;
+    width: 100%;
+    background-color: #ECF1FA;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    color: grey;
+}
+
+.company-wrapper .company-display .table .table-head .item {
+    margin-top: 5px;
 }
 
 .company-wrapper .company-display .company-profile {
     width: 300px;
     height: 80px;
-    background-color: yellow;
+    background-color: white;
     margin-left: -20px;
     margin-top: 260px;
     border-radius: 5px;
     z-index: 3;
     position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1.7fr;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.05),
+    0 6px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.company-wrapper .company-display .company-profile .image {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 15px;
+    margin-top: 15px;
+    background-color: grey;
+}
+
+.company-wrapper .company-display .company-profile .name {
+    text-align: left;
+}
+
+.company-wrapper .company-display .company-profile .name .name-title {
+    margin-top: 17px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.company-wrapper .company-display .company-profile .name .role {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 0.8rem;
+    color: grey;
+}
+
+/* .company-wrapper .company-display .company-profile .rating {
+    padding: 10px;
+} */
+
+.company-wrapper .company-display .company-profile .rating .rate {
+    margin-top: 17px;
+    font-size: 0.5rem;
+    font-weight: bolder;
+}
+
+.company-wrapper .company-display .company-profile .rating .rate span {
+    margin-left: 5px;
+} 
+
+.company-wrapper .company-display .company-profile .rating .date {
+    font-size: 0.6rem;
+    color: grey;
+    margin-top: 14px;
 }
 
 .company-wrapper .company-display .security {
     width: 300px;
     height: 80px;
-    background-color: orange;
     margin-left: -50px;
     margin-top: 380px;
     border-radius: 5px;
+    background-color: white;
     z-index: 4;
     position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.05),
+    0 6px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.company-wrapper .company-display .security .icon-lock {
+    height: 20px;
+    width: 20px;
+    margin-left:15px;
+    margin-top: 25px;
+}
+
+.company-wrapper .company-display .security .icon-lock span {
+    padding: 20px;
+    background-color: #FF9066;
+    border-radius: 50%;
+}
+
+.company-wrapper .company-display .security .title {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+.company-wrapper .company-display .security .title span {
+    color: #55BC7E;
+}
+
+.company-wrapper .company-display .security .subtitle {
+    font-size: 0.6rem;
+    color: grey;
+    margin-left: 10px;
 }

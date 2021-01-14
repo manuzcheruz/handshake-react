@@ -1,0 +1,44 @@
+.table-card {
+    margin-top: 5px;
+    border-radius: 5px;
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+}
+
+.table-card:hover {
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.table-card:hover .table-card-body .table-card-item button {
+    background-color: #55BC7E;
+    color: white;
+}
+
+.table-card .table-card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.table-card .table-card-body .table-card-item {
+    margin-top: 20px;
+    font-size: 0.5rem;
+    color: grey;
+}
+
+.table-card .table-card-body .table-card-item span {
+    margin-right: 5px;
+    margin-left: 2px;
+    margin-top: 20px;
+}
+
+.table-card .table-card-body .table-card-item button {
+    border: 2px solid #55BC7E;
+    background-color: white;
+    border-radius: 15px;
+    height: 20px;
+    color: grey;
+    font-size: 0.5rem;
+    width: 60px;
+}
