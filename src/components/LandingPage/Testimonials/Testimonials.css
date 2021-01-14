@@ -1,0 +1,26 @@
+.testimonial-wrapper {
+    margin-top: 90px;
+    height: 700px;
+    width: 80%;
+}
+
+.testimonial-wrapper .title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.testimonial-wrapper .title span {
+    color: #55BC7E;
+}
+
+.testimonial-wrapper .testimonials {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+}
+
+.testimonial-wrapper .testimonials::-webkit-scrollbar {
+    display: none;
+}
