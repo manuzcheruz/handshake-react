@@ -1,6 +1,6 @@
 .testimonial-card {
     height: 400px;
-    width: 350px;
+    width: 330px;
     background-color: white;
     margin-top: 20px;
     margin-bottom: 30px;
@@ -21,7 +21,7 @@
 
 .testimonial-card .testimonial-card-body .top {
     margin-top: 20px;
-    margin-left: 110px;
+    margin-left: 100px;
     width: 100px;
     height: 100px;
     background-color: grey;
@@ -50,6 +50,13 @@
     font-size: 0.9rem;
     color: grey;
     line-height: 30px;
+}
+
+.testimonial-card .testimonial-card-body .line {
+    margin-top: 20px;
+    border-bottom: 2px solid orange;
+    width: 30%;
+    margin-left: 100px;
 }
 
 .testimonial-card .testimonial-card-body .bottom {

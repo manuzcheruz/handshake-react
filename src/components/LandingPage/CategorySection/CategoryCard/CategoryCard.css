@@ -21,9 +21,11 @@
     background-color: #ECF1FA;
 }
 
-/* .cat-card .cat-card-body .cat-card-icon .icon-gear {
-    
-} */
+.cat-card .cat-card-body .cat-card-icon .icon-gear {
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 15px;
+}
 
 .cat-card .cat-card-body .cat-card-title {
     margin-top: 10px;

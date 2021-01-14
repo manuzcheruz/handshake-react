@@ -19,7 +19,6 @@ function ExploreStudentSection() {
                                     </div>
                                     <div className="profile-info">
                                         <div className="profile-image">
-
                                         </div>
                                         <div className="name">
                                             Junaki
@@ -74,6 +73,18 @@ function ExploreStudentSection() {
                         <div className="jobholders">
                             <div className="title">
                                 20,000+ Talented Job Holders
+                            </div>
+                            <div className="profile-images">
+                                <div className="items"></div>
+                                <div className="items"></div>
+                                <div className="items"></div>
+                                <div className="items"></div>
+                                <div className="items"></div>
+                                <div className="items"></div>
+                                <div className="items"></div>
+                                <div className="items"></div>
+                                <div className="items"></div>
+                                <div className="items"></div>
                             </div>
                         </div>
                         <div className="circle"></div>

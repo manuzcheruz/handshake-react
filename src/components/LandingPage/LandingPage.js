@@ -6,7 +6,7 @@ import ExploreStudentSection from './ExploreStudentSection/ExploreStudentSection
 import IntroSection from './IntroSection/IntroSection'
 import JobSection from './JobSection/JobSection'
 import ProcessSection from './ProcessSection/ProcessSection'
-import Subscribe from './Subscribe/Subscribe'
+// import Subscribe from './Subscribe/Subscribe'
 import Testimonials from './Testimonials/Testimonials'
 
 function LandingPage() {
@@ -19,7 +19,7 @@ function LandingPage() {
             <CategorySection />
             <ExploreCompanySection />
             <Testimonials />
-            <Subscribe />
+            {/* <Subscribe /> */}
         </div>
     )
 }

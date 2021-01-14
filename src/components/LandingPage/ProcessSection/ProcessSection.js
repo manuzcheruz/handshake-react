@@ -83,18 +83,18 @@ function ProcessSection() {
                     </div>
                     <div className="process-apply">
                         <div className="apply-block" style={{width: '150px'}}>
-                            <div className="rotated" style={{backgroundColor: '#ECF1FA', marginLeft: '50px', height: '100px', width: '100px', borderRadius: '25px', transform: 'rotate(45deg)'}}>
+                            <div className="rotated" style={{backgroundColor: '#ECF1FA', marginLeft: '20px', height: '100px', width: '100px', borderRadius: '25px', transform: 'rotate(45deg)'}}>
                                 <div className="icon-acc" style={{marginLeft: '25px', paddingTop: '15px', transform: 'rotate(-45deg)'}}>
                                     <Plug height={30} />
                                 </div>
                             </div>
                         </div>
-                        <div className="item-bottom" style={{textAlign: 'center'}}>
+                        <div className="item-bottom" style={{textAlign: 'center', marginLeft: '-25px', marginTop: '30px', width: '200px'}}>
                                 <h4>
-                                    Quick Jobs
+                                    Apply them
                                 </h4>
                                 <p style={{fontSize: '0.8rem', color: 'grey'}}>
-                                    Find your best jobs by using search or categories.
+                                    Finally you apply your job and enjoy your work.
                                 </p>
                             </div>
                     </div>

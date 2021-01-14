@@ -17,6 +17,7 @@ function TestimonialsCard() {
                     <div className="middle">
                         This platform enabled me to secure my dream job in Apple, I am so excited and recommend any student to join it.
                     </div>
+                    <div className="line"></div>
                     <div className="bottom">
                         <div className="name">
                             Randy Elliot

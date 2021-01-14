@@ -93,3 +93,7 @@ export {
 export {
     default as Lock
 } from './lock'
+
+export {
+    default as Plus
+} from './plus'

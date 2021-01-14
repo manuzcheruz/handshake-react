@@ -2,7 +2,7 @@ import React from 'react'
 
 import './IntroSection.css'
 import handshake from '../../../Assets/Images/handshake2.png'
-import { Mail, Check, Pdf, Heart, Google, Be, Instagram, Microsoft, Search } from '../../../Assets/icons'
+import { Mail, Check, Pdf, Heart, Google, Be, Instagram, Microsoft, Search, Plus } from '../../../Assets/icons'
 
 function IntroSection() {
     return (
@@ -27,6 +27,8 @@ function IntroSection() {
                             <div className="select-search">
                                 <select>
                                     <option>City or Zip code</option>
+                                    <option>Nairobi</option>
+                                    <option>Others</option>
                                 </select>
                             </div>
                             <span role="button">
@@ -83,9 +85,20 @@ function IntroSection() {
                             </div>
                         </div>
                         <div className="job-holder">
-                            <h5 className="job-holder-text" style={{marginLeft: '15px'}}>
+                            <div className="job-holder-text" style={{marginLeft: '15px'}}>
                                 10k+ Jobholder Get job
-                            </h5>
+                            </div>
+                            <div className="job-holder-images">
+                                <div className="item"></div>
+                                <div className="items"></div>
+                                <div className="items"></div>
+                                <div className="items"></div>
+                                <div className="items">
+                                    <div className="icon-plus">
+                                        <Plus height={20} color="white" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div className="heart">
                             <div className="heart-icon" style={{marginTop: '5px', marginLeft: '5px'}}>
@@ -105,7 +118,9 @@ function IntroSection() {
                                 </div>
                             </div>
                         </div>
-                        <div className="mini-profile"></div>
+                        <div className="mini-profile">
+                            <div className="mini-profile-image"></div>
+                        </div>
                         <div className="thumb">
                             <img width="450px" src={handshake} alt="handshake" />
                         </div>
