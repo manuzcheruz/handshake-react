@@ -46,7 +46,10 @@ function JobCard() {
                         <button type='button'>Apply Now</button>
                     </div>
                     <div className="others">
-
+                        <div className="item"></div>
+                        <div className="items"></div>
+                        <div className="items"></div>
+                        <div className="items"></div>
                     </div>
                 </div>
             </div>

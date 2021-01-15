@@ -111,3 +111,29 @@
     background-color: white;
     text-decoration: underline;
 }
+
+.card-body-bottom .others {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 50px;
+    width: 100px;
+    margin-left: 40px;
+}
+
+.card-body-bottom .others .item {
+    height: 35px;
+    width: 35px;
+    border-radius: 15px;
+    border: 3px solid white;
+    margin-top: 25px;
+    background-color: grey;
+}
+.card-body-bottom .others .items {
+    height: 35px;
+    width: 35px;
+    border-radius: 15px;
+    border: 3px solid white;
+    margin-left: -15px;
+    background-color: grey;
+    margin-top: 25px;
+}
