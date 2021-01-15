@@ -1,0 +1,118 @@
+.jobs-wrapper {
+    width: 100vw;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1.5fr 5fr;
+}
+
+.jobs-wrapper .filters {
+    height: 100vh;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 80px;
+}
+
+.jobs-wrapper .filters .job-alert {
+    height: 185px;
+    width: auto;
+    border-radius: 15px;
+    background-color: #E8F2FF;
+}
+
+.jobs-wrapper .filters .job-alert .title {
+    margin-left: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.jobs-wrapper .filters .job-alert .text {
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.jobs-wrapper .filters .job-alert .job-alert-search {
+    margin-left: 10px;
+}
+
+.jobs-wrapper .filters .job-alert .job-alert-btn {
+    margin-left: 10px;
+    margin-top: 7px;
+}
+
+.jobs-wrapper .filters .filter {
+    width: auto;
+    height: 500px;
+    margin-top: 30px;
+    border-radius: 15px;
+}
+
+.jobs-wrapper .filters .filter .employment-type {
+    height: 200px;
+    width: auto;
+    background-color: orange;
+    border-radius: 5px;
+}
+
+.jobs-wrapper .filters .filter .employment-type .title {
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+.jobs-wrapper .filters .filter .level {
+    margin-top: 20px;
+    height: 200px;
+    width: auto;
+    background-color: blue;
+    border-radius: 5px;
+}
+
+.jobs-wrapper .filters .filter .level .title {
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+.jobs-wrapper .filters .filter .salary {
+    margin-top: 20px;
+    height: 200px;
+    width: auto;
+    background-color: green;
+    border-radius: 5px;
+}
+
+.jobs-wrapper .filters .filter .salary .title {
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+.jobs-wrapper .jobs {
+    margin-right: 3%;
+    margin-top: 80px;
+}
+
+.jobs-wrapper .jobs .top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.jobs-wrapper .jobs .top .no {
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.jobs-wrapper .jobs .top .sort {
+    text-align: right;
+    font-size: 0.9rem;
+    color: grey;
+}
+
+.jobs-wrapper .jobs .all-jobs {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}

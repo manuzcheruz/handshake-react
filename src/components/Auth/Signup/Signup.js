@@ -94,7 +94,7 @@ function Signup() {
                     </div>
                     <div className="illustrator">
                         <div className="illustrator-coworker">
-                            <CoWorkers height={700} width={750} />
+                            <CoWorkers height={700} width={700} />
                         </div>
                     </div>
                 </div>

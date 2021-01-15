@@ -14,6 +14,7 @@ function Field(props) {
                     name={props.name}
                     type={props.elementType}
                     placeholder={props.placeholder}
+                    style={{height: `${props.height}`, width: `${props.width}`, border: `${props.border}`}}
                 />
             </div>
         )
