@@ -97,3 +97,23 @@ export {
 export {
     default as Plus
 } from './plus'
+
+export {
+    default as Briefcase
+} from './briefcase'
+
+export {
+    default as School
+} from './school'
+
+export {
+    default as Cap
+} from './cap'
+
+export {
+    default as LoginIcon
+} from './login'
+
+export {
+    default as Logout
+} from './logout'

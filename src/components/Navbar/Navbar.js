@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { User } from '../../Assets/icons'
 import './Navbar.css'
@@ -31,9 +32,12 @@ function Navbar() {
                         <button className="">
                             my account
                         </button>
-                        <button className="create-acc">
-                            <span><User height={20} /></span>create account
-                        </button>
+                            <Link to="/signup" >
+                                <button className="create-acc">
+                                    <span><User height={20} /></span>
+                                    create account
+                                </button>
+                            </Link>
                     </div>
                 </div>
             </div>

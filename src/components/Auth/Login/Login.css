@@ -1,0 +1,169 @@
+.login-wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.login-wrapper .login {
+    background-color: white;
+    padding: 50px 150px;
+}
+
+.login-wrapper .login .logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.login-wrapper .login .form-wrapper {
+    margin-top: 30px;
+}
+
+.login-wrapper .login .form-wrapper .title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.login-wrapper .login .form-wrapper .subtitle {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: grey;
+}
+
+.login-wrapper .login .form-wrapper .form {
+    margin-top: 20px;
+}
+
+.login-wrapper .login .form-wrapper .form .line {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.login-wrapper .login .form-wrapper .form .line .line1 {
+    border-bottom: 5px solid grey;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.login-wrapper .login .form-wrapper .form .button {
+    margin-top: 40px;
+}
+
+.login-wrapper .login .signup {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1rem;
+    color: grey;
+}
+
+.login-wrapper .login .signup span {
+    margin-left: 10px;
+    color: blue;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-wrapper .illustrator {
+    background-color: #ECF1FA;
+}
+
+.login-wrapper .illustrator .student-card {
+    width: 300px;
+    height: 52px;
+    border-radius: 15px;
+    z-index: 2;
+    position: absolute;
+    margin-left: 60px;
+    margin-top: 70px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: 0.6fr 3fr;
+}
+
+.login-wrapper .illustrator .student-card .title {
+    font-size: 0.8rem;
+    color: grey;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.login-wrapper .illustrator .student-card .icon-cap {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.login-wrapper .illustrator .student-card .subtitle {
+    font-size: 0.7rem;
+    color: grey;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.login-wrapper .illustrator .employer-card {
+    width: 300px;
+    height: 52px;
+    border-radius: 15px;
+    z-index: 2;
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 150px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: 0.6fr 3fr;
+}
+
+.login-wrapper .illustrator .employer-card .icon-briefcase {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.login-wrapper .illustrator .employer-card .title {
+    font-size: 0.8rem;
+    color: grey;
+    margin-left: 10px;
+    margin-top: 5px;
+} 
+
+.login-wrapper .illustrator .employer-card .subtitle {
+    font-size: 0.7rem;
+    color: grey;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.login-wrapper .illustrator .center-card {
+    width: 300px;
+    height: 52px;
+    border-radius: 15px;
+    z-index: 2;
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 600px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: 0.6fr 3fr;
+}
+
+.login-wrapper .illustrator .center-card .icon-school {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.login-wrapper .illustrator .center-card .title {
+    font-size: 0.8rem;
+    color: grey;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.login-wrapper .illustrator .center-card .subtitle {
+    font-size: 0.7rem;
+    color: grey;
+    margin-left: 10px;
+    margin-top: 5px;
+}

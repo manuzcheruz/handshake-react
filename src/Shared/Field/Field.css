@@ -1,0 +1,27 @@
+.field-item {
+    padding: 10px 0px;
+}
+
+.field-item .label {
+    text-align: left;
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.field-item input {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 7px;
+    height: 40px;
+    border: 2px solid grey;
+}
+
+.field-item input::placeholder {
+    padding-left: 10px;
+}
+
+.field-item input:focus {
+    border: none;
+}
+
+
