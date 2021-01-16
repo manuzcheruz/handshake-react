@@ -1,0 +1,64 @@
+.center-card {
+    height: 105px;
+    width: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px 0 rgba(43, 46, 207, 0.1)
+}
+
+.center-card:hover {
+    background-color: #2B2ECF;
+    color: white;
+    box-shadow: 0 15px 4px 0 rgba(43, 46, 207, 0.1),
+    0 9px 30px 0 rgba(43, 46, 207, 0.19);
+}
+
+.center-card:hover .center-card-body .bottom .view button {
+    background-color: blue;
+}
+
+.center-card .center-card-body {
+    padding: 10px 10px;
+}
+
+.center-card .center-card-body .top {
+    display: grid;
+    grid-template-columns: 1fr 2fr 0.6fr;
+}
+
+.center-card .center-card-body .top .icon-center {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.center-card .center-card-body .top .name .title {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.center-card .center-card-body .top .name .location {
+    font-size: 0.7rem;
+    color: grey;
+}
+
+.center-card .center-card-body .top .name .location span {
+    margin-right: 8px;
+}
+
+.center-card .center-card-body .top .heart {
+    margin-top: 5px;
+    padding: 3px;
+    margin-left: 10px;
+    height: 20px;
+    width: 20px;
+    /* border: 1px solid #F0F0F0; */
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(43, 46, 207, 0.1)
+}
+
+.center-card .center-card-body .bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    padding: 5px 10px;
+}
