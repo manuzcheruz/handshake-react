@@ -45,14 +45,13 @@
 .jobs-wrapper .filters .filter {
     width: auto;
     height: 500px;
-    margin-top: 30px;
+    margin-top: 20px;
     border-radius: 15px;
 }
 
 .jobs-wrapper .filters .filter .employment-type {
-    height: 200px;
+    height: 230px;
     width: auto;
-    background-color: orange;
     border-radius: 5px;
 }
 
@@ -62,10 +61,9 @@
 }
 
 .jobs-wrapper .filters .filter .level {
-    margin-top: 20px;
-    height: 200px;
+    margin-top: 5px;
+    height: 190px;
     width: auto;
-    background-color: blue;
     border-radius: 5px;
 }
 
@@ -75,10 +73,9 @@
 }
 
 .jobs-wrapper .filters .filter .salary {
-    margin-top: 20px;
+    margin-top: 5px;
     height: 200px;
     width: auto;
-    background-color: green;
     border-radius: 5px;
 }
 

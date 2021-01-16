@@ -31,8 +31,9 @@ const fields = [
     },
     {
         name: 'terms',
-        elementName: 'checkbox',
-        elementType: 'checkbox'
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'accept our terms and conditions in order to complete creating your account'
     }
 ]
 

@@ -3,6 +3,7 @@ import React from 'react'
 import JobCard from '../../LandingPage/JobSection/JobCard/JobCard'
 import Field from '../../../Shared/Field/Field'
 import Button from '../../../Shared/Button/Button'
+import Pagination from '../../../Shared/Pagination/Pagination'
 
 import './Jobs.css'
 
@@ -13,6 +14,111 @@ const fields = [
         elementType: 'text',
         placeholder: 'Enter job keyword',
         // label: 'Your e-mail'
+    }
+]
+
+const employmentFilters = [
+    {
+        name: 'full',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'Full Time Jobs'
+    },
+    {
+        name: 'part',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'Part Time Jobs'
+    },
+    {
+        name: 'remote',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'Remote Jobs'
+    },
+    {
+        name: 'internship',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'Internship Jobs'
+    },
+    {
+        name: 'contract',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'Contract'
+    },
+    {
+        name: 'training',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'Training Jobs'
+    }
+]
+
+const levelFilters = [
+    {
+        name: 'freshman',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'Freshman Level'
+    },
+    {
+        name: 'sophomore',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'Sophomore Level'
+    },
+    {
+        name: 'junior',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'Junior Level'
+    },
+    {
+        name: 'senior',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'Senior Level'
+    },
+    {
+        name: 'graduate',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'Graduate Level'
+    }
+]
+
+const salaryFilters = [
+    {
+        name: 'first',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'less than $100'
+    },
+    {
+        name: 'second',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: '$100 - $200'
+    },
+    {
+        name: 'third',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: '$200 - $300'
+    },
+    {
+        name: 'senior',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: '$300 - $500'
+    },
+    {
+        name: 'graduate',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'over $500'
     }
 ]
 
@@ -59,15 +165,39 @@ function Jobs() {
                                 <div className="title">
                                     Type of Employment
                                 </div>
+                                <div className="items">
+                                    {employmentFilters.map(item => {
+                                        return (
+                                            <Field
+                                                {...item} />
+                                        )
+                                    })}
+                                </div>
                             </div>
                             <div className="level">
                                 <div className="title">
                                     Seniority Level
                                 </div>
+                                <div className="items">
+                                    {levelFilters.map(item => {
+                                        return (
+                                            <Field
+                                                {...item} />
+                                        )
+                                    })}
+                                </div>
                             </div>
                             <div className="salary">
                                 <div className="title">
                                     Salary Range
+                                </div>
+                                <div className="items">
+                                    {salaryFilters.map(item => {
+                                        return (
+                                            <Field
+                                                {...item} />
+                                        )
+                                    })}
                                 </div>
                             </div>
                         </div>
@@ -94,6 +224,7 @@ function Jobs() {
                             <JobCard />
                             <JobCard />
                         </div>
+                        <Pagination />
                     </div>
                 </div>
             </div>

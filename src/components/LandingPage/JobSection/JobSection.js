@@ -1,5 +1,6 @@
 import React from 'react'
 import Fade from 'react-reveal/Fade'
+import Pagination from '../../../Shared/Pagination/Pagination'
 import JobCard from './JobCard/JobCard'
 
 import './JobSection.css'
@@ -21,33 +22,7 @@ function JobSection() {
                             <JobCard />
                             <JobCard />
                         </div>
-                        <div className="pagination">
-                            <div className="pagination-items">
-                                <div className="pagination-item">
-                                    1
-                                </div>
-                            </div>
-                            <div className="pagination-items" style={{backgroundColor: '#55BC7E', color: 'white'}}>
-                                <div className="pagination-item">
-                                    2
-                                </div>
-                            </div>
-                            <div className="pagination-items">
-                                <div className="pagination-item">
-                                    3
-                                </div>
-                            </div>
-                            <div className="pagination-items">
-                                <div className="pagination-item">
-                                    4
-                                </div>
-                            </div>
-                            <div className="pagination-items">
-                                <div className="pagination-item">
-                                    5
-                                </div>
-                            </div>
-                        </div>
+                        <Pagination />
                     </div>
                 </Fade>
             </div>

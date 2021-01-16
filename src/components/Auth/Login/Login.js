@@ -21,6 +21,12 @@ const fields = [
         elementType: 'password',
         placeholder: 'Password',
         label: 'Password'
+    },
+    {
+        name: 'remember',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'keep me logged in'
     }
 ]
 
@@ -50,17 +56,19 @@ function Login() {
                                     )
                                 })}
                                 <div className="button">
-                                    <Button
-                                        name='Log In'
-                                        color='white'
-                                        width='100%'
-                                        height='40px'
-                                        bgcolor='#55BC7E'
-                                        radius='7px'
-                                        border='none'
-                                        iconMarginLeft='20px'
-                                        iconMarginTop='0px'
-                                        icon={<LoginIcon height={20} color='white' />} />
+                                    <Link to="/jobs">
+                                        <Button
+                                            name='Log In'
+                                            color='white'
+                                            width='100%'
+                                            height='40px'
+                                            bgcolor='#55BC7E'
+                                            radius='7px'
+                                            border='none'
+                                            iconMarginLeft='20px'
+                                            iconMarginTop='0px'
+                                            icon={<LoginIcon height={20} color='white' />} />
+                                    </Link>
                                 </div>
                             </form>
                         </div>
