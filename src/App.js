@@ -10,6 +10,7 @@ import Signup from './components/Auth/Signup/Signup';
 import Jobs from './components/Job/Jobs/Jobs';
 import Centers from './components/Center/Centers/Centers';
 import Companies from './components/Company/Companies/Companies';
+import Students from './components/Student/Students/Students';
 
 function App() {
   return (
@@ -17,9 +18,10 @@ function App() {
       <Switch>
         <Route path="/login" exact component={Login} />
         <Route path="/signup" exact component={Signup} />
-        <Route path="/jobs" component={Jobs} />
-        <Route path="/centers" component={Centers} />
-        <Route path="/companies" component={Companies} />
+        <Route path="/jobs" exact component={Jobs} />
+        <Route path="/centers" exact component={Centers} />
+        <Route path="/companies" exact component={Companies} />
+        <Route path="/students" exact component={Students} />
         <Layout>
           {/* going to add routes here and enable lazy loading for them */}
           <Route path="/" component={LandingPage} />

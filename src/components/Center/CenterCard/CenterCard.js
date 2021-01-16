@@ -1,5 +1,5 @@
 import React from 'react'
-import { Google, Heart, Marker } from '../../../Assets/icons'
+import { Heart, Marker } from '../../../Assets/icons'
 import Button from '../../../Shared/Button/Button'
 
 import './CenterCard.css'

@@ -1,0 +1,108 @@
+.jobholder-profile {
+    padding: 20px;
+    width: auto;
+    height: 220px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1)
+}
+
+.jobholder-profile:hover {
+    background-color: #2B2ECF;
+    color: white;
+    box-shadow: 0 15px 4px 0 rgba(43, 46, 207, 0.1),
+    0 9px 30px 0 rgba(43, 46, 207, 0.19);
+}
+
+.jobholder-profile .profile-wrapper .profile-top .profile-menu {
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    border: 1px solid #ECF1FA;
+    z-index: 2;
+    position: absolute;
+    margin-left: 170px;
+}
+
+.jobholder-profile .profile-wrapper .profile-top .profile-menu .icon-menu {
+    margin-left: 11px;
+    margin-top: 4px;
+}
+
+.jobholder-profile .profile-wrapper .profile-top .profile-info {
+    text-align: center;
+}
+
+.jobholder-profile .profile-wrapper .profile-top .profile-info .profile-image {
+    height: 70px;
+    width: 70px;
+    background-color: grey;
+    border-radius: 50%;
+    margin-left: 65px;
+}
+
+.jobholder-profile .profile-wrapper .profile-top .profile-info .name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.jobholder-profile .profile-wrapper .profile-top .profile-info .role {
+    font-size: 0.7rem;
+}
+
+.jobholder-profile .profile-wrapper .profile-top .profile-info .location {
+    font-size: 0.6rem;
+    color: grey;
+}
+
+.jobholder-profile .profile-wrapper .profile-top .profile-info .location span {
+    margin-right: 5px;
+}
+
+.jobholder-profile .profile-wrapper .profile-middle {
+    padding: 0px 5px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.jobholder-profile .profile-wrapper .profile-middle .profile-posts {
+    font-size: 0.8rem;
+}
+
+.jobholder-profile .profile-wrapper .profile-middle .profile-posts span {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.jobholder-profile .profile-wrapper .profile-bottom {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.jobholder-profile .profile-wrapper .profile-bottom .button-friends .friends {
+    background-color: #FF9066;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 90px;
+    color: white;
+}
+
+.jobholder-profile .profile-wrapper .profile-bottom .button-friends .friends span {
+    margin-right: 5px;
+}
+
+.jobholder-profile .profile-wrapper .profile-bottom .button-friends .message {
+    background-color: #ECF1FA;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    color: black;
+}
+
+.jobholder-profile .profile-wrapper .profile-bottom .button-friends .message span {
+    margin-right: 5px;
+}
