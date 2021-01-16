@@ -4,23 +4,23 @@ import Button from '../../../Shared/Button/Button'
 
 import './CenterCard.css'
 
-function CenterCard() {
+function CenterCard(props) {
     return (
         <div className="center-card">
             <div className="center-card-body">
                 <div className="top">
                     <div className="icon-center">
                         <span>
-                            <Google height={40} color='blue' />
+                            {props.icon}
                         </span>
                     </div>
                     <div className="name">
                         <div className="title">
-                            Google
+                            {props.name}
                         </div>
                         <div className="location">
                             <span><Marker height={15} color='orange' /></span>
-                            Nairobi, Kenya
+                            {props.location}
                         </div>
                     </div>
                     <div className="heart">

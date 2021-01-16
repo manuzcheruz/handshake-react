@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { School } from '../../../Assets/icons'
+import { Be, Google, Instagram, Microsoft } from '../../../Assets/icons'
 import Field from '../../../Shared/Field/Field'
 import Button from '../../../Shared/Button/Button'
 import Pagination from '../../../Shared/Pagination/Pagination'
 
 import '../../Job/Jobs/Jobs.css'
-import CenterCard from '../CenterCard/CenterCard'
+import CenterCard from '../../Center/CenterCard/CenterCard'
 
 const fields = [
     {
@@ -18,7 +18,7 @@ const fields = [
     }
 ]
 
-const centerFilters = [
+const companyFilters = [
     {
         name: 'technology',
         elementName: 'input',
@@ -62,14 +62,38 @@ const centerFilters = [
         label: 'Agriculture'
     },
     {
-        name: 'engineering',
+        name: 'manufacturing',
         elementName: 'input',
         elementType: 'checkbox',
-        label: 'Engineering'
+        label: 'Manufacturing'
+    },
+    {
+        name: 'Gis',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'GIS'
+    },
+    {
+        name: 'real-estate',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'Real Estate'
+    },
+    {
+        name: 'auditing',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'Auditing'
+    },
+    {
+        name: 'automotive',
+        elementName: 'input',
+        elementType: 'checkbox',
+        label: 'Automotive'
     }
 ]
 
-function Centers() {
+function Companies() {
     return (
         <div className="section" style={{backgroundColor: '#FAFAFB'}}>
             <div className="container">
@@ -110,10 +134,10 @@ function Centers() {
                         <div className="filter">
                             <div className="employment-type">
                                 <div className="title">
-                                    Types of Campuses
+                                    Types of Companies
                                 </div>
                                 <div className="items">
-                                    {centerFilters.map(item => {
+                                    {companyFilters.map(item => {
                                         return (
                                             <Field
                                                 {...item} />
@@ -126,7 +150,7 @@ function Centers() {
                     <div className="jobs">
                         <div className="top">
                             <div className="no">
-                                Showing 25 Campuses
+                                Showing 25 Companies
                             </div>
                             <div className="sort">
                                 Sort by:
@@ -134,99 +158,104 @@ function Centers() {
                         </div>
                         <div className="all-jobs" style={{gridTemplateColumns: 'repeat(4, 1fr)', gridGap: '15px'}}>
                             <CenterCard 
-                                icon={<School height={40} />}
-                                name='Dekut'
-                                location='Nyeri, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<School height={40} />}
-                                name='UON'
+                                icon={<Microsoft height={40} />}
+                                name='Microsoft'
                                 location='Nairobi, Kenya'
                                 />
                             <CenterCard 
-                                icon={<School height={40} />}
-                                name='JKUAT'
+                                icon={<Google height={40} />}
+                                name='Google'
                                 location='Nairobi, Kenya'
                                 />
                             <CenterCard 
-                                icon={<School height={40} />}
-                                name='KU'
-                                location='Ruiru, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<School height={40} />}
-                                name='UON'
+                                icon={<Microsoft height={40} />}
+                                name='Microsoft'
                                 location='Nairobi, Kenya'
                                 />
                             <CenterCard 
-                                icon={<School height={40} />}
-                                name='KU'
-                                location='Ruiru, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<School height={40} />}
-                                name='Dekut'
-                                location='Nyeri, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<School height={40} />}
-                                name='JKUAT'
+                                icon={<Instagram height={40} />}
+                                name='Instagram'
                                 location='Nairobi, Kenya'
                                 />
                             <CenterCard 
-                                icon={<School height={40} />}
-                                name='UON'
+                                icon={<Be height={40} />}
+                                name='Be'
                                 location='Nairobi, Kenya'
                                 />
                             <CenterCard 
-                                icon={<School height={40} />}
-                                name='KU'
-                                location='Ruiru, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<School height={40} />}
-                                name='JKUAT'
+                                icon={<Microsoft height={40} />}
+                                name='Microsoft'
                                 location='Nairobi, Kenya'
                                 />
                             <CenterCard 
-                                icon={<School height={40} />}
-                                name='Dekut'
-                                location='Nyeri, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<School height={40} />}
-                                name='KU'
-                                location='Ruiru, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<School height={40} />}
-                                name='UON'
+                                icon={<Google height={40} />}
+                                name='Google'
                                 location='Nairobi, Kenya'
                                 />
                             <CenterCard 
-                                icon={<School height={40} />}
-                                name='JKUAT'
+                                icon={<Microsoft height={40} />}
+                                name='Microsoft'
                                 location='Nairobi, Kenya'
                                 />
                             <CenterCard 
-                                icon={<School height={40} />}
-                                name='Dekut'
-                                location='Nyeri, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<School height={40} />}
-                                name='UON'
+                                icon={<Instagram height={40} />}
+                                name='Instagram'
                                 location='Nairobi, Kenya'
                                 />
                             <CenterCard 
-                                icon={<School height={40} />}
-                                name='KU'
-                                location='Ruiru, Kenya'
+                                icon={<Be height={40} />}
+                                name='Be'
+                                location='Nairobi, Kenya'
                                 />
                             <CenterCard 
-                                icon={<School height={40} />}
-                                name='Dekut'
-                                location='Nyeri, Kenya'
+                                icon={<Microsoft height={40} />}
+                                name='Microsoft'
+                                location='Nairobi, Kenya'
+                                />
+                            <CenterCard 
+                                icon={<Google height={40} />}
+                                name='Google'
+                                location='Nairobi, Kenya'
+                                />
+                            <CenterCard 
+                                icon={<Microsoft height={40} />}
+                                name='Microsoft'
+                                location='Nairobi, Kenya'
+                                />
+                            <CenterCard 
+                                icon={<Instagram height={40} />}
+                                name='Instagram'
+                                location='Nairobi, Kenya'
+                                />
+                            <CenterCard 
+                                icon={<Be height={40} />}
+                                name='Be'
+                                location='Nairobi, Kenya'
+                                />
+                            <CenterCard 
+                                icon={<Microsoft height={40} />}
+                                name='Microsoft'
+                                location='Nairobi, Kenya'
+                                />
+                            <CenterCard 
+                                icon={<Google height={40} />}
+                                name='Google'
+                                location='Nairobi, Kenya'
+                                />
+                            <CenterCard 
+                                icon={<Microsoft height={40} />}
+                                name='Microsoft'
+                                location='Nairobi, Kenya'
+                                />
+                            <CenterCard 
+                                icon={<Instagram height={40} />}
+                                name='Instagram'
+                                location='Nairobi, Kenya'
+                                />
+                            <CenterCard 
+                                icon={<Be height={40} />}
+                                name='Be'
+                                location='Nairobi, Kenya'
                                 />
                         </div>
                         <Pagination />
@@ -237,5 +266,5 @@ function Centers() {
     )
 }
 
-export default Centers
+export default Companies
 
