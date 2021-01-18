@@ -1,0 +1,72 @@
+.message {
+    height: auto;
+    width: 350px;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    z-index: 5;
+    background-color: yellow;
+    border-radius: 10px;
+    box-shadow: 0 15px 4px 0 rgba(0, 0, 0, 0.1),
+    0 9px 30px 0 rgba(0, 0, 0, 0.19);
+}
+
+.message .header {
+    border-radius: 10px;
+    height: 50px;
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    background-color: white;
+    box-shadow: 0 15px 4px 0 rgba(0, 0, 0, 0.1),
+    0 9px 30px 0 rgba(0, 0, 0, 0.19);
+}
+
+.message .header:hover {
+    background-color: green;
+    color: white;
+}
+
+.message .header .image {
+    height: 40px;
+    width: 40px;
+    background-color: grey;
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.message .header .title {
+    margin-top: 15px;
+    /* color: grey; */
+    font-size: 1rem;
+    margin-left: -15px;
+}
+
+.message .body {
+    height: 550px;
+    width: 100%;
+}
+
+.message .body .item {
+    padding-top: 15px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 0.5fr 3fr;
+}
+
+.message .body .item .image {
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 50%;
+    background-color: grey;
+}
+
+.message .body .item .content {
+    margin: 8px 5px 0;
+    background-color: blue;
+    display: grid;
+
+}

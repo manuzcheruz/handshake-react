@@ -7,6 +7,7 @@ import Pagination from '../../../Shared/Pagination/Pagination'
 
 import '../../Job/Jobs/Jobs.css'
 import StudentCard from '../StudentCard/StudentCard'
+import Messaging from '../../Messaging/Messaging'
 
 const fields = [
     {
@@ -54,6 +55,7 @@ const studentFilters = [
 function Students() {
     return (
         <div className="section" style={{backgroundColor: '#FAFAFB'}}>
+            <Messaging bottom='0px' right='0px' />
             <div className="container">
                 <div className="jobs-wrapper">
                     <div className="filters">

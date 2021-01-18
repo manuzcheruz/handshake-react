@@ -8,7 +8,7 @@
 }
 
 .jobholder-profile:hover {
-    background-color: #2B2ECF;
+    background-color: indigo;
     color: white;
     box-shadow: 0 15px 4px 0 rgba(43, 46, 207, 0.1),
     0 9px 30px 0 rgba(43, 46, 207, 0.19);

@@ -7,6 +7,7 @@ import Pagination from '../../../Shared/Pagination/Pagination'
 
 import '../../Job/Jobs/Jobs.css'
 import CenterCard from '../../Center/CenterCard/CenterCard'
+import Messaging from '../../Messaging/Messaging'
 
 const fields = [
     {
@@ -97,6 +98,7 @@ function Companies() {
     return (
         <div className="section" style={{backgroundColor: '#FAFAFB'}}>
             <div className="container">
+                <Messaging />
                 <div className="jobs-wrapper">
                     <div className="filters">
                         <div className="job-alert">

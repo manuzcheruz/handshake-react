@@ -6,6 +6,7 @@ import Button from '../../../Shared/Button/Button'
 import Pagination from '../../../Shared/Pagination/Pagination'
 
 import './Jobs.css'
+import Messaging from '../../Messaging/Messaging'
 
 const fields = [
     {
@@ -126,6 +127,7 @@ function Jobs() {
     return (
         <div className="section" style={{backgroundColor: '#FAFAFB'}}>
             <div className="container">
+                <Messaging />
                 <div className="jobs-wrapper">
                     <div className="filters">
                         <div className="job-alert">
