@@ -1,36 +1,37 @@
-.message {
+.chat {
     height: auto;
     width: 350px;
     position: fixed;
-    right: 0px;
+    right: 380px;
     bottom: 0px;
     z-index: 5;
     background-color: white;
     border-radius: 10px;
     border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
     box-shadow: 0 15px 4px 0 rgba(0, 0, 0, 0.1),
     0 9px 30px 0 rgba(0, 0, 0, 0.19);
 }
 
-.message .header {
+.chat .top {
     border-radius: 10px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
     height: 50px;
     width: auto;
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-columns: 1fr 2fr 1fr;
     background-color: white;
     box-shadow: 0 15px 4px 0 rgba(0, 0, 0, 0.1),
     0 9px 30px 0 rgba(0, 0, 0, 0.19);
 }
 
-.message .header:hover {
+.chat .top:hover {
     background-color: green;
     color: white;
 }
 
-.message .header .image {
+.chat .top .image {
     height: 40px;
     width: 40px;
     background-color: grey;
@@ -39,47 +40,20 @@
     margin-left: 10px;
 }
 
-.message .header .title {
+.chat .top .name {
     margin-top: 15px;
     /* color: grey; */
     font-size: 1rem;
     margin-left: -15px;
 }
 
-.message .header .icons {
+.chat .top .icons {
+    margin-top: 15px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr;
 }
 
-.message .header .icons .icon {
-    margin: 15px 5px 0px 5px;
-}
-
-.message .body {
-    height: 550px;
+.chat .chat-box {
+    height: 300px;
     width: 100%;
-}
-
-.message .body .item {
-    padding-top: 15px;
-    height: 50px;
-    display: grid;
-    grid-template-columns: 0.5fr 3fr;
-}
-
-.message .body .item .image {
-    width: 50px;
-    height: 50px;
-    margin-left: 5px;
-    margin-top: 5px;
-    border-radius: 50%;
-    background-color: grey;
-}
-
-.message .body .item .content {
-    margin: 8px 5px 0;
-    background-color: blue;
-    display: grid;
-
 }

@@ -117,3 +117,19 @@ export {
 export {
     default as Logout
 } from './logout'
+
+export {
+    default as Chevron
+} from './chevron'
+
+export {
+    default as Edit
+} from './edit'
+
+export {
+    default as Expand
+} from './expand'
+
+export {
+    default as Close
+} from './close'
