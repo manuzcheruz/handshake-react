@@ -8,7 +8,8 @@ function Button(props) {
             height: `${props.height}`, 
             border: `${props.border}`,
             color: `${props.color}`,
-            borderRadius: `${props.radius}`
+            borderRadius: `${props.radius}`,
+            fontSize: `${props.size}`
         }}>
             {props.name}
             {props.icon && <span style={{

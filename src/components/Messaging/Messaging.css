@@ -25,10 +25,10 @@
     0 9px 30px 0 rgba(0, 0, 0, 0.19);
 }
 
-.message .header:hover {
+/* .message .header:hover {
     background-color: green;
     color: white;
-}
+} */
 
 .message .header .image {
     height: 40px;

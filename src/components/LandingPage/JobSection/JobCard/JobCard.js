@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Bookmark, Calendar, Instagram } from '../../../../Assets/icons'
 
 import './JobCard.css'
@@ -43,7 +44,9 @@ function JobCard() {
                 </div>
                 <div className="card-body-bottom">
                     <div className="apply-button">
-                        <button type='button'>Apply Now</button>
+                        <Link to="/jobs/job">
+                            <button type='button'>Apply Now</button>
+                        </Link> 
                     </div>
                     <div className="others">
                         <div className="item"></div>

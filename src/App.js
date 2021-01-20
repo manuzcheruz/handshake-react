@@ -11,6 +11,7 @@ import Jobs from './components/Job/Jobs/Jobs';
 import Centers from './components/Center/Centers/Centers';
 import Companies from './components/Company/Companies/Companies';
 import Students from './components/Student/Students/Students';
+import JobDetail from './components/Job/JobDetail/JobDetail';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/centers" exact component={Centers} />
         <Route path="/companies" exact component={Companies} />
         <Route path="/students" exact component={Students} />
+        <Route path="/jobs/job" exact component={JobDetail} />
         <Layout>
           {/* going to add routes here and enable lazy loading for them */}
           <Route path="/" component={LandingPage} />

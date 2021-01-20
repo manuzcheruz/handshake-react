@@ -26,10 +26,10 @@
     0 9px 30px 0 rgba(0, 0, 0, 0.19);
 }
 
-.chat .top:hover {
+/* .chat .top:hover {
     background-color: green;
     color: white;
-}
+} */
 
 .chat .top .image {
     height: 40px;

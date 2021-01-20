@@ -1,0 +1,168 @@
+.jobdetail-wrapper {
+    margin-top: 100px;
+    height: auto;
+    width: 97%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 20px;
+}
+
+.jobdetail-wrapper .job-detail {
+    width: 100%;
+    height: auto;
+}
+
+.jobdetail-wrapper .job-detail .bg {
+    height: 200px;
+    background-color: brown;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.jobdetail-wrapper .job-detail .logo {
+    height: 100px;
+    width: 100px;
+    border: 3px solid white;
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-top: -50px;
+    background-color: chocolate;
+}
+
+.jobdetail-wrapper .job-detail .top {
+    margin-top: 20px;
+}
+
+.jobdetail-wrapper .job-detail .top .name {
+    display: grid;
+    grid-template-columns: 1fr 0.15fr;
+}
+
+.jobdetail-wrapper .job-detail .top .name .title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    height: 40px;
+    width: 300px;
+}
+
+.jobdetail-wrapper .job-detail .top .name .icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.jobdetail-wrapper .job-detail .top .name .icons .icon-heart {
+    height: 36px;
+    width: 36px;
+    border-radius: 10px;
+    margin-left: -10px;
+    border: 2px solid #ECF1FA;
+}
+
+.jobdetail-wrapper .job-detail .top .name .icons .icon-heart span {
+    padding-left: 5px;
+    padding-top: 10px;
+}
+
+.jobdetail-wrapper .job-detail .top .name .icon-share {
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    background-color: lime;
+}
+
+.jobdetail-wrapper .job-detail .top .location {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.jobdetail-wrapper .job-detail .top .location .subtitle {
+    height: 30px;
+    width: 310px;
+    color: blue;
+}
+
+/* .jobdetail-wrapper .job-detail .top .location .subtitle span {
+
+} */
+
+.jobdetail-wrapper .job-detail .top .location .date {
+    height: 30px;
+    width: 100%;
+    text-align: right;
+    font-size: 1rem;
+}
+
+.jobdetail-wrapper .job-detail .top .location .date span {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.jobdetail-wrapper .job-detail .top .table {
+    margin-top: 20px;
+    height: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-radius: 15px;
+    border: 2px solid #ECF1FA;
+}
+
+.jobdetail-wrapper .job-detail .top .table .item1 {
+    border-right: 2px solid #ECF1FA;
+}
+
+.jobdetail-wrapper .job-detail .top .table .item2 {
+    border-right: 2px solid #ECF1FA;
+}
+
+.jobdetail-wrapper .job-detail .top .table .item3 {
+    border-right: 2px solid #ECF1FA;
+}
+
+.jobdetail-wrapper .job-detail .overview {
+    margin-top: 30px;
+}
+
+.jobdetail-wrapper .job-detail .overview .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.jobdetail-wrapper .job-detail .overview .content {
+    margin-top: 15px;
+    height: 250px;
+    width: 100%;
+    background-color: silver;
+}
+
+.jobdetail-wrapper .job-detail .description {
+    margin-top: 30px;
+}
+
+.jobdetail-wrapper .job-detail .description .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.jobdetail-wrapper .job-detail .description .content {
+    margin-top: 15px;
+    height: 400px;
+    width: 100%;
+    background-color: wheat;
+    margin-bottom: 30px;
+}
+
+.jobdetail-wrapper .similar-jobs .title {
+    margin-top: 10px;
+    height: 30px;
+    width: 200px;
+    margin-bottom: 15px;
+    color: grey;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.jobdetail-wrapper .similar-jobs .title span {
+    color: #55BC7E;
+    margin-left: 10px;
+}

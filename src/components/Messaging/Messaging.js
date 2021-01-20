@@ -28,6 +28,9 @@ function Messaging(props) {
             <div className="message" style={{height: `${height}`}}>
                 <div className="header" onClick={onSelectMessage}>
                     <div className="image">
+                        <div className="dot" style={{backgroundColor: 'green', width: '10px', height: '10px', marginTop: '27px', marginLeft: '25px', borderRadius: '50%', border: '3px solid white'}}>
+
+                        </div>
                     </div>
                     <div className="title">
                         Messaging

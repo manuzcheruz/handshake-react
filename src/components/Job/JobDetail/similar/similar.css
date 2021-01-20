@@ -1,0 +1,91 @@
+.similar-card {
+    width: 100%;
+    height: 110px;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.similar-card:hover {
+    color: white;
+    background-color: #2B2ECF;
+    box-shadow: 0 8px 4px 0 rgba(0, 0, 0, 0.1),
+    0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.similar-card:hover .similar-card-body .top .image {
+    border: 3px solid white;
+}
+
+.similar-card:hover .similar-card-body .top .name .location-similar {
+    color: white;
+}
+
+.similar-card:hover .similar-card-body .bottom .time-similar span {
+    color: white;
+}
+
+.similar-card .similar-card-body {
+    padding: 5px 5px;
+}
+
+.similar-card .similar-card-body .top {
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 0.6fr;
+}
+
+.similar-card .similar-card-body .top .image {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    margin-left: 5px;
+    background-color: orange;
+}
+
+.similar-card .similar-card-body .top .name .title-similar {
+    font-size: 1rem;
+}
+
+.similar-card .similar-card-body .top .name .location-similar {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.similar-card .similar-card-body .top .name .location-similar span {
+    margin-right: 5px;
+}
+
+.similar-card .similar-card-body .top .icon-bookmark {
+    margin-top: 5px;
+    padding: 2px 4px 5px 3px;
+    height: 15px;
+    width: 10px;
+    border-radius: 5px;
+    margin-left: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.similar-card .similar-card-body .bottom {
+    margin-top: 10px;
+    margin-left: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-gap: 5px;
+}
+
+.similar-card .similar-card-body .bottom .time-similar {
+    margin-top: 5px;
+    text-align: right;
+    margin-right: 5px;
+    font-size: 0.65rem;
+}
+
+.similar-card .similar-card-body .bottom .time-similar span {
+    font-weight: bold;
+    margin-right: 5px;
+    color: blue;
+}
