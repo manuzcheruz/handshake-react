@@ -137,3 +137,35 @@ export {
 export {
     default as Share
 } from './share'
+
+export {
+    default as Facebook
+} from './facebook'
+
+export {
+    default as Tesla
+} from './tesla'
+
+export {
+    default as Apple
+} from './apple'
+
+export {
+    default as Amazon
+} from './amazon'
+
+export {
+    default as Safaricom
+} from './safaricom'
+
+export {
+    default as Linkedin
+} from './linkedin'
+
+export {
+    default as Slack
+} from './slack'
+
+export {
+    default as Benz
+} from './benz'

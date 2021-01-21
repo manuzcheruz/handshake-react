@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { Heart, Marker, Microsoft, Share } from '../../../Assets/icons'
+import { Apple, Facebook, Google, Heart, Linkedin, Marker, Microsoft, Share, Slack, Tesla } from '../../../Assets/icons'
 import Similar from './similar/similar'
 import Button from '../../../Shared/Button/Button'
 import Messaging from '../../Messaging/Messaging'
@@ -58,7 +58,7 @@ function JobDetail() {
                         </div>
                         <div className="logo">
                             <div className="icon-logo">
-                                <Microsoft height={70} color='yellow' />
+                                <Microsoft height={90} color='yellow' />
                             </div>
                         </div>
                         <div className="top">
@@ -173,13 +173,28 @@ function JobDetail() {
                                 Jobs
                             </span>
                         </div>
-                        <Similar />
-                        <Similar />
-                        <Similar />
-                        <Similar />
-                        <Similar />
-                        <Similar />
-                        <Similar />
+                        <Similar 
+                            logo={<Slack height={50} />}
+                            />
+                        <Similar 
+                            logo={<Google height={50} />}
+                            />
+                        <Similar 
+                            logo={<Facebook height={50} />}
+                            />
+                        <Similar 
+                            logo={<Apple height={50} />}
+                            />
+                        <Similar 
+                            logo={<Tesla height={50} />}
+                            />
+                        <Similar 
+                            logo={<Microsoft height={50} />}
+                            />
+                        <Similar 
+                            logo={<Linkedin height={50} />}
+                            />
+                        
                         <div className="btn-more" style={{marginTop: '30px'}}>
                             <Link to='/jobs' >
                                 <Button 

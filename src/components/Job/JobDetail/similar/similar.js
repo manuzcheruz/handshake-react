@@ -1,17 +1,17 @@
 import React from 'react'
-import { Bookmark, Google, Marker } from '../../../../Assets/icons'
+import { Bookmark, Marker } from '../../../../Assets/icons'
 
 import Button from '../../../../Shared/Button/Button'
 import './similar.css'
 
-function Similar() {
+function Similar(props) {
     return (
         <div className="similar-card">
             <div className="similar-card-body">
                 <div className="top">
                     <div className="image">
                         <div className="icon-image" style={{marginLeft: '1px'}}>
-                            <Google height={50} />
+                            {props.logo}
                         </div>
                     </div>
                     <div className="name">

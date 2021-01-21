@@ -3,7 +3,7 @@ import Fade from 'react-reveal/Fade';
 
 import './IntroSection.css'
 import handshake from '../../../Assets/Images/handshake2.png'
-import { Mail, Check, Pdf, Heart, Google, Be, Instagram, Microsoft, Search, Plus } from '../../../Assets/icons'
+import { Mail, Check, Pdf, Heart, Google, Instagram, Microsoft, Search, Plus, Apple } from '../../../Assets/icons'
 
 function IntroSection() {
     return (
@@ -48,7 +48,7 @@ function IntroSection() {
                                         <Google height={20} />
                                     </div>
                                     <div className="icon-google" style={{paddingTop: '10px', marginLeft: '10px'}}>
-                                        <Be height={20} />
+                                        <Apple height={20} />
                                     </div>
                                     <div className="icon-google" style={{paddingTop: '10px', marginLeft: '10px'}}>
                                         <Instagram height={20} />
