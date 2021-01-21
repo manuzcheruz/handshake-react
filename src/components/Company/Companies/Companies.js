@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Be, Google, Instagram, Microsoft } from '../../../Assets/icons'
+import { Amazon, Apple, Be, Benz, Facebook, Google, Instagram, Linkedin, Microsoft, Safaricom, Slack, Tesla } from '../../../Assets/icons'
 import Field from '../../../Shared/Field/Field'
 import Button from '../../../Shared/Button/Button'
 import Pagination from '../../../Shared/Pagination/Pagination'
@@ -152,7 +152,7 @@ function Companies() {
                     <div className="jobs">
                         <div className="top">
                             <div className="no">
-                                Showing 25 Companies
+                                Showing 20 Companies
                             </div>
                             <div className="sort">
                                 Sort by:
@@ -160,19 +160,74 @@ function Companies() {
                         </div>
                         <div className="all-jobs" style={{gridTemplateColumns: 'repeat(4, 1fr)', gridGap: '15px'}}>
                             <CenterCard 
-                                icon={<Microsoft height={40} />}
-                                name='Microsoft'
+                                icon={<Tesla height={40} />}
+                                name='Tesla'
                                 location='Nairobi, Kenya'
                                 />
                             <CenterCard 
                                 icon={<Google height={40} />}
                                 name='Google'
-                                location='Nairobi, Kenya'
+                                location='Amphire, US'
                                 />
                             <CenterCard 
                                 icon={<Microsoft height={40} />}
                                 name='Microsoft'
+                                location='Paris, France'
+                                />
+                            <CenterCard 
+                                icon={<Instagram height={40} />}
+                                name='Instagram'
+                                location='Berlin, Germany'
+                                />
+                            <CenterCard 
+                                icon={<Apple height={40} />}
+                                name='Be'
+                                location='New York, US'
+                                />
+                            <CenterCard 
+                                icon={<Benz height={40} />}
+                                name='Lamborghini'
+                                location='Turin, Italy'
+                                />
+                            <CenterCard 
+                                icon={<Amazon height={40} />}
+                                name='Amazon'
+                                location='Carlifonia, US'
+                                />
+                            <CenterCard 
+                                icon={<Linkedin height={40} />}
+                                name='LInkedIn'
                                 location='Nairobi, Kenya'
+                                />
+                            <CenterCard 
+                                icon={<Facebook height={40} />}
+                                name='Facebook'
+                                location='Tokyo, Japan'
+                                />
+                            <CenterCard 
+                                icon={<Safaricom height={40} />}
+                                name='Safaricom'
+                                location='Paris, France'
+                                />
+                            <CenterCard 
+                                icon={<Slack height={40} />}
+                                name='Slack'
+                                location='Nairobi, Kenya'
+                                />
+                            <CenterCard 
+                                icon={<Be height={30} />}
+                                name='Behence'
+                                location='Cape Town, SA'
+                                />
+                            <CenterCard 
+                                icon={<Google height={40} />}
+                                name='Google'
+                                location='London, UK'
+                                />
+                            <CenterCard 
+                                icon={<Tesla height={40} />}
+                                name='Tesla'
+                                location='San Fransisco, US'
                                 />
                             <CenterCard 
                                 icon={<Instagram height={40} />}
@@ -180,83 +235,28 @@ function Companies() {
                                 location='Nairobi, Kenya'
                                 />
                             <CenterCard 
-                                icon={<Be height={40} />}
-                                name='Be'
-                                location='Nairobi, Kenya'
-                                />
-                            <CenterCard 
                                 icon={<Microsoft height={40} />}
                                 name='Microsoft'
                                 location='Nairobi, Kenya'
                                 />
                             <CenterCard 
-                                icon={<Google height={40} />}
+                                icon={<Benz height={40} />}
+                                name='Microsoft'
+                                location='Nairobi, Kenya'
+                                />
+                            <CenterCard 
+                                icon={<Amazon height={40} />}
                                 name='Google'
                                 location='Nairobi, Kenya'
                                 />
                             <CenterCard 
-                                icon={<Microsoft height={40} />}
+                                icon={<Linkedin height={40} />}
                                 name='Microsoft'
                                 location='Nairobi, Kenya'
                                 />
                             <CenterCard 
-                                icon={<Instagram height={40} />}
+                                icon={<Facebook height={40} />}
                                 name='Instagram'
-                                location='Nairobi, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<Be height={40} />}
-                                name='Be'
-                                location='Nairobi, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<Microsoft height={40} />}
-                                name='Microsoft'
-                                location='Nairobi, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<Google height={40} />}
-                                name='Google'
-                                location='Nairobi, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<Microsoft height={40} />}
-                                name='Microsoft'
-                                location='Nairobi, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<Instagram height={40} />}
-                                name='Instagram'
-                                location='Nairobi, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<Be height={40} />}
-                                name='Be'
-                                location='Nairobi, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<Microsoft height={40} />}
-                                name='Microsoft'
-                                location='Nairobi, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<Google height={40} />}
-                                name='Google'
-                                location='Nairobi, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<Microsoft height={40} />}
-                                name='Microsoft'
-                                location='Nairobi, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<Instagram height={40} />}
-                                name='Instagram'
-                                location='Nairobi, Kenya'
-                                />
-                            <CenterCard 
-                                icon={<Be height={40} />}
-                                name='Be'
                                 location='Nairobi, Kenya'
                                 />
                         </div>

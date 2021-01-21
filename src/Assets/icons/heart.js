@@ -5,7 +5,7 @@ function Heart(props) {
         
 <svg 
     height={props.height}
-    color="#FF9066"
+    color={props.color}
     role="img" 
     xmlns="http://www.w3.org/2000/svg" 
     viewBox="0 0 512 512"

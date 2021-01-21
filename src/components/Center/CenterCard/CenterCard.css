@@ -34,6 +34,7 @@
 .center-card .center-card-body .top .name .title {
     margin-top: 10px;
     font-size: 0.9rem;
+    font-weight: bold;
 }
 
 .center-card .center-card-body .top .name .location {
@@ -53,7 +54,7 @@
     width: 20px;
     /* border: 1px solid #F0F0F0; */
     border-radius: 5px;
-    box-shadow: 0 2px 2px 0 rgba(43, 46, 207, 0.1)
+    /* box-shadow: 0 2px 2px 0 rgba(43, 46, 207, 0.1) */
 }
 
 .center-card .center-card-body .bottom {
