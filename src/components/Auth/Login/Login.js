@@ -59,6 +59,7 @@ function Login() {
                                     <Link to="/jobs">
                                         <Button
                                             name='Log In'
+                                            size='1.1rem'
                                             color='white'
                                             width='100%'
                                             height='40px'
@@ -66,8 +67,8 @@ function Login() {
                                             radius='7px'
                                             border='none'
                                             iconMarginLeft='20px'
-                                            iconMarginTop='5px'
-                                            icon={<LoginIcon height={20} color='white' />} />
+                                            // iconMarginTop='5px'
+                                            icon={<LoginIcon height={18} color='white' />} />
                                     </Link>
                                 </div>
                             </form>

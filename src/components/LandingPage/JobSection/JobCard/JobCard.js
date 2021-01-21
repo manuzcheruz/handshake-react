@@ -16,10 +16,10 @@ function JobCard(props) {
                     </div>
                     <div className="title">
                         <div className="title-head">
-                            Slack, New York
+                            Sr. Product Designer
                         </div>
                         <div className="title-subhead">
-                            Sr. Product Designer
+                            Slack, New York
                         </div>
                         <div className="title-small">
                             2 days ago
@@ -52,7 +52,11 @@ function JobCard(props) {
                         <div className="item"></div>
                         <div className="items"></div>
                         <div className="items"></div>
-                        <div className="items"></div>
+                        <div className="items">
+                            <div style={{marginLeft: '5px', fontSize: '0.75rem', marginTop: '11px'}}>
+                                107+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

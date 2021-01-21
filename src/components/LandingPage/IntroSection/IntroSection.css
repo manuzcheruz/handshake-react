@@ -10,7 +10,7 @@
     height: 300px;
 } */
 
-.intro-wrapper .message .top h5 {
+.intro-wrapper .message-intro .top h5 {
     /* padding: 5px; */
     background-color: #ECF;
     padding: 8px;
@@ -19,7 +19,7 @@
     width: 370px;
 }
 
-.intro-wrapper .message .top .btn {
+.intro-wrapper .message-intro .top .btn {
     font-size: 0.6rem;
     padding: 5px 10px;
     margin-right: 10px;
@@ -31,7 +31,7 @@
 
 
 
-.intro-wrapper .message h1 {
+.intro-wrapper .message-intro h1 {
     font-size: 4rem;
     font-weight: bolder;
     line-height: 30px;
@@ -42,7 +42,7 @@
     font-weight: 200;
 }
 
-.intro-wrapper .message .search-input {
+.intro-wrapper .message-intro .search-input {
     width: 680px;
     display: grid;
     grid-template-columns: 1fr 1fr 0.3fr;
@@ -53,7 +53,7 @@
     0 3px 10px 0 rgba(0, 0, 0, 0.05);
 }
 
-.intro-wrapper .message .search-input input {
+.intro-wrapper .message-intro .search-input input {
     margin-left: 8px;
     margin-top: 7px;
     height: 53px;
@@ -65,12 +65,12 @@
     color: black;
 }
 
-.intro-wrapper .message .search-input input::placeholder {
+.intro-wrapper .message-intro .search-input input::placeholder {
     color: black;
     padding-right: 20px;
 }
 
-.intro-wrapper .message .search-input select {
+.intro-wrapper .message-intro .search-input select {
     margin-left: 15px;
     margin-top: 7px;
     height: 53px;
@@ -82,7 +82,7 @@
     color: black;
 }
 
-.intro-wrapper .message .search-input span {
+.intro-wrapper .message-intro .search-input span {
     background-color: #55BC7E;
     margin-top: 7px;
     margin-left: 20px;
@@ -92,15 +92,15 @@
     border-radius: 5px;
 }
 
-.intro-wrapper .message .trust {
+.intro-wrapper .message-intro .trust {
     margin-top: 70px;
 }
 
-.intro-wrapper .message .trust h1 {
+.intro-wrapper .message-intro .trust h1 {
     color: #37383D;
 }
 
-.intro-wrapper .message .trust .icons {
+.intro-wrapper .message-intro .trust .icons {
     width: 200px;
     height: 40px;
     background-color: white;
@@ -134,10 +134,12 @@
     padding: 0;
     margin: 0;
 }
+
 .intro-wrapper .image .mail .text .text-title {
     margin-top: 10px;
     color: #55BC7E;
 }
+
 .intro-wrapper .image .mail .text .text-cont {
     margin-top: 5px;
     font-size: 0.8rem;

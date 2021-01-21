@@ -8,6 +8,8 @@ import Pagination from '../../../Shared/Pagination/Pagination'
 import '../../Job/Jobs/Jobs.css'
 import StudentCard from '../StudentCard/StudentCard'
 import Messaging from '../../Messaging/Messaging'
+import Aux from '../../../hoc/Aux'
+import Navbar from '../../Navbar/Navbar'
 
 const fields = [
     {
@@ -54,86 +56,91 @@ const studentFilters = [
 
 function Students() {
     return (
-        <div className="section" style={{backgroundColor: '#FAFAFB'}}>
-            <Messaging bottom='0px' right='0px' />
-            <div className="container">
-                <div className="jobs-wrapper">
-                    <div className="filters">
-                        <div className="job-alert">
-                            <div className="title">
-                                Create Job Alert
-                            </div>
-                            <div className="text">
-                                Create a job alert now and never miss a job.
-                            </div>
-                            <div className="job-alert-search">
-                                {fields.map(item => {
-                                    return (
-                                        <Field
-                                            key={item.name}
-                                            {...item}
-                                            height='35px'
-                                            width='205px'
-                                            border='none'
-                                            />
-                                    )
-                                })}
-                            </div>
-                            <div className="job-alert-btn">
-                                <Button
-                                    name='Create Job Alerts'
-                                    width='130px'
-                                    height='30px'
-                                    bgcolor='#55BC7E'
-                                    color='white'
-                                    radius='5px'
-                                    border='none' />
-                            </div>
-                        </div>
-
-                        <div className="filter">
-                            <div className="employment-type">
+        <Aux>
+            <Navbar bgColor='#FAFAFB' core />
+            <div className="section" style={{backgroundColor: '#FAFAFB'}}>
+                <Messaging bottom='0px' right='0px' />
+                <div className="container">
+                    <div className="jobs-wrapper">
+                        <div className="filters">
+                            <div className="job-alert">
                                 <div className="title">
-                                    Types of Students
+                                    Create Job Alert
                                 </div>
-                                <div className="items">
-                                    {studentFilters.map(item => {
+                                <div className="text">
+                                    Create a job alert now and never miss a job.
+                                </div>
+                                <div className="job-alert-search">
+                                    {fields.map(item => {
                                         return (
                                             <Field
-                                                {...item} />
+                                                key={item.name}
+                                                {...item}
+                                                height='35px'
+                                                width='205px'
+                                                border='none'
+                                                />
                                         )
                                     })}
                                 </div>
+                                <div className="job-alert-btn">
+                                    <Button
+                                        name='Create Job Alerts'
+                                        size='0.6rem'
+                                        width='130px'
+                                        height='30px'
+                                        bgcolor='#55BC7E'
+                                        color='white'
+                                        radius='5px'
+                                        border='none' />
+                                </div>
+                            </div>
+
+                            <div className="filter">
+                                <div className="employment-type">
+                                    <div className="title">
+                                        Types of Students
+                                    </div>
+                                    <div className="items">
+                                        {studentFilters.map(item => {
+                                            return (
+                                                <Field
+                                                    {...item} />
+                                            )
+                                        })}
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="jobs">
-                        <div className="top">
-                            <div className="no">
-                                Showing 33 Students
+                        <div className="jobs">
+                            <div className="top">
+                                <div className="no">
+                                    Showing 33 Students
+                                </div>
+                                <div className="sort">
+                                    Sort by:
+                                </div>
                             </div>
-                            <div className="sort">
-                                Sort by:
+                            <div className="all-jobs" style={{gridTemplateColumns: 'repeat(4, 1fr)', gridGap: '15px'}}>
+                                <StudentCard />
+                                <StudentCard />
+                                <StudentCard />
+                                <StudentCard />
+                                <StudentCard />
+                                <StudentCard />
+                                <StudentCard />
+                                <StudentCard />
+                                <StudentCard />
+                                <StudentCard />
+                                <StudentCard />
                             </div>
+                            <Pagination />
                         </div>
-                        <div className="all-jobs" style={{gridTemplateColumns: 'repeat(4, 1fr)', gridGap: '15px'}}>
-                            <StudentCard />
-                            <StudentCard />
-                            <StudentCard />
-                            <StudentCard />
-                            <StudentCard />
-                            <StudentCard />
-                            <StudentCard />
-                            <StudentCard />
-                            <StudentCard />
-                            <StudentCard />
-                            <StudentCard />
-                        </div>
-                        <Pagination />
                     </div>
                 </div>
             </div>
-        </div>
+
+        </Aux>
     )
 }
 

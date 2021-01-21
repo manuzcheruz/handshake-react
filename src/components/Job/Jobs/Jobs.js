@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Aux from '../../../hoc/Aux'
+import Navbar from '../../Navbar/Navbar'
 import JobCard from '../../LandingPage/JobSection/JobCard/JobCard'
 import Field from '../../../Shared/Field/Field'
 import Button from '../../../Shared/Button/Button'
@@ -126,112 +128,116 @@ const salaryFilters = [
 
 function Jobs() {
     return (
-        <div className="section" style={{backgroundColor: '#FAFAFB'}}>
-            <div className="container">
-                <Messaging />
-                <div className="jobs-wrapper">
-                    <div className="filters">
-                        <div className="job-alert">
-                            <div className="title">
-                                Create Job Alert
+        <Aux>
+            <Navbar bgColor='#FAFAFB' core />
+            <div className="section" style={{backgroundColor: '#FAFAFB'}}>
+                <div className="container">
+                    <Messaging />
+                    <div className="jobs-wrapper">
+                        <div className="filters">
+                            <div className="job-alert">
+                                <div className="title">
+                                    Create Job Alert
+                                </div>
+                                <div className="text">
+                                    Create a job alert now and never miss a job.
+                                </div>
+                                <div className="job-alert-search">
+                                    {fields.map(item => {
+                                        return (
+                                            <Field
+                                                key={item.name}
+                                                {...item}
+                                                height='35px'
+                                                width='205px'
+                                                border='none'
+                                                />
+                                        )
+                                    })}
+                                </div>
+                                <div className="job-alert-btn">
+                                    <Button
+                                        name='Create Job Alerts'
+                                        size='0.6rem'
+                                        width='130px'
+                                        height='30px'
+                                        bgcolor='#55BC7E'
+                                        color='white'
+                                        radius='5px'
+                                        border='none' />
+                                </div>
                             </div>
-                            <div className="text">
-                                Create a job alert now and never miss a job.
-                            </div>
-                            <div className="job-alert-search">
-                                {fields.map(item => {
-                                    return (
-                                        <Field
-                                            key={item.name}
-                                            {...item}
-                                            height='35px'
-                                            width='205px'
-                                            border='none'
-                                            />
-                                    )
-                                })}
-                            </div>
-                            <div className="job-alert-btn">
-                                <Button
-                                    name='Create Job Alerts'
-                                    width='130px'
-                                    height='30px'
-                                    bgcolor='#55BC7E'
-                                    color='white'
-                                    radius='5px'
-                                    border='none' />
-                            </div>
-                        </div>
 
-                        <div className="filter">
-                            <div className="employment-type">
-                                <div className="title">
-                                    Type of Employment
+                            <div className="filter">
+                                <div className="employment-type">
+                                    <div className="title">
+                                        Type of Employment
+                                    </div>
+                                    <div className="items">
+                                        {employmentFilters.map(item => {
+                                            return (
+                                                <Field
+                                                    {...item} />
+                                            )
+                                        })}
+                                    </div>
                                 </div>
-                                <div className="items">
-                                    {employmentFilters.map(item => {
-                                        return (
-                                            <Field
-                                                {...item} />
-                                        )
-                                    })}
+                                <div className="level">
+                                    <div className="title">
+                                        Seniority Level
+                                    </div>
+                                    <div className="items">
+                                        {levelFilters.map(item => {
+                                            return (
+                                                <Field
+                                                    {...item} />
+                                            )
+                                        })}
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="level">
-                                <div className="title">
-                                    Seniority Level
+                                <div className="salary">
+                                    <div className="title">
+                                        Salary Range
+                                    </div>
+                                    <div className="items">
+                                        {salaryFilters.map(item => {
+                                            return (
+                                                <Field
+                                                    {...item} />
+                                            )
+                                        })}
+                                    </div>
                                 </div>
-                                <div className="items">
-                                    {levelFilters.map(item => {
-                                        return (
-                                            <Field
-                                                {...item} />
-                                        )
-                                    })}
-                                </div>
-                            </div>
-                            <div className="salary">
-                                <div className="title">
-                                    Salary Range
-                                </div>
-                                <div className="items">
-                                    {salaryFilters.map(item => {
-                                        return (
-                                            <Field
-                                                {...item} />
-                                        )
-                                    })}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="jobs">
-                        <div className="top">
-                            <div className="no">
-                                Showing 46 Jobs
-                            </div>
-                            <div className="sort">
-                                Sort by:
                             </div>
                         </div>
-                        <div className="all-jobs">
-                            <JobCard logo={<Microsoft height={60} />} />
-                            <JobCard logo={<Slack height={60} />} />
-                            <JobCard logo={<Apple height={60} />} />
-                            <JobCard logo={<Linkedin height={60} />} />
-                            <JobCard logo={<Facebook height={60} />} />
-                            <JobCard logo={<Instagram height={60} />} />
-                            <JobCard logo={<Google height={60} />} />
-                            <JobCard logo={<Tesla height={60} />} />
-                            <JobCard logo={<Safaricom height={60} />} />
-                            <JobCard logo={<Benz height={60} />} />
-                            <JobCard logo={<Amazon height={60} />} />
+                        <div className="jobs">
+                            <div className="top">
+                                <div className="no">
+                                    Showing 46 Jobs
+                                </div>
+                                <div className="sort">
+                                    Sort by:
+                                </div>
+                            </div>
+                            <div className="all-jobs">
+                                <JobCard logo={<Microsoft height={60} />} />
+                                <JobCard logo={<Slack height={60} />} />
+                                <JobCard logo={<Apple height={60} />} />
+                                <JobCard logo={<Linkedin height={60} />} />
+                                <JobCard logo={<Facebook height={60} />} />
+                                <JobCard logo={<Instagram height={60} />} />
+                                <JobCard logo={<Google height={60} />} />
+                                <JobCard logo={<Tesla height={60} />} />
+                                <JobCard logo={<Safaricom height={60} />} />
+                                <JobCard logo={<Benz height={60} />} />
+                                <JobCard logo={<Amazon height={60} />} />
+                            </div>
+                            <Pagination />
                         </div>
-                        <Pagination />
                     </div>
                 </div>
             </div>
-        </div>
+        </Aux>
     )
 }
 

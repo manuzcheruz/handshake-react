@@ -24,6 +24,22 @@
     text-decoration: none;
 }
 
+.card:hover .card-body-top .title .title-head {
+    color: white;
+}
+
+.card:hover .card-body-top .title .title-subhead {
+    color: white;
+}
+
+.card:hover .card-body-top .title .title-small {
+    color: white;
+}
+
+.card:hover .card-body-middle .card-content {
+    color: white;
+}
+
 .card-body {
     padding: 10px;
 }
@@ -46,10 +62,11 @@
 
 .card-body-top .title .title-head {
     color: grey;
+    font-weight: bold;
 }
 
 .card-body-top .title .title-subhead {
-    font-weight: bold;
+    color: grey;
 }
 
 .card-body-top .title .title-small {

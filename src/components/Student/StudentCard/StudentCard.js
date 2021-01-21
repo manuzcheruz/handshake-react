@@ -48,7 +48,7 @@ function StudentCard(props) {
                         </button>
                     </div>
                     <div className="button-friends">
-                        <button className="message">
+                        <button className="message-friends">
                             <span><Message height={15} color="black" /></span>
                                 Message
                         </button>

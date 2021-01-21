@@ -71,6 +71,7 @@ function Signup() {
                                 <div className="button">
                                     <Button
                                         name='create account'
+                                        size='1.1rem'
                                         color='white'
                                         width='100%'
                                         height='40px'
@@ -79,7 +80,7 @@ function Signup() {
                                         border='none' 
                                         iconMarginLeft='20px'
                                         iconMarginTop='0px'
-                                        icon={<User height={20} color='white' />}
+                                        icon={<User height={17} color='white' />}
                                         />
                                 </div>
                             </form>

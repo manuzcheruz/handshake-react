@@ -10,7 +10,8 @@ function Button(props) {
                 border: `${props.border}`,
                 color: `${props.color}`,
                 borderRadius: `${props.radius}`,
-                fontSize: `${props.size}`
+                fontSize: `${props.size}`,
+                padding: '10px'
             }}
             onClick={props.createMessage}
             >
@@ -18,7 +19,7 @@ function Button(props) {
                 {props.icon && <span style={{
                     marginLeft: `${props.iconMarginLeft}`, 
                     marginTop: `${props.iconMarginTop}`
-                    }}>{props.icon}</span>}
+                }}>{props.icon}</span>}
             </button>
         </div>
     )

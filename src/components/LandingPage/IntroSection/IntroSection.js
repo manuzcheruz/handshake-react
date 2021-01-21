@@ -11,7 +11,7 @@ function IntroSection() {
             <div className="container">
                 <Fade bottom>
                     <div className="intro-wrapper">
-                        <div className="message">
+                        <div className="message-intro">
                             <div className="top">
                                 <h5>
                                     <span className="btn">NEW</span>

@@ -3,13 +3,14 @@
     height: auto;
     display: grid;
     grid-template-columns: 1.5fr 5fr;
+    margin-top: 10px;
 }
 
 .jobs-wrapper .filters {
     height: 100vh;
     margin-left: 15%;
     margin-right: 15%;
-    margin-top: 80px;
+    /* margin-top: 80px; */
 }
 
 .jobs-wrapper .filters .job-alert {
@@ -86,7 +87,7 @@
 
 .jobs-wrapper .jobs {
     margin-right: 3%;
-    margin-top: 80px;
+    /* margin-top: 80px; */
 }
 
 .jobs-wrapper .jobs .top {
