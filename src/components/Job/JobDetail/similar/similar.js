@@ -1,5 +1,5 @@
 import React from 'react'
-import { Bookmark, Marker } from '../../../../Assets/icons'
+import { Bookmark, Google, Marker } from '../../../../Assets/icons'
 
 import Button from '../../../../Shared/Button/Button'
 import './similar.css'
@@ -9,7 +9,11 @@ function Similar() {
         <div className="similar-card">
             <div className="similar-card-body">
                 <div className="top">
-                    <div className="image"></div>
+                    <div className="image">
+                        <div className="icon-image" style={{marginLeft: '1px'}}>
+                            <Google height={50} />
+                        </div>
+                    </div>
                     <div className="name">
                         <div className="title-similar">
                             Sr. Product Designer

@@ -4,7 +4,95 @@
     width: 97%;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 30px;
+}
+
+.jobdetail-wrapper .side-panel {
+    width: 100%;
+    height: auto;
+    background-color: #FAFAFB;
+}
+
+.jobdetail-wrapper .side-panel .top {
+    border-radius: 10px;
+    height: 300px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.jobdetail-wrapper .side-panel .top .image-thumbnail {
+    height: 100px;
+    width: 100%;
+    background-color: grey;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.jobdetail-wrapper .side-panel .top .image-smaller {
+    height: 120px;
+    width: 120px;
+    z-index: 5;
+    margin-top: -50px;
+    margin-left: 105px;
+    background-color: indigo;
+    border-radius: 50%;
+}
+
+.jobdetail-wrapper .side-panel .top .name {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.jobdetail-wrapper .side-panel .top .role {
+    text-align: center;
+    font-size: 1.1rem;
+    color: grey;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.jobdetail-wrapper .side-panel .top .views {
+    text-align: center;
+    font-size: 1rem;
+    color: grey;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.jobdetail-wrapper .side-panel .top .connections {
+    text-align: center;
+    font-size: 1rem;
+    color: grey;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.jobdetail-wrapper .side-panel .recent {
+    margin-top: 20px;
+    border-radius: 10px;
+    height: 200px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.jobdetail-wrapper .side-panel .title {
+    padding-top: 5px;
+    margin-left: 15px;
+}
+
+.jobdetail-wrapper .side-panel .groups {
+    margin-top: 20px;
+    border-radius: 10px;
+    height: 100px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.jobdetail-wrapper .side-panel .events {
+    margin-top: 20px;
+    border-radius: 10px;
+    height: 100px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 .jobdetail-wrapper .job-detail {
@@ -14,7 +102,7 @@
 
 .jobdetail-wrapper .job-detail .bg {
     height: 200px;
-    background-color: brown;
+    overflow: hidden;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -27,10 +115,17 @@
     margin-left: 50px;
     margin-top: -50px;
     background-color: chocolate;
+    z-index: 2;
+    position: absolute;
+}
+
+.jobdetail-wrapper .job-detail .logo .icon-logo {
+    margin-left: 20px;
+    margin-top: 15px;
 }
 
 .jobdetail-wrapper .job-detail .top {
-    margin-top: 20px;
+    margin-top: 70px;
 }
 
 .jobdetail-wrapper .job-detail .top .name {
@@ -58,16 +153,11 @@
     border: 2px solid #ECF1FA;
 }
 
-.jobdetail-wrapper .job-detail .top .name .icons .icon-heart span {
-    padding-left: 5px;
-    padding-top: 10px;
-}
-
 .jobdetail-wrapper .job-detail .top .name .icon-share {
-    height: 40px;
-    width: 40px;
+    height: 36px;
+    width: 36px;
     border-radius: 10px;
-    background-color: lime;
+    border: 2px solid #ECF1FA;
 }
 
 .jobdetail-wrapper .job-detail .top .location {
@@ -80,6 +170,7 @@
     height: 30px;
     width: 310px;
     color: blue;
+    font-size: 0.8rem;
 }
 
 /* .jobdetail-wrapper .job-detail .top .location .subtitle span {
@@ -90,7 +181,7 @@
     height: 30px;
     width: 100%;
     text-align: right;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 .jobdetail-wrapper .job-detail .top .location .date span {
@@ -109,14 +200,33 @@
 
 .jobdetail-wrapper .job-detail .top .table .item1 {
     border-right: 2px solid #ECF1FA;
+    text-align: center;
+}
+
+.jobdetail-wrapper .job-detail .top .table .title {
+    margin-top: 10px;
+    font-size: 0.7rem;
+    color: grey;
+}
+
+.jobdetail-wrapper .job-detail .top .table .subtitle {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 5px;
 }
 
 .jobdetail-wrapper .job-detail .top .table .item2 {
     border-right: 2px solid #ECF1FA;
+    text-align: center;
 }
 
 .jobdetail-wrapper .job-detail .top .table .item3 {
     border-right: 2px solid #ECF1FA;
+    text-align: center;
+}
+
+.jobdetail-wrapper .job-detail .top .table .item4 {
+    text-align: center;
 }
 
 .jobdetail-wrapper .job-detail .overview {
@@ -130,9 +240,10 @@
 
 .jobdetail-wrapper .job-detail .overview .content {
     margin-top: 15px;
-    height: 250px;
+    height: auto;
     width: 100%;
-    background-color: silver;
+    font-size: 0.9rem;
+    line-height: 30px;
 }
 
 .jobdetail-wrapper .job-detail .description {
@@ -146,10 +257,16 @@
 
 .jobdetail-wrapper .job-detail .description .content {
     margin-top: 15px;
-    height: 400px;
+    height: auto;
     width: 100%;
-    background-color: wheat;
     margin-bottom: 30px;
+    font-size: 0.9rem;
+    line-height: 30px;
+}
+
+.jobdetail-wrapper .job-detail .btn-apply {
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 .jobdetail-wrapper .similar-jobs .title {

@@ -5,7 +5,7 @@ function Microsoft(props) {
         
 <svg 
     height={props.height}
-    color="yellow"
+    color={props.color}
     role="img" 
     xmlns="http://www.w3.org/2000/svg" 
     viewBox="0 0 448 512"
