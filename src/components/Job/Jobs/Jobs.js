@@ -7,6 +7,7 @@ import Pagination from '../../../Shared/Pagination/Pagination'
 
 import './Jobs.css'
 import Messaging from '../../Messaging/Messaging'
+import { Amazon, Apple, Benz, Facebook, Google, Instagram, Linkedin, Microsoft, Safaricom, Slack, Tesla } from '../../../Assets/icons'
 
 const fields = [
     {
@@ -214,17 +215,17 @@ function Jobs() {
                             </div>
                         </div>
                         <div className="all-jobs">
-                            <JobCard />
-                            <JobCard />
-                            <JobCard />
-                            <JobCard />
-                            <JobCard />
-                            <JobCard />
-                            <JobCard />
-                            <JobCard />
-                            <JobCard />
-                            <JobCard />
-                            <JobCard />
+                            <JobCard logo={<Microsoft height={60} />} />
+                            <JobCard logo={<Slack height={60} />} />
+                            <JobCard logo={<Apple height={60} />} />
+                            <JobCard logo={<Linkedin height={60} />} />
+                            <JobCard logo={<Facebook height={60} />} />
+                            <JobCard logo={<Instagram height={60} />} />
+                            <JobCard logo={<Google height={60} />} />
+                            <JobCard logo={<Tesla height={60} />} />
+                            <JobCard logo={<Safaricom height={60} />} />
+                            <JobCard logo={<Benz height={60} />} />
+                            <JobCard logo={<Amazon height={60} />} />
                         </div>
                         <Pagination />
                     </div>

@@ -1,17 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Bookmark, Calendar, Instagram } from '../../../../Assets/icons'
+import { Bookmark, Calendar } from '../../../../Assets/icons'
 
 import './JobCard.css'
 
-function JobCard() {
+function JobCard(props) {
     return (
         <div className="card">
             <div className="card-body">
                 <div className="card-body-top">
                     <div className="thumbnail">
                         <div className="icon-thumbnail">
-                            <Instagram height={60} />
+                            {props.logo}
                         </div>
                     </div>
                     <div className="title">
