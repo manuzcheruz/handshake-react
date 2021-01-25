@@ -1,18 +1,18 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Close, Expand } from '../../../Assets/icons'
 
 import './Chat.css'
 
 function Chat(props) {
 
-    let [display, setDisplay] = useState('')
-
+    let [display, setDisplay] = useState('300px') 
+    
     const onSelectClose = () => {
-        setDisplay('none')
+        setDisplay('0px')
     }
 
     return (
-        <div className="chat" style={{height: `${props.height ? props.height : '0px'}`, display: `${display ? display : ''}`}}>
+        <div className="chat" style={{height: `${display}`, display: `${props.display ? props.display : 'none'}`}}>
             <div className="top">
                 <div className="image">
                     <div className="dot" style={{backgroundColor: 'green', width: '10px', height: '10px', marginTop: '27px', marginLeft: '25px', borderRadius: '50%', border: '3px solid white'}}>

@@ -72,7 +72,7 @@ function Navbar(props) {
                                         Manuz
                                     </button>
                                 </Link>
-                                <Link to="/signup" >
+                                <Link to="/login" >
                                     <button style={{width: '150px', backgroundColor: 'none'}} className="create-acc1">
                                         logout
                                         <span style={{marginLeft: '15px'}}><Logout height={20} /></span>

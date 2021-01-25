@@ -9,16 +9,16 @@ import './CenterCard.css'
 
 function CenterCard(props) {
     const [active, setActive] = useState(false)
-    const [chatHeight, setChatHeight] = useState('0px')
+    const [show, setShow] = useState('none')
     const onSelectHeart = () => {
         setActive(true)
     }
     const onMessageClick = () => {
-        setChatHeight('300px')
+        setShow('block')
     }
     return (
         <Aux>
-            <Chat height={chatHeight} />
+            <Chat display={show} />
             <div className="center-card">
                 <div className="center-card-body">
                     <div className="top">
@@ -47,6 +47,7 @@ function CenterCard(props) {
                             <Link to="">
                                 <Button 
                                     name='View'
+                                    size='0.6rem'
                                     height='30px'
                                     width='100px'
                                     border='none'
@@ -59,6 +60,7 @@ function CenterCard(props) {
                         <div className="message-btn">
                             <Button 
                                 name='Message'
+                                size='0.6rem'
                                 height='30px'
                                 width='100px'
                                 border='none'

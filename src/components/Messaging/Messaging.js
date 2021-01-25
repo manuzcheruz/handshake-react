@@ -8,7 +8,7 @@ import './Messaging.css'
 function Messaging(props) {
     const [height, setHeight] = useState('50px')
     const [active, setActive] = useState(false)
-    const [chatHeight, setChatHeight] = useState('0px')
+    let [show, setShow] = useState('none')
 
     const onSelectMessage = () => {
         setActive(!active)
@@ -20,11 +20,11 @@ function Messaging(props) {
     }
 
     const onSelectChat = () => {
-        setChatHeight('300px')
+        setShow('block')
     }
     return (
         <Aux>
-            <Chat height={chatHeight} />
+            <Chat display={show} />
             <div className="message" style={{height: `${height}`}}>
                 <div className="header" onClick={onSelectMessage}>
                     <div className="image">
