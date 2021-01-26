@@ -7,7 +7,7 @@ import './Navbar.css'
 
 function Navbar(props) {
     return (
-        <div className="section" style={{backgroundColor: `${props.bgColor ? props.bgColor : ''}`}}>
+        <div className="section" style={{backgroundColor: `${props.bgColor && props.bgColor }`}}>
             <div className="container">
                 <div className="navbar-wrapper">
                     <div className="name">

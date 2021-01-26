@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 
-// import postReducer from '../store/reducers/Posts';
+import messageReducer from './reducers/message'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
     // company: companyReducer,
     // center: centerReducer,
     // job: jobReducer,
-    // message: messageReducer
+    message: messageReducer
 })
 
 const persistConfig = {
