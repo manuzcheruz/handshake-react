@@ -1,5 +1,7 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { toggleNightMode } from './Store/actions'
 
 import Layout from './hoc/Layout/Layout';
 import LandingPage from './components/LandingPage/LandingPage'
@@ -15,7 +17,15 @@ const Centers = React.lazy(() => import('./components/Center/Centers/Centers'))
 const Students = React.lazy(() => import('./components/Student/Students/Students'))
 const Companies = React.lazy(() => import('./components/Company/Companies/Companies'))
 
-function App() {
+function App(props) {
+  const [ onToggleNightMode ] = props
+  
+  useEffect(() => {
+    let time = new Date().getHours()
+    if (time < 6 || time > 19) {
+      onToggleNightMode()
+    } 
+  }, [onToggleNightMode])
   return (
     <BrowserRouter>
       <Switch>
@@ -35,4 +45,10 @@ function App() {
   );
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    onToggleNightMode: () => dispatch(toggleNightMode())
+  }
+}
+
+export default connect(null, mapDispatchToProps)(App);
