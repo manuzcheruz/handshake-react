@@ -18,8 +18,7 @@ const Students = React.lazy(() => import('./components/Student/Students/Students
 const Companies = React.lazy(() => import('./components/Company/Companies/Companies'))
 
 function App(props) {
-  const [ onToggleNightMode ] = props
-  
+  const { onToggleNightMode } = props
   useEffect(() => {
     let time = new Date().getHours()
     if (time < 6 || time > 19) {
