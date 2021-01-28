@@ -44,7 +44,7 @@ function CenterCard(props) {
                     </div>
                     <div className="bottom">
                         <div className="view">
-                            <Link to="">
+                            <Link to="/companies/company">
                                 <Button 
                                     name='View'
                                     size='0.6rem'
