@@ -168,6 +168,7 @@ function Companies() {
                                     icon={<Tesla height={40} />}
                                     name='Tesla'
                                     location='Nairobi, Kenya'
+                                    link='/companies/company'
                                     />
                                 <CenterCard 
                                     icon={<Google height={40} />}

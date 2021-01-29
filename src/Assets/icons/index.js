@@ -169,3 +169,27 @@ export {
 export {
     default as Benz
 } from './benz'
+
+export {
+    default as Campus1
+} from './campus1'
+
+export {
+    default as Campus2
+} from './campus2'
+
+export {
+    default as Campus3
+} from './campus3'
+
+export {
+    default as Campus4
+} from './campus4'
+
+export {
+    default as Campus5
+} from './campus5'
+
+export {
+    default as Campus6
+} from './campus6'

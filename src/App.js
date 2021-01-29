@@ -14,6 +14,7 @@ const Signup = React.lazy(() => import('./components/Auth/Signup/Signup'))
 const Jobs = React.lazy(() => import('./components/Job/Jobs/Jobs'))
 const JobDetail = React.lazy(() => import('./components/Job/JobDetail/JobDetail'))
 const Centers = React.lazy(() => import('./components/Center/Centers/Centers'))
+const CenterDetail = React.lazy(() => import('./components/Center/CenterDetail/CenterDetail'))
 const Students = React.lazy(() => import('./components/Student/Students/Students'))
 const Companies = React.lazy(() => import('./components/Company/Companies/Companies'))
 const CompanyDetail = React.lazy(() => import('./components/Company/CompanyDetail/CompanyDetail'))
@@ -33,6 +34,7 @@ function App(props) {
         <Route path="/signup" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Signup /></Suspense>} />
         <Route path="/jobs" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Jobs /></Suspense>} />
         <Route path="/centers" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Centers /></Suspense>} />
+        <Route path="/centers/center" exact render={() => <Suspense fallback={<h1>loading..</h1>}><CenterDetail /></Suspense>} />
         <Route path="/companies" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Companies /></Suspense>} />
         <Route path="/companies/company" exact render={() => <Suspense fallback={<h1>loading..</h1>}><CompanyDetail /></Suspense>} />
         <Route path="/students" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Students /></Suspense>} />

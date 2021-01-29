@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { School } from '../../../Assets/icons'
+import { Campus2, Campus3, Campus6, Campus4, Campus5 } from '../../../Assets/icons'
 import Field from '../../../Shared/Field/Field'
 import Button from '../../../Shared/Button/Button'
 import Pagination from '../../../Shared/Pagination/Pagination'
@@ -139,99 +139,115 @@ function Centers() {
                             </div>
                             <div className="all-jobs" style={{gridTemplateColumns: 'repeat(4, 1fr)', gridGap: '15px'}}>
                                 <CenterCard 
-                                    icon={<School height={40} />}
+                                    icon={<Campus6 height={40} />}
                                     name='Dekut'
                                     location='Nyeri, Kenya'
+                                    link='/centers/center'
                                     />
                                 <CenterCard 
-                                    icon={<School height={40} />}
+                                    icon={<Campus2 height={40} />}
                                     name='UON'
                                     location='Nairobi, Kenya'
                                     />
                                 <CenterCard 
-                                    icon={<School height={40} />}
+                                    icon={<Campus3 height={40} />}
                                     name='JKUAT'
                                     location='Nairobi, Kenya'
                                     />
                                 <CenterCard 
-                                    icon={<School height={40} />}
+                                    icon={<Campus4 height={40} />}
                                     name='KU'
                                     location='Ruiru, Kenya'
                                     />
                                 <CenterCard 
-                                    icon={<School height={40} />}
+                                    icon={<Campus5 height={40} />}
                                     name='UON'
                                     location='Nairobi, Kenya'
                                     />
                                 <CenterCard 
-                                    icon={<School height={40} />}
-                                    name='KU'
-                                    location='Ruiru, Kenya'
-                                    />
-                                <CenterCard 
-                                    icon={<School height={40} />}
+                                    icon={<Campus4 height={40} />}
                                     name='Dekut'
                                     location='Nyeri, Kenya'
                                     />
                                 <CenterCard 
-                                    icon={<School height={40} />}
+                                    icon={<Campus2 height={40} />}
                                     name='JKUAT'
                                     location='Nairobi, Kenya'
                                     />
                                 <CenterCard 
-                                    icon={<School height={40} />}
-                                    name='UON'
-                                    location='Nairobi, Kenya'
-                                    />
-                                <CenterCard 
-                                    icon={<School height={40} />}
+                                    icon={<Campus3 height={40} />}
                                     name='KU'
                                     location='Ruiru, Kenya'
                                     />
                                 <CenterCard 
-                                    icon={<School height={40} />}
+                                    icon={<Campus6 height={40} />}
+                                    name='UON'
+                                    location='Nairobi, Kenya'
+                                    />
+                                <CenterCard 
+                                    icon={<Campus3 height={40} />}
+                                    name='KU'
+                                    location='Ruiru, Kenya'
+                                    />
+                                <CenterCard 
+                                    icon={<Campus6 height={40} />}
+                                    name='Dekut'
+                                    location='Nyeri, Kenya'
+                                    />
+                                <CenterCard 
+                                    icon={<Campus4 height={40} />}
                                     name='JKUAT'
                                     location='Nairobi, Kenya'
                                     />
                                 <CenterCard 
-                                    icon={<School height={40} />}
-                                    name='Dekut'
-                                    location='Nyeri, Kenya'
-                                    />
-                                <CenterCard 
-                                    icon={<School height={40} />}
-                                    name='KU'
-                                    location='Ruiru, Kenya'
-                                    />
-                                <CenterCard 
-                                    icon={<School height={40} />}
+                                    icon={<Campus2 height={40} />}
                                     name='UON'
                                     location='Nairobi, Kenya'
                                     />
                                 <CenterCard 
-                                    icon={<School height={40} />}
+                                    icon={<Campus3 height={40} />}
                                     name='JKUAT'
                                     location='Nairobi, Kenya'
                                     />
                                 <CenterCard 
-                                    icon={<School height={40} />}
-                                    name='Dekut'
-                                    location='Nyeri, Kenya'
-                                    />
-                                <CenterCard 
-                                    icon={<School height={40} />}
-                                    name='UON'
-                                    location='Nairobi, Kenya'
-                                    />
-                                <CenterCard 
-                                    icon={<School height={40} />}
+                                    icon={<Campus4 height={40} />}
                                     name='KU'
                                     location='Ruiru, Kenya'
                                     />
                                 <CenterCard 
-                                    icon={<School height={40} />}
+                                    icon={<Campus5 height={40} />}
+                                    name='UON'
+                                    location='Nairobi, Kenya'
+                                    />
+                                <CenterCard 
+                                    icon={<Campus3 height={40} />}
+                                    name='KU'
+                                    location='Ruiru, Kenya'
+                                    />
+                                <CenterCard 
+                                    icon={<Campus4 height={40} />}
                                     name='Dekut'
                                     location='Nyeri, Kenya'
+                                    />
+                                <CenterCard 
+                                    icon={<Campus2 height={40} />}
+                                    name='JKUAT'
+                                    location='Nairobi, Kenya'
+                                    />
+                                <CenterCard 
+                                    icon={<Campus3 height={40} />}
+                                    name='KU'
+                                    location='Ruiru, Kenya'
+                                    />
+                                <CenterCard 
+                                    icon={<Campus6 height={40} />}
+                                    name='UON'
+                                    location='Nairobi, Kenya'
+                                    />
+                                <CenterCard 
+                                    icon={<Campus4 height={40} />}
+                                    name='JKUAT'
+                                    location='Nairobi, Kenya'
                                     />
                             </div>
                             <Pagination />
