@@ -1,17 +1,19 @@
 import React from 'react'
-import { Amazon, Apple, Benz, Facebook, Google, Instagram, Linkedin, Marker, Microsoft, Safaricom, Share, Tesla } from '../../../Assets/icons'
+import { Map, Marker as GoogleMarker, GoogleApiWrapper } from 'google-maps-react';
+
+import { Apple, Benz, Facebook, Google, Instagram, Linkedin, Marker, Microsoft, Safaricom, Share, Tesla } from '../../../Assets/icons'
 import Aux from '../../../hoc/Aux'
 import Pagination from '../../../Shared/Pagination/Pagination'
 import CenterCard from '../../Center/CenterCard/CenterCard'
 import JobCard from '../../LandingPage/JobSection/JobCard/JobCard'
 import Navbar from '../../Navbar/Navbar'
+import Messaging from '../../Messaging/Messaging'
 
 import appleImage from '../../../Assets/Images/apple.jpeg'
 
 import './CompanyDetail.css'
-import Messaging from '../../Messaging/Messaging'
 
-function CompanyDetail() {
+function CompanyDetail(props) {
     return (
         <Aux>
             <Navbar bgColor='#FAFAFB' core />
@@ -68,7 +70,7 @@ function CompanyDetail() {
                             <div className="middle">
                                 <div className="about">
                                     <div className="title">
-                                        About Us
+                                        About <span>Us</span>
                                     </div>
                                     <div className="content">
 
@@ -103,46 +105,53 @@ function CompanyDetail() {
                             <div className="title">
                                 Similar <span>Companies</span>
                             </div>
-                            <CenterCard 
-                                    icon={<Tesla height={40} />}
-                                    name='Tesla'
-                                    location='Nairobi, Kenya'
-                                    />
+                            <div className="similar-companies-wrapper">
                                 <CenterCard 
-                                    icon={<Google height={40} />}
-                                    name='Google'
-                                    location='Amphire, US'
-                                    />
-                                <CenterCard 
-                                    icon={<Microsoft height={40} />}
-                                    name='Microsoft'
-                                    location='Paris, France'
-                                    />
-                                <CenterCard 
-                                    icon={<Instagram height={40} />}
-                                    name='Instagram'
-                                    location='Berlin, Germany'
-                                    />
-                                <CenterCard 
-                                    icon={<Apple height={40} />}
-                                    name='Be'
-                                    location='New York, US'
-                                    />
-                                <CenterCard 
-                                    icon={<Benz height={40} />}
-                                    name='Lamborghini'
-                                    location='Turin, Italy'
-                                    />
-                                <CenterCard 
-                                    icon={<Amazon height={40} />}
-                                    name='Amazon'
-                                    location='Carlifonia, US'
-                                    />
-                                <CenterCard 
-                                    icon={<Linkedin height={40} />}
-                                    name='LInkedIn'
-                                    location='Nairobi, Kenya'
-                                    />
+                                        icon={<Tesla height={40} />}
+                                        name='Tesla'
+                                        location='Nairobi, Kenya'
+                                        />
+                                    <CenterCard 
+                                        icon={<Google height={40} />}
+                                        name='Google'
+                                        location='Amphire, US'
+                                        />
+                                    <CenterCard 
+                                        icon={<Microsoft height={40} />}
+                                        name='Microsoft'
+                                        location='Paris, France'
+                                        />
+                                    <CenterCard 
+                                        icon={<Instagram height={40} />}
+                                        name='Instagram'
+                                        location='Berlin, Germany'
+                                        />
+                                    <CenterCard 
+                                        icon={<Apple height={40} />}
+                                        name='Be'
+                                        location='New York, US'
+                                        />
+                                    <CenterCard 
+                                        icon={<Benz height={40} />}
+                                        name='Lamborghini'
+                                        location='Turin, Italy'
+                                        />
+                            </div>
+                            <div className="location-map">
+                                <div className="title">
+                                    Location
+                                </div>
+                                <div className="map">
+                                    <Map
+                                    google={props.google}
+                                    zoom={10}
+                                    style={{width: '250px', height: '250px', borderRadius: '10px'}}
+                                    initialCenter={{ lat: 0.38, lng: 35.8}}
+                                    >
+                                        <GoogleMarker title='business location' position={{ lat: 0.38, lng: 35.8}} />
+                                    </Map>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -151,4 +160,4 @@ function CompanyDetail() {
     )
 }
 
-export default CompanyDetail
+export default GoogleApiWrapper({apiKey: 'AIzaSyAok6R5nza1EEHCpuPHj8m6sV5HiQGH4o4'})(CompanyDetail)

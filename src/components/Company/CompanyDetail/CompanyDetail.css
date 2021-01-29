@@ -13,7 +13,6 @@
     width: 100%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    background-color: blue;
 }
 
 .company-detail-wrapper .profile .top .top-bottom-block {
@@ -83,6 +82,11 @@
     font-size: 1.5rem;
     font-weight: bold;
     text-align: left;
+    /* color: grey; */
+}
+
+.company-detail-wrapper .profile .about .title span {
+    color: #55BC7E;
 }
 
 .company-detail-wrapper .profile .activity {
@@ -94,6 +98,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     text-align: left;
+    /* color: grey; */
 }
 
 .company-detail-wrapper .profile .jobs-block {
@@ -104,6 +109,11 @@
     font-size: 1.5rem;
     text-align: left;
     font-weight: bold;
+    /* color: grey; */
+}
+
+.company-detail-wrapper .profile .jobs-block .title-job-bottom span {
+    color: #55BC7E;
 }
 
 .company-detail-wrapper .profile .jobs-block .jobs {
@@ -116,8 +126,36 @@
     border-radius: 10px;
 }
 
-.company-detail-wrapper .similar-companies {
+.company-detail-wrapper .similar-companies .title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: grey;
+}
+
+.company-detail-wrapper .similar-companies .title span {
+    color: #55BC7E;
+    margin-left: 5px;
+}
+
+.company-detail-wrapper .similar-companies .similar-companies-wrapper {
+    margin-top: 15px;
     display: grid;
     grid-template-columns: repeat(1fr);
     grid-gap: 15px;
+}
+
+.company-detail-wrapper .similar-companies .location-map .title {
+    margin-top: 15px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: grey;
+}
+
+.company-detail-wrapper .similar-companies .location-map .map {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    height: 250px;
+    width: 100%;
+    background-color: grey;
+    border-radius: 10px;
 }
