@@ -171,10 +171,6 @@ export {
 } from './benz'
 
 export {
-    default as Campus1
-} from './campus1'
-
-export {
     default as Campus2
 } from './campus2'
 
