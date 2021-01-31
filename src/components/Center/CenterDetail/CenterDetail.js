@@ -3,9 +3,7 @@ import { Map, Marker as GoogleMarker, GoogleApiWrapper } from 'google-maps-react
 
 import { Marker, Share, Linkedin, Facebook, Instagram, Campus2, Campus3, Campus4, Campus5, Campus6 } from '../../../Assets/icons'
 import Aux from '../../../hoc/Aux'
-import Pagination from '../../../Shared/Pagination/Pagination'
 import CenterCard from '../../Center/CenterCard/CenterCard'
-import JobCard from '../../LandingPage/JobSection/JobCard/JobCard'
 import Navbar from '../../Navbar/Navbar'
 import Messaging from '../../Messaging/Messaging'
 
@@ -80,23 +78,114 @@ function CenterDetail(props) {
                                     <div className="title">
                                         Events
                                     </div>
-                                    <div className="content">
+                                    <div className="content" style={{marginTop: '15px'}}>
+                                        <div className="item" style={{height: '70px', width: '100%', display: 'grid', gridTemplateColumns: '0.3fr 1fr', gridGap: '20px', marginBottom: '10px'}}>
+                                            <div className="image" style={{height: '70px', width: '100%', backgroundColor: 'indigo', borderRadius: '10px'}}>
 
+                                            </div>
+                                            <div className="cont">
+                                                <div className="title" style={{height: '20px', width: '50%', marginTop: '3px', backgroundColor: 'teal'}}>
+
+                                                </div>
+                                                <div className="content" style={{height: '35px', width: '100%',marginTop: '7px', backgroundColor: 'yellow'}}>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="item" style={{height: '70px', width: '100%', display: 'grid', gridTemplateColumns: '0.3fr 1fr', gridGap: '20px'}}>
+                                            <div className="image" style={{height: '70px', width: '100%', backgroundColor: 'indigo', borderRadius: '10px'}}>
+
+                                            </div>
+                                            <div className="cont">
+                                                <div className="title" style={{height: '20px', width: '50%', marginTop: '3px', backgroundColor: 'teal'}}>
+
+                                                </div>
+                                                <div className="content" style={{height: '35px', width: '100%',marginTop: '7px', backgroundColor: 'yellow'}}>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             
                             <div className="jobs-block">
                                 <div className="title-job-bottom">
-                                    Activities <span>Posted</span> Jobs
+                                    <span>News</span> & Updates
                                 </div>
-                                <div className="jobs">
-                                    <JobCard logo={<Linkedin height={60} />} />
-                                    <JobCard logo={<Facebook height={60} />} />
-                                    <JobCard logo={<Instagram height={60} />} />
+                                <div className="news" style={{display: 'grid', gridTemplateColumns: '1fr 0.8fr', gridGap: '40px', marginTop: '15px'}}>
+                                    <div className="main" style={{height: '430px', width: '100%'}}>
+                                        <div className="image" style={{height: '280px', width: '100%', backgroundColor: 'yellow', borderRadius: '10px'}}>
+
+                                        </div>
+                                        <div className="time" style={{marginTop: '10px', height: '20px', backgroundColor: 'blue', width: '30%'}}>
+
+                                        </div>
+                                        <div className="title" style={{marginTop: '10px', height: '40px', backgroundColor: 'green', width: '100%'}}>
+
+                                        </div>
+                                        <div className="content" style={{marginTop: '10px', height: '60px', backgroundColor: 'red', width: '100%'}}>
+
+                                        </div>
+                                    </div>
+                                    <div className="others">
+                                        <div className="item" style={{height: '100px', width: '100%', display: 'grid', gridTemplateColumns: '0.3fr 1fr', gridGap: '20px', borderRadius: '10px', marginBottom: '10px'}}>
+                                            <div className="image" style={{height: '100px', width: '100%', borderRadius: '6px', backgroundColor: 'lime'}}>
+
+                                            </div>
+                                            <div className="content">
+                                                <div className="top" style={{marginTop: '5px', height: '20px', backgroundColor: 'teal', width: '30%'}}>
+
+                                                </div>
+                                                <div className="bottom" style={{marginTop: '10px', height: '50px', backgroundColor: 'red', width: '100%'}}>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="item" style={{height: '100px', width: '100%', display: 'grid', gridTemplateColumns: '0.3fr 1fr', gridGap: '20px', borderRadius: '10px', marginBottom: '10px'}}>
+                                            <div className="image" style={{height: '100px', width: '100%', borderRadius: '6px', backgroundColor: 'lime'}}>
+
+                                            </div>
+                                            <div className="content">
+                                                <div className="top" style={{marginTop: '5px', height: '20px', backgroundColor: 'teal', width: '30%'}}>
+
+                                                </div>
+                                                <div className="bottom" style={{marginTop: '10px', height: '50px', backgroundColor: 'red', width: '100%'}}>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="item" style={{height: '100px', width: '100%', display: 'grid', gridTemplateColumns: '0.3fr 1fr', gridGap: '20px', borderRadius: '10px', marginBottom: '10px'}}>
+                                            <div className="image" style={{height: '100px', width: '100%', borderRadius: '6px', backgroundColor: 'lime'}}>
+
+                                            </div>
+                                            <div className="content">
+                                                <div className="top" style={{marginTop: '5px', height: '20px', backgroundColor: 'teal', width: '30%'}}>
+
+                                                </div>
+                                                <div className="bottom" style={{marginTop: '10px', height: '50px', backgroundColor: 'red', width: '100%'}}>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="item" style={{height: '100px', width: '100%', display: 'grid', gridTemplateColumns: '0.3fr 1fr', gridGap: '20px', borderRadius: '10px', marginBottom: '10px'}}>
+                                            <div className="image" style={{height: '100px', width: '100%', borderRadius: '6px', backgroundColor: 'lime'}}>
+
+                                            </div>
+                                            <div className="content">
+                                                <div className="top" style={{marginTop: '5px', height: '20px', backgroundColor: 'teal', width: '30%'}}>
+
+                                                </div>
+                                                <div className="bottom" style={{marginTop: '10px', height: '50px', backgroundColor: 'red', width: '100%'}}>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <Pagination />
+                            <div className="social-media">
+                            </div>
                         </div>
                         <div className="similar-companies">
                             <div className="title">
