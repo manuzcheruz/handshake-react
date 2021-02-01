@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Map, Marker as GoogleMarker, GoogleApiWrapper } from 'google-maps-react';
+import cheerio from 'cheerio'
 
 import { Marker, Share, Linkedin, Facebook, Instagram, Campus2, Campus3, Campus4, Campus5, Campus6 } from '../../../Assets/icons'
 import Aux from '../../../hoc/Aux'
@@ -13,8 +14,28 @@ import '../../Company/CompanyDetail/CompanyDetail.css'
 import CenterNewsCard from '../CenterNews/CenterNewsCard';
 
 function CenterDetail(props) {
+    const [news, setNews] = useState([])
     useEffect(() => {
 
+        async function fetchData(){
+            const data = await fetch('https://www.uonbi.ac.ke/news', {
+                mode: 'no-cors'
+            });
+            const $ = cheerio.load(await data.text());
+            $('.thumbnail')
+                .get()
+                .map(repo => {
+                    const $repo = $(repo);
+                    const title = $repo.find('a').text();
+                    const image = $repo.find('img').attr('src');
+                    const content = $repo.find('.field-content').text();
+                    const combo = [title, image, content];
+                    console.log(combo);
+                    return setNews[combo];
+                });
+        }
+
+        fetchData(); 
     }, [])
     return (
         <Aux>
@@ -135,10 +156,17 @@ function CenterDetail(props) {
                                         </div>
                                     </div>
                                     <div className="others">
-                                        <CenterNewsCard />
-                                        <CenterNewsCard />
-                                        <CenterNewsCard />
-                                        <CenterNewsCard />
+                                        {news ? news.map((item, i) => {
+                                            return (
+                                                <CenterNewsCard 
+                                                    title={item.title}
+                                                    image={item.image}
+                                                    key={i}
+                                                    />
+                                            )
+                                        })
+                                        : 'no news hehe'}
+                                        
                                     </div>
                                 </div>
                             </div>
