@@ -13,11 +13,7 @@ import uon from '../../../Assets/Images/uon.jpg'
 import '../../Company/CompanyDetail/CompanyDetail.css'
 import CenterNewsCard from '../CenterNews/CenterNewsCard';
 
-function CenterDetail(props) {
-    const [news, setNews] = useState([])
-    useEffect(() => {
-
-        async function fetchData(){
+async function fetchData(){
             const data = await fetch('https://www.uonbi.ac.ke/news', {
                 mode: 'no-cors'
             });
@@ -31,11 +27,15 @@ function CenterDetail(props) {
                     const content = $repo.find('.field-content').text();
                     const combo = [title, image, content];
                     console.log(combo);
-                    return setNews[combo];
+                    return combo;
                 });
-        }
+        };
 
-        fetchData(); 
+function CenterDetail(props) {
+    const [news, setNews] = useState([])
+    console.log(fetchData());
+    
+    useEffect(() => {
     }, [])
     return (
         <Aux>
