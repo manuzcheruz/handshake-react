@@ -26,7 +26,6 @@ async function fetchData(){
                     const image = $repo.find('img').attr('src');
                     const content = $repo.find('.field-content').text();
                     const combo = [title, image, content];
-                    console.log(combo);
                     return combo;
                 });
         };
