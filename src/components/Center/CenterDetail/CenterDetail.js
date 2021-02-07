@@ -31,7 +31,7 @@ async function fetchData(){
         };
 
 function CenterDetail(props) {
-    const [news, setNews] = useState([])
+    // const [news, setNews] = useState([])
     console.log(fetchData());
     
     useEffect(() => {
