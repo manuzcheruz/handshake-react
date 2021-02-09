@@ -13,10 +13,15 @@ import uon from '../../../Assets/Images/uon.jpg'
 import '../../Company/CompanyDetail/CompanyDetail.css'
 import CenterNewsCard from '../CenterNews/CenterNewsCard';
 
-async function fetchData(){
+function CenterDetail(props) {
+    const [news, setNews] = useState([])
+    
+    useEffect(() => {
+        (async function fetchData(){
             const data = await fetch('https://www.uonbi.ac.ke/news', {
                 mode: 'no-cors'
             });
+            console.log(data);
             const $ = cheerio.load(await data.text());
             $('.thumbnail')
                 .get()
@@ -26,15 +31,10 @@ async function fetchData(){
                     const image = $repo.find('img').attr('src');
                     const content = $repo.find('.field-content').text();
                     const combo = [title, image, content];
-                    return combo;
+                    // console.log(combo);
+                    return setNews(combo);
                 });
-        };
-
-function CenterDetail(props) {
-    // const [news, setNews] = useState([])
-    console.log(fetchData());
-    
-    useEffect(() => {
+        })();
     }, [])
     return (
         <Aux>
