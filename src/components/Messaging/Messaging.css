@@ -78,8 +78,27 @@
 }
 
 .message .body .item .content {
-    margin: 8px 5px 0;
-    background-color: blue;
-    display: grid;
+    margin: 8px 10px 0;
+}
 
+.message .body .item .content .name {
+    display: grid;
+    grid-template-columns: 1fr 0.3fr;
+}
+
+.message .body .item .content .name .user-name {
+    text-align: left;
+    font-size: 1rem;
+}
+
+.message .body .item .content .name .time {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: grey;
+    text-align: right;
+}
+
+.message .body .item .content .mess {
+    font-size: 0.8rem;
+    font-weight: 200;
 }

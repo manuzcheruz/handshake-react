@@ -5,6 +5,39 @@ import Chat from './Chat/Chat'
 
 import './Messaging.css'
 
+const messageArr = [
+    {
+        name: 'Collins Cheruiyot',
+        time: '12:30 PM',
+        message: 'You: Mzito vipi umeapply'
+    },
+    {
+        name: '',
+        time: '',
+        message: ''
+    },
+    {
+        name: '',
+        time: '',
+        message: ''
+    },
+    {
+        name: '',
+        time: '',
+        message: ''
+    },
+    {
+        name: '',
+        time: '',
+        message: ''
+    },
+    {
+        name: '',
+        time: '',
+        message: ''
+    }
+]
+
 function Messaging(props) {
     const [height, setHeight] = useState('50px')
     const [active, setActive] = useState(false)
@@ -48,157 +81,28 @@ function Messaging(props) {
                     </div>
                 </div>
                 <div className="body">
-                    <div className="item" onClick={onSelectChat}>
-                        <div className="image">
-
-                        </div>
-                        <div className="content">
-                            <div className="name">
-                                <div className="user-name">
-
-                                </div>
-                                <div className="time">
-
-                                </div>
-                            </div>
-                            <div className="mess">
+                    {messageArr.map((item, i) => {
+                        return (
+                            <div className="item" onClick={onSelectChat}>
+                            <div className="image">
 
                             </div>
-                        </div>
-                    </div>
-
-                    <div className="item">
-                        <div className="image">
-
-                        </div>
-                        <div className="content">
-                            <div className="name">
-                                <div className="user-name">
-
+                            <div className="content">
+                                <div className="name">
+                                    <div className="user-name">
+                                        Collins Cheruiyot
+                                    </div>
+                                    <div className="time">
+                                        12:30 PM
+                                    </div>
                                 </div>
-                                <div className="time">
-
+                                <div className="mess">
+                                    You: Mzito vipi umeapply
                                 </div>
                             </div>
-                            <div className="mess">
-
-                            </div>
                         </div>
-                    </div>
-
-                    <div className="item">
-                        <div className="image">
-
-                        </div>
-                        <div className="content">
-                            <div className="name">
-                                <div className="user-name">
-
-                                </div>
-                                <div className="time">
-
-                                </div>
-                            </div>
-                            <div className="mess">
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="item">
-                        <div className="image">
-
-                        </div>
-                        <div className="content">
-                            <div className="name">
-                                <div className="user-name">
-
-                                </div>
-                                <div className="time">
-
-                                </div>
-                            </div>
-                            <div className="mess">
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="item">
-                        <div className="image">
-
-                        </div>
-                        <div className="content">
-                            <div className="name">
-                                <div className="user-name">
-
-                                </div>
-                                <div className="time">
-
-                                </div>
-                            </div>
-                            <div className="mess">
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="item">
-                        <div className="image">
-
-                        </div>
-                        <div className="content">
-                            <div className="name">
-                                <div className="user-name">
-
-                                </div>
-                                <div className="time">
-
-                                </div>
-                            </div>
-                            <div className="mess">
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="item">
-                        <div className="image">
-
-                        </div>
-                        <div className="content">
-                            <div className="name">
-                                <div className="user-name">
-
-                                </div>
-                                <div className="time">
-
-                                </div>
-                            </div>
-                            <div className="mess">
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="item">
-                        <div className="image">
-
-                        </div>
-                        <div className="content">
-                            <div className="name">
-                                <div className="user-name">
-
-                                </div>
-                                <div className="time">
-
-                                </div>
-                            </div>
-                            <div className="mess">
-
-                            </div>
-                        </div>
-                    </div>
+                        )
+                    })}
                 </div>
             </div>
 
