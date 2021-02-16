@@ -18,6 +18,7 @@ const CenterDetail = React.lazy(() => import('./components/Center/CenterDetail/C
 const Students = React.lazy(() => import('./components/Student/Students/Students'))
 const Companies = React.lazy(() => import('./components/Company/Companies/Companies'))
 const CompanyDetail = React.lazy(() => import('./components/Company/CompanyDetail/CompanyDetail'))
+const StudentForm = React.lazy(() => import('./components/Forms/StudentForm/StudentForm'))
 
 function App(props) {
   const { onToggleNightMode } = props
@@ -39,6 +40,7 @@ function App(props) {
         <Route path="/companies/company" exact render={() => <Suspense fallback={<h1>loading..</h1>}><CompanyDetail /></Suspense>} />
         <Route path="/students" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Students /></Suspense>} />
         <Route path="/jobs/job" exact render={() => <Suspense fallback={<h1>loading..</h1>}><JobDetail /></Suspense>} />
+        <Route path="/student-register" exact render={() => <Suspense fallback={<h1>loading..</h1>}><StudentForm /></Suspense>} />
         <Layout>
           {/* going to add routes here and enable lazy loading for them */}
           <Route path="/" component={LandingPage} />
