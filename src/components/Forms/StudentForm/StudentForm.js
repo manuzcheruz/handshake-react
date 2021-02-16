@@ -40,7 +40,7 @@ function StudentForm(props) {
                     </div>
                     <div className="top-student-form">
                         <div className="title">
-                            Student Form
+                            Student Registration
                         </div>
                         <div className='sub-title'>
                             Tell us abit about yourself so we can easily match you with the best jobs and everything really
