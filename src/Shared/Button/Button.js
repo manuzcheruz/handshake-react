@@ -11,7 +11,7 @@ function Button(props) {
                 color: `${props.color}`,
                 borderRadius: `${props.radius}`,
                 fontSize: `${props.size}`,
-                padding: '10px'
+                padding: '5px 10px'
             }}
             onClick={props.createMessage}
             >

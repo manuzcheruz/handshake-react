@@ -189,3 +189,20 @@ export {
 export {
     default as Campus6
 } from './campus6'
+
+export {
+    default as Send
+} from './send';
+
+export {
+    default as PaperClip
+} from './paperClip';
+
+export {
+    default as Image
+} from './image';
+
+export {
+    default as Grin
+} from './grin';
+

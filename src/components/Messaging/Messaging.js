@@ -9,32 +9,40 @@ const messageArr = [
     {
         name: 'Collins Cheruiyot',
         time: '12:30 PM',
-        message: 'You: Mzito vipi umeapply'
+        message: 'Collins: Mzito vipi umeapply',
+        active: true
     },
     {
-        name: '',
-        time: '',
-        message: ''
+        name: 'Google LLC',
+        time: 'Feb 06',
+        message: 'Google: You are approved for the role',
+        active: true
     },
     {
-        name: '',
-        time: '',
-        message: ''
+        name: 'Amazon',
+        time: 'Jan 31',
+        message: 'You: Is the slot still available?'
     },
     {
-        name: '',
-        time: '',
-        message: ''
+        name: 'UON',
+        time: 'Jan 30',
+        message: 'UON: Please fill the required forms first'
     },
     {
-        name: '',
-        time: '',
-        message: ''
+        name: 'Kenya Power LTD',
+        time: 'Jan 20',
+        message: 'You: Are the internship roles still available?'
     },
     {
-        name: '',
-        time: '',
-        message: ''
+        name: 'Hillary Yegon',
+        time: 'Jan 17',
+        message: 'Hillary: Boss ulifikisha wapi ile maneno'
+    },
+    {
+        name: 'Libryo Turks',
+        time: 'Jan 15',
+        message: 'Libryo: You have been accepted for the ...',
+        active: true
     }
 ]
 
@@ -85,19 +93,22 @@ function Messaging(props) {
                         return (
                             <div className="item" onClick={onSelectChat}>
                             <div className="image">
-
+                                {item.active && 
+                                    <div className="dot" style={{backgroundColor: 'green', width: '10px', height: '10px', marginTop: '35px', marginLeft: '32px', borderRadius: '50%', border: '3px solid white'}}>
+                                    </div>
+                                }
                             </div>
                             <div className="content">
                                 <div className="name">
                                     <div className="user-name">
-                                        Collins Cheruiyot
+                                        {item.name}
                                     </div>
                                     <div className="time">
-                                        12:30 PM
+                                        {item.time}
                                     </div>
                                 </div>
                                 <div className="mess">
-                                    You: Mzito vipi umeapply
+                                    {item.message}
                                 </div>
                             </div>
                         </div>

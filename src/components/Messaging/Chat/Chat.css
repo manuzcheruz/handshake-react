@@ -5,12 +5,12 @@
     right: 380px;
     bottom: 0px;
     z-index: 5;
-    background-color: white;
+    background-color: #EBEBEC;
     border-radius: 10px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    box-shadow: 0 15px 4px 0 rgba(0, 0, 0, 0.1),
-    0 9px 30px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 15px 4px 0 rgba(0, 0, 0, 0.2),
+    0 9px 30px 0 rgba(0, 0, 0, 0.3);
 }
 
 .chat .top {
@@ -54,6 +54,47 @@
 }
 
 .chat .chat-box {
-    height: 300px;
-    width: 100%;
+    height: 150px;
+    width: auto;
+    padding: 0px 10px;
+}
+
+.chat .chat-box .message-item {
+    width: 60%;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    background-color: white;
+}
+
+.chat .chat-box .message-item:nth-child(even) {
+    margin-left: 34%;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.chat .chat-box .message-item:nth-child(odd) {
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.chat .message-compose {
+    height: 100px;
+    width: auto;
+    background-color: white;
+    font-size: 0.8rem;
+    padding: 10px 10px;
+    color: grey;
+}
+
+.chat .message-compose .top-compose {
+    height: 40px;
+}
+
+.chat .message-compose .bottom-compose {
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
 }
