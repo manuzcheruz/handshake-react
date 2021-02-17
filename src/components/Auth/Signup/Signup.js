@@ -44,14 +44,14 @@ function Signup() {
                 <div className="login-wrapper">
                     <div className="login">
                         <div className="logo">
-                            Handshake
+                            Fanaka
                         </div>
                         <div className="form-wrapper">
                             <div className="title">
                                 Sign Up
                             </div>
                             <div className="subtitle">
-                                Fill in the following fields to get access to Handshake and secure your dream job.
+                                Fill in the following fields to get access to Fanaka and secure your dream job.
                             </div>
                             <form className="form">
                                 {fields.map( item => {

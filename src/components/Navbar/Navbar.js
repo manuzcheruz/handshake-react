@@ -12,7 +12,7 @@ function Navbar(props) {
                 <div className="navbar-wrapper">
                     <div className="name">
                         <h2>
-                            handshake
+                            Fanaka
                         </h2>
                     </div>
                     <div className="links-wrapper">

@@ -21,9 +21,31 @@ const fields = [
         elementType: 'text',
         placeholder: 'e.g Nairobi, Kenya',
         label: 'Location'
+    },
+    {
+        name: 'slots',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'e.g 25 slots available',
+        label: 'Slots'
     }
 ]
+
+// const fields2 = [
+//     {
+//         name: 'description',
+//         elementName: 'editor',
+//         elementType: 'editor',
+//         placeholder: 'Describe your job listing here',
+//         label: 'Description'
+//     }
+// ]
 function StudentForm(props) {
+    // const [show, setShow] = useState('block')
+
+    // const onClickBtn = () => {
+    //     setShow('');
+    // }
     return (
         <Aux>
             <Navbar bgColor='#FAFAFB' core />
@@ -58,6 +80,15 @@ function StudentForm(props) {
                                 )
                             })}
                         </div>
+                        {/* <div className="inputs2" style={{display: `${show ? 'none' : 'block'}`}}>
+                            {fields2.map((item, i) => {
+                                return (
+                                    <Field
+                                        key={item.name}
+                                        {...item} />
+                                )
+                            })}
+                        </div> */}
                         <div className="btn">
                             <Button
                                 name="Next"
@@ -67,7 +98,9 @@ function StudentForm(props) {
                                 border='none'
                                 width='367px'
                                 radius='5px'
-                                height='40px' />
+                                height='40px'
+                                // createMessage={onClickBtn} 
+                                    />
                         </div>
                     </div>
                 </div>

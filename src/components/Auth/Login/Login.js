@@ -37,7 +37,7 @@ function Login() {
                 <div className="login-wrapper">
                     <div className="login">
                         <div className="logo">
-                            Handshake
+                            Fanaka
                         </div>
                         <div className="form-wrapper">
                             <div className="title">

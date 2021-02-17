@@ -1,4 +1,5 @@
 import React from 'react'
+import Editor from 'tinymce'
 
 import './Field.css'
 
@@ -33,6 +34,18 @@ function Field(props) {
                 />
             </div>
         )
+    } else {
+        <div className="field-item">
+                <div className="label">
+                    {props.label}
+                </div>
+                <Editor
+                    name={props.name}
+                    type={props.elementType}
+                    placeholder={props.placeholder}
+                    // style={{height: `${props.height}`, width: `${props.width}`, border: `${props.border}`}}
+                />
+            </div>
     }
     return field
 }
