@@ -1,10 +1,10 @@
 import React from 'react'
-import { Cap, Student } from '../../../Assets/illustrators'
+import { BookLover, Teacher } from '../../../Assets/illustrators'
 import Aux from '../../../hoc/Aux'
 import Navbar from '../../Navbar/Navbar'
 import Button from '../../../Shared/Button/Button'
 
-import './StudentForm.css'
+import '../StudentForm/StudentForm.css'
 import Field from '../../../Shared/Field/Field'
 
 const fields = [
@@ -12,14 +12,14 @@ const fields = [
         name: 'name',
         elementName: 'input',
         elementType: 'text',
-        placeholder: 'John Doe',
+        placeholder: 'e.g John Doe',
         label: 'Full Name'
     },
     {
         name: 'Course',
         elementName: 'input',
         elementType: 'text',
-        placeholder: 'Bsc. Geomatic Engineering',
+        placeholder: 'e.g Bsc. Geomatic Engineering',
         label: 'Course'
     }
 ]
@@ -31,18 +31,18 @@ function StudentForm(props) {
                 <div className='container-student-form'>
                     <div className="bottom-student-form">
                         <div className="student">
-                            <Student height={500} />
+                            <Teacher height={500} />
                         </div>
                         <div className="cap" style={{marginLeft: '455px', marginTop: '200px'}}>
-                            <Cap height={150} />
+                            <BookLover height={150} />
                         </div>
                     </div>
                     <div className="top-student-form">
                         <div className="title">
-                            Student Registration
+                            Center Registration
                         </div>
                         <div className='sub-title'>
-                            Tell us abit about yourself so we can easily match you with the best jobs and everything really
+                            Tell us abit about your campus so students and employers can easily interract with you
                         </div>
                         <div className="image-top">
                         </div>

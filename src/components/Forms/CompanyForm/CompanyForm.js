@@ -1,10 +1,10 @@
 import React from 'react'
-import { Cap, Student } from '../../../Assets/illustrators'
+import { Hiring, Deal } from '../../../Assets/illustrators'
 import Aux from '../../../hoc/Aux'
 import Navbar from '../../Navbar/Navbar'
 import Button from '../../../Shared/Button/Button'
 
-import './StudentForm.css'
+import '../StudentForm/StudentForm.css'
 import Field from '../../../Shared/Field/Field'
 
 const fields = [
@@ -12,15 +12,15 @@ const fields = [
         name: 'name',
         elementName: 'input',
         elementType: 'text',
-        placeholder: 'John Doe',
-        label: 'Full Name'
+        placeholder: 'e.g Toyota Kenya',
+        label: 'Full Company Name'
     },
     {
-        name: 'Course',
+        name: 'industry',
         elementName: 'input',
         elementType: 'text',
-        placeholder: 'Bsc. Geomatic Engineering',
-        label: 'Course'
+        placeholder: 'e.g Automotive',
+        label: 'Industry'
     }
 ]
 function StudentForm(props) {
@@ -31,18 +31,18 @@ function StudentForm(props) {
                 <div className='container-student-form'>
                     <div className="bottom-student-form">
                         <div className="student">
-                            <Student height={500} />
+                            <Deal height={500} />
                         </div>
                         <div className="cap" style={{marginLeft: '455px', marginTop: '200px'}}>
-                            <Cap height={150} />
+                            <Hiring height={150} />
                         </div>
                     </div>
                     <div className="top-student-form">
                         <div className="title">
-                            Student Registration
+                            Company Registration
                         </div>
                         <div className='sub-title'>
-                            Tell us abit about yourself so we can easily match you with the best jobs and everything really
+                            Tell us abit about your company so we can easily match you with the best students and everything really
                         </div>
                         <div className="image-top">
                         </div>
