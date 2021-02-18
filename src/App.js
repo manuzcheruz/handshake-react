@@ -5,6 +5,7 @@ import { toggleNightMode } from './Store/actions'
 
 import Layout from './hoc/Layout/Layout';
 import LandingPage from './components/LandingPage/LandingPage'
+// import StudentDetailSkeleton from './components/Student/StudentDetail/StudentDetailSkeleton'
 
 import './App.css';
 
@@ -49,7 +50,7 @@ function App(props) {
         <Route path="/companies/company" exact render={() => <Suspense fallback={<h1>loading..</h1>}><CompanyDetail /></Suspense>} />
         <Route path="/company-registration" exact render={() => <Suspense fallback={<h1>loading..</h1>}><CompanyForm /></Suspense>} />
         <Route path="/students" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Students /></Suspense>} />
-        <Route path="/students/student" exact render={() => <Suspense fallback={<h1>loading..</h1>}><StudentDetail /></Suspense>} />
+        <Route path="/students/student" exact render={() => <Suspense fallback={''}><StudentDetail /></Suspense>} />
         <Route path="/student-registration" exact render={() => <Suspense fallback={<h1>loading..</h1>}><StudentForm /></Suspense>} />
         <Layout>
           {/* going to add routes here and enable lazy loading for them */}
