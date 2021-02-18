@@ -37,3 +37,7 @@ export {
 export {
     default as JobHunt
 } from './jobHunt';
+
+export {
+    default as Sad
+} from './sad';

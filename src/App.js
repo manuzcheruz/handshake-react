@@ -11,11 +11,13 @@ import './App.css';
 // lazy loading other routes for better performance
 const Login = React.lazy(() => import('./components/Auth/Login/Login'))
 const Signup = React.lazy(() => import('./components/Auth/Signup/Signup'))
+const Logout = React.lazy(() => import('./components/Auth/Logout/Logout'))
 const Jobs = React.lazy(() => import('./components/Job/Jobs/Jobs'))
 const JobDetail = React.lazy(() => import('./components/Job/JobDetail/JobDetail'))
 const Centers = React.lazy(() => import('./components/Center/Centers/Centers'))
 const CenterDetail = React.lazy(() => import('./components/Center/CenterDetail/CenterDetail'))
 const Students = React.lazy(() => import('./components/Student/Students/Students'))
+const StudentDetail = React.lazy(() => import('./components/Student/StudentDetail/StudentDetail'))
 const Companies = React.lazy(() => import('./components/Company/Companies/Companies'))
 const CompanyDetail = React.lazy(() => import('./components/Company/CompanyDetail/CompanyDetail'))
 const StudentForm = React.lazy(() => import('./components/Forms/StudentForm/StudentForm'))
@@ -36,6 +38,7 @@ function App(props) {
       <Switch>
         <Route path="/login" exact render={() => <Suspense fallback={<h1>loading...</h1>}><Login /></Suspense>} />
         <Route path="/signup" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Signup /></Suspense>} />
+        <Route path="/logout" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Logout /></Suspense>} />
         <Route path="/jobs" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Jobs /></Suspense>} />
         <Route path="/jobs/job" exact render={() => <Suspense fallback={<h1>loading..</h1>}><JobDetail /></Suspense>} />
         <Route path="/job-registration" exact render={() => <Suspense fallback={<h1>loading..</h1>}><JobForm /></Suspense>} />
@@ -46,6 +49,7 @@ function App(props) {
         <Route path="/companies/company" exact render={() => <Suspense fallback={<h1>loading..</h1>}><CompanyDetail /></Suspense>} />
         <Route path="/company-registration" exact render={() => <Suspense fallback={<h1>loading..</h1>}><CompanyForm /></Suspense>} />
         <Route path="/students" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Students /></Suspense>} />
+        <Route path="/students/student" exact render={() => <Suspense fallback={<h1>loading..</h1>}><StudentDetail /></Suspense>} />
         <Route path="/student-registration" exact render={() => <Suspense fallback={<h1>loading..</h1>}><StudentForm /></Suspense>} />
         <Layout>
           {/* going to add routes here and enable lazy loading for them */}

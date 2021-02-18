@@ -35,7 +35,7 @@ function Field(props) {
             </div>
         )
     } else {
-        <div className="field-item">
+        <div className="field-item-">
                 <div className="label">
                     {props.label}
                 </div>
