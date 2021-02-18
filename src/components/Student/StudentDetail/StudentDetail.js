@@ -1,7 +1,7 @@
 import React from 'react'
 import { Map, Marker as GoogleMarker, GoogleApiWrapper } from 'google-maps-react';
 
-import { Apple, Benz, Facebook, Google, Instagram, Linkedin, Microsoft, School, Share, Slack } from '../../../Assets/icons'
+import { Apple, Benz, Facebook, Google, Heart, Instagram, Linkedin, Microsoft, School, Share, Slack } from '../../../Assets/icons'
 import Aux from '../../../hoc/Aux'
 import Pagination from '../../../Shared/Pagination/Pagination'
 import CenterCard from '../../Center/CenterCard/CenterCard'
@@ -21,6 +21,37 @@ import mem7 from '../../../Assets/Images/mem7.jpg';
 import mem8 from '../../../Assets/Images/mem8.jpg';
 
 import '../../Company/CompanyDetail/CompanyDetail.css'
+
+const skills = [
+    {
+        name: 'React Js',
+        num: 34
+    },
+    {
+        name: 'Django',
+        num: 26
+    },
+    {
+        name: 'Typescript',
+        num: 24
+    },
+    {
+        name: 'Git',
+        num: 43
+    },
+    {
+        name: 'Firebase',
+        num: 21
+    },
+    {
+        name: 'Express Js',
+        num: 40
+    },
+    {
+        name: 'MongoDB',
+        num: 19
+    }
+]
 
 function CompanyDetail(props) {
     return (
@@ -124,10 +155,15 @@ function CompanyDetail(props) {
                                 <div className="title-job-bottom">
                                     My <span>Skills</span>
                                 </div>
-                                <div className="jobs">
-                                    <JobCard logo={<Benz height={60} />} />
-                                    <JobCard logo={<Google height={60} />} />
-                                    <JobCard logo={<Slack height={60} />} />
+                                <div className="skills" style={{display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gridGap: '10px', marginTop: '15px'}}>
+                                    {skills.map((item, i) => {
+                                        return (
+                                            <div className="item" style={{height: '30px', width: '200px', borderRadius: '10px', padding: '5px 10px', backgroundColor: 'white', display: 'grid', gridTemplateColumns: '1fr 0.3fr'}}>
+                                                <span>{item.name}</span>
+                                                <span style={{color: 'grey'}}><span style={{marginRight: '5px'}}><Heart height='12' /></span>{item.num}</span>
+                                            </div>
+                                        )
+                                    })}
                                 </div>
                             </div>
                             
