@@ -28,6 +28,13 @@ const fields = [
         elementType: 'text',
         placeholder: 'e.g 25 slots available',
         label: 'Slots'
+    },
+    {
+        name: 'description',
+        elementName: 'editor',
+        elementType: '',
+        placeholder: 'Describe your job listing here',
+        label: 'Description'
     }
 ]
 

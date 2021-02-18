@@ -1,5 +1,5 @@
 import React from 'react'
-import Editor from 'tinymce'
+import { Editor } from '@tinymce/tinymce-react'
 
 import './Field.css'
 
@@ -43,6 +43,7 @@ function Field(props) {
                     name={props.name}
                     type={props.elementType}
                     placeholder={props.placeholder}
+                    apiKey="doh7uvi94w8ejme39aoeql00wr4wtwf5303k0o30lw2751ez"
                     // style={{height: `${props.height}`, width: `${props.width}`, border: `${props.border}`}}
                 />
             </div>
