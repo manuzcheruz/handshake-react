@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
-import { Edit, Menu, Chevron } from '../../Assets/icons'
+import { Edit, Menu, Chevron, Google, Amazon, Campus2, Tesla, Facebook } from '../../Assets/icons'
 import Aux from '../../hoc/Aux'
 import Chat from './Chat/Chat'
+import { me, mem5, mem6} from '../../Assets/Images'
 
 import './Messaging.css'
 
 const messageArr = [
     {
+        image: <img alt='' src={mem6} height='50px' />,
         name: 'Collins Cheruiyot',
         time: '12:30 PM',
         message: 'Collins: Mzito vipi umeapply',
@@ -16,33 +18,39 @@ const messageArr = [
         name: 'Google LLC',
         time: 'Feb 06',
         message: 'Google: You are approved for the role',
-        active: true
+        image: <Google height={45} />
     },
     {
         name: 'Amazon',
         time: 'Jan 31',
-        message: 'You: Is the slot still available?'
+        message: 'You: Is the slot still available?',
+        active: true,
+        image: <Amazon height={50} />
     },
     {
         name: 'UON',
         time: 'Jan 30',
-        message: 'UON: Please fill the required forms first'
+        message: 'UON: Please fill the required forms first',
+        image: <Campus2 height={50} />
     },
     {
-        name: 'Kenya Power LTD',
+        name: 'Facebook',
         time: 'Jan 20',
-        message: 'You: Are the internship roles still available?'
+        message: 'You: Are the internship roles still available?',
+        image: <Facebook height={50} />
     },
     {
         name: 'Hillary Yegon',
         time: 'Jan 17',
-        message: 'Hillary: Boss ulifikisha wapi ile maneno'
+        message: 'Hillary: Boss ulifikisha wapi ile maneno',
+        image: <img alt='' src={mem5} height='50px' />
     },
     {
-        name: 'Libryo Turks',
+        name: 'Tesla',
         time: 'Jan 15',
-        message: 'Libryo: You have been accepted for the ...',
-        active: true
+        message: 'Tesla: You have been accepted for the ...',
+        active: true,
+        image: <Tesla height={50} />
     }
 ]
 
@@ -69,7 +77,8 @@ function Messaging(props) {
             <div className="message" style={{height: `${height}`}}>
                 <div className="header" onClick={onSelectMessage}>
                     <div className="image">
-                        <div className="dot" style={{backgroundColor: 'green', width: '10px', height: '10px', marginTop: '27px', marginLeft: '25px', borderRadius: '50%', border: '3px solid white'}}>
+                        <img alt='' src={me} height='40px' />
+                        <div className="dot" style={{backgroundColor: 'green', width: '10px', height: '10px', marginTop: '-19px', marginLeft: '25px', borderRadius: '50%', border: '3px solid white'}}>
 
                         </div>
                     </div>
@@ -93,8 +102,9 @@ function Messaging(props) {
                         return (
                             <div className="item" onClick={onSelectChat}>
                             <div className="image">
+                                {item.image}
                                 {item.active && 
-                                    <div className="dot" style={{backgroundColor: 'green', width: '10px', height: '10px', marginTop: '35px', marginLeft: '32px', borderRadius: '50%', border: '3px solid white'}}>
+                                    <div className="dot" style={{backgroundColor: 'green', width: '10px', height: '10px', marginTop: '-20px', marginLeft: '32px', borderRadius: '50%', border: '3px solid white'}}>
                                     </div>
                                 }
                             </div>

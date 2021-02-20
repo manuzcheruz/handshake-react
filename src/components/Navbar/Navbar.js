@@ -66,7 +66,7 @@ function Navbar(props) {
                     <div className="account-wrapper">
                         {props.core ? 
                             <Aux>
-                                <Link to='/companies/company' >
+                                <Link to='/students/student' >
                                     <button className="">
                                         <span style={{marginRight: '15px'}}><Account height={20} /></span>
                                         Manuz

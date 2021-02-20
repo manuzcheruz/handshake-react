@@ -1,10 +1,64 @@
 import React from 'react'
 import Pulse from 'react-reveal/Pulse';
 import Fade from 'react-reveal/Fade'
-import { Lock, Star } from '../../../Assets/icons'
+import { Lock, Star, Google, Microsoft, Tesla, Amazon, Apple, Benz } from '../../../Assets/icons'
 import TableCard from './TableCard/TableCard'
+import { me } from '../../../Assets/Images'
 
 import './ExploreCompanySection.css'
+import { Link } from 'react-router-dom';
+
+const companyTable = [
+    {
+        role: 'Software Engineer',
+        name: 'Google',
+        image: <Google height={15} />,
+        salary: '$7,000',
+        time: '2 hrs ago'
+    },
+    {
+        role: 'UI/UX Designer',
+        name: 'Microsoft',
+        image: <Microsoft height={15} />,
+        salary: '$8,000',
+        time: '4 hrs ago'
+    },
+    {
+        role: 'Software Engineer',
+        name: 'Apple',
+        image: <Apple height={15} />,
+        salary: '$7,000',
+        time: '2 hrs ago'
+    },
+    {
+        role: 'Javascript Engineer',
+        name: 'Amazon',
+        image: <Amazon height={15} />,
+        salary: '$10,000',
+        time: '1 hr ago'
+    },
+    {
+        role: 'Fullstack Engineer',
+        name: 'Tesla',
+        image: <Tesla height={15} />,
+        salary: '$7,000',
+        time: '2 hrs ago'
+    },
+    {
+        role: 'Software Engineer',
+        name: 'Lamborghini',
+        image: <Benz height={15} />,
+        salary: '$7,000',
+        time: '2 hrs ago'
+    },
+    {
+        role: 'Software Engineer',
+        name: 'Google',
+        image: <Google height={15} />,
+        salary: '$7,000',
+        time: '2 hrs ago'
+    }
+]
 
 function ExploreCompanySection() {
     return (
@@ -22,9 +76,11 @@ function ExploreCompanySection() {
                                 The fortune 500 companies are all part of our members posting premium jobs to match your high level of skill and talent.
                             </div>
                             <div className="button">
-                                <button className="button-add-acc" type="button">
-                                    Create free Account
-                                </button>
+                                <Link to='/company-registration'>
+                                    <button className="button-add-acc" type="button">
+                                        Create free Account
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                         <div className="company-display">
@@ -48,11 +104,11 @@ function ExploreCompanySection() {
                             <Fade left>
                                 <div className="company-profile">
                                     <div className="image">
-
+                                        <img alt='' src={me} height='50' />
                                     </div>
                                     <div className="name">
                                         <div className="name-title">
-                                            Madhu Mia
+                                            John Doe
                                         </div>
                                         <div className="role">
                                             Top job Poster
@@ -103,13 +159,11 @@ function ExploreCompanySection() {
                                         </div>
                                     </div>
                                     <div className="table-content">
-                                        <TableCard />
-                                        <TableCard />
-                                        <TableCard />
-                                        <TableCard />
-                                        <TableCard />
-                                        <TableCard />
-                                        <TableCard />
+                                        {companyTable.map((item, i) => {
+                                            return (
+                                                <TableCard key={i} {...item} />
+                                            )
+                                        })}
                                     </div>
                                 </div>
                             </Fade>

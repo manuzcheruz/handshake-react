@@ -9,6 +9,8 @@ import '../../Job/Jobs/Jobs.css'
 import CenterCard from '../CenterCard/CenterCard'
 import Aux from '../../../hoc/Aux'
 import Navbar from '../../Navbar/Navbar'
+import SearchBar from '../../../Shared/SearchBar/searchBar'
+import Messaging from '../../Messaging/Messaging'
 
 const fields = [
     {
@@ -77,6 +79,8 @@ function Centers() {
             <Navbar bgColor='#FAFAFB' core />
             <div className="section" style={{backgroundColor: '#FAFAFB'}}>
                 <div className="container">
+                    <Messaging />
+                    <SearchBar center />
                     <div className="jobs-wrapper">
                         <div className="filters">
                             <div className="job-alert">

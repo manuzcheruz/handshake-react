@@ -10,6 +10,7 @@ import CenterCard from '../../Center/CenterCard/CenterCard'
 import Messaging from '../../Messaging/Messaging'
 import Aux from '../../../hoc/Aux'
 import Navbar from '../../Navbar/Navbar'
+import SearchBar from '../../../Shared/SearchBar/searchBar'
 
 const fields = [
     {
@@ -103,6 +104,7 @@ function Companies() {
             <div className="section" style={{backgroundColor: '#FAFAFB'}}>
                 <div className="container">
                     <Messaging />
+                    <SearchBar />
                     <div className="jobs-wrapper">
                         <div className="filters">
                             <div className="job-alert">

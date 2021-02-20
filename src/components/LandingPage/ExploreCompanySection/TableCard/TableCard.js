@@ -1,24 +1,23 @@
 import React from 'react'
-import { Google } from '../../../../Assets/icons'
 
 import './TableCard.css'
 
-function TableCard() {
+function TableCard({name, image, time, role, salary}) {
     return (
         <div className="table-card">
             <div className="table-card-body">
                 <div className="table-card-item">
-                    <span><Google height={15} color="green" /></span>
-                    Product Manager
+                    <span>{image}</span>
+                    {role}
                 </div>
                 <div className="table-card-item">
-                    Google
+                    {name}
                 </div>
                 <div className="table-card-item">
-                    $7,000
+                    {salary}
                 </div>
                 <div className="table-card-item">
-                    2 hrs ago
+                    {time}
                 </div>
                 <div className="table-card-item">
                     <button>

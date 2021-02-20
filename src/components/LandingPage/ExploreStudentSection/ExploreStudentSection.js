@@ -2,8 +2,10 @@ import React from 'react'
 import HeadShake from 'react-reveal/HeadShake';
 import Fade from 'react-reveal/Fade'
 import { Search, Menu, Message, CheckSlim, Marker } from '../../../Assets/icons'
+import { me, mem1, mem2, mem3, mem8, mem4, mem7 } from '../../../Assets/Images'
 
 import './ExploreStudentSection.css'
+import { Link } from 'react-router-dom';
 
 function ExploreStudentSection() {
     return (
@@ -23,18 +25,19 @@ function ExploreStudentSection() {
                                             </div>
                                             <div className="profile-info">
                                                 <div className="profile-image">
+                                                    <img alt='' src={mem2} height='70px' />
                                                 </div>
                                                 <div className="name">
-                                                    Junaki
+                                                    Jane Doe
                                                 </div>
                                                 <div className="role">
-                                                    Product Manager
+                                                    Software Engineer
                                                 </div>
                                                 <div className="location">
                                                     <span className="icon-marker">
                                                         <Marker height={10} color="grey" />
                                                     </span>
-                                                    Nairobi, Kenya
+                                                    University of Nairobi
                                                 </div>
                                             </div>
                                         </div>
@@ -56,7 +59,7 @@ function ExploreStudentSection() {
                                                 </button>
                                             </div>
                                             <div className="button-friends">
-                                                <button className="message">
+                                                <button className="message-friends">
                                                     <span><Message height={15} color="black" /></span>
                                                     Message
                                                 </button>
@@ -85,16 +88,36 @@ function ExploreStudentSection() {
                                         20,000+ Talented Job Holders
                                     </div>
                                     <div className="profile-images">
-                                        <div className="items"></div>
-                                        <div className="items"></div>
-                                        <div className="items"></div>
-                                        <div className="items"></div>
-                                        <div className="items"></div>
-                                        <div className="items"></div>
-                                        <div className="items"></div>
-                                        <div className="items"></div>
-                                        <div className="items"></div>
-                                        <div className="items"></div>
+                                        <div className="items">
+                                            <img alt='' src={mem4} height='50px' />
+                                        </div>
+                                        <div className="items">
+                                            <img alt='' src={mem4} height='50px' />
+                                        </div>
+                                        <div className="items">
+                                            <img alt='' src={mem7} height='50px' />
+                                        </div>
+                                        <div className="items">
+                                            <img alt='' src={mem8} height='50px' />
+                                        </div>
+                                        <div className="items">
+                                            <img alt='' src={me} height='50px' />
+                                        </div>
+                                        <div className="items">
+                                            <img alt='' src={mem4} height='50px' />
+                                        </div>
+                                        <div className="items">
+                                            <img alt='' src={mem4} height='50px' />
+                                        </div>
+                                        <div className="items">
+                                            <img alt='' src={mem3} height='50px' />
+                                        </div>
+                                        <div className="items">
+                                            <img alt='' src={mem2} height='50px' />
+                                        </div>
+                                        <div className="items">
+                                            <img alt='' src={mem1} height='50px' />
+                                        </div>
                                     </div>
                                 </div>
                             </Fade>
@@ -108,7 +131,9 @@ function ExploreStudentSection() {
                                 Our platform boasts a large number of talented students from Kenyan universities that are either holding jobs in various top tier companies or actively looking for them.
                             </div>
                             <div className="button">
-                                <button className="explore-btn" type="button">Explore More</button>
+                                <Link to='student-registration'>
+                                    <button className="explore-btn" type="button">Explore More</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

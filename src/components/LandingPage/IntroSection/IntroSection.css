@@ -229,7 +229,7 @@
 .intro-wrapper .image .job-holder .job-holder-images .item {
     height: 50px;
     width: 50px;
-    background-color: grey;
+    background-color: #ECF1FA;
     border-radius: 50%;
     border-radius: 2px solid white;
 }
@@ -237,7 +237,7 @@
 .intro-wrapper .image .job-holder .job-holder-images .items {
     height: 50px;
     width: 50px;
-    background-color: grey;
+    background-color: #ECF1FA;
     border-radius: 50%;
     border: 2px solid white;
     margin-left: -20px;
@@ -268,7 +268,7 @@
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background-color: grey;
+    /* background-color: grey; */
 }
 
 .intro-wrapper .image .mini {

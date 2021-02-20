@@ -1,8 +1,24 @@
 import React from 'react'
 import Fade from 'react-reveal/Fade';
+import { mem1, mem2, mem3 } from '../../../Assets/Images'
 
 import './Testimonials.css'
 import TestimonialsCard from './TestimonialsCard/TestimonialsCard'
+
+const testimonialData = [
+    {
+        image: <img alt='' src={mem1} height='100px' />
+    },
+    {
+        image: <img alt='' src={mem2} height='100px' />
+    },
+    {
+        image: <img alt='' src={mem3} height='100px' />
+    },
+    {
+        image: <img alt='' src={mem1} height='100px' />
+    }
+]
 
 function Testimonials() {
     return (
@@ -16,14 +32,11 @@ function Testimonials() {
                             about us
                         </div>
                         <div className="testimonials">
-                            <TestimonialsCard />
-                            <TestimonialsCard />
-                            <TestimonialsCard />
-                            <TestimonialsCard />
-                            <TestimonialsCard />
-                            <TestimonialsCard />
-                            <TestimonialsCard />
-                            <TestimonialsCard />
+                            {testimonialData.map((item, i) => {
+                                return (
+                                    <TestimonialsCard key={i} {...item} />
+                                )
+                            })}
                         </div>
                     </div>
                 </Fade>

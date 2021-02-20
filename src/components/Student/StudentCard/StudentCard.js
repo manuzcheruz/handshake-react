@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { Menu, Marker, CheckSlim, Message } from '../../../Assets/icons'
+import { Menu, CheckSlim, Message, School } from '../../../Assets/icons'
 import './StudentCard.css'
 
-function StudentCard(props) {
+function StudentCard({name, img, role, friends, posts, center}) {
     return (
         <div className="jobholder-profile">
             <div className="profile-wrapper">
@@ -15,28 +15,29 @@ function StudentCard(props) {
                     </div>
                     <div className="profile-info">
                         <div className="profile-image">
+                            {img}
                         </div>
                         <div className="name">
-                            Junaki
+                            {name}
                         </div>
                         <div className="role">
-                            Product Manager
+                            {role}
                         </div>
                         <div className="location">
                             <span className="icon-marker">
-                                <Marker height={10} color="grey" />
+                                <School height={10} color="grey" />
                             </span>
-                            Nairobi, Kenya
+                            {center}
                         </div>
                     </div>
                 </div>
                 <div className="profile-middle">
                     <div className="profile-posts">
-                        <span>431</span>
+                        <span>{posts}</span>
                             Posts
                     </div>
                     <div className="profile-posts">
-                        <span>23k</span>
+                        <span>{friends}</span>
                             Friends
                     </div>
                 </div>
@@ -44,7 +45,7 @@ function StudentCard(props) {
                     <div className="button-friends">
                         <button className="friends">
                             <span><CheckSlim height={15} color="white" /></span>
-                                Friends
+                                Invite
                         </button>
                     </div>
                     <div className="button-friends">

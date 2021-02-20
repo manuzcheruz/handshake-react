@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Close, Expand, Grin, Image, PaperClip, Send } from '../../../Assets/icons'
 import Button from '../../../Shared/Button/Button';
+import { mem6 } from '../../../Assets/Images';
 
 import './Chat.css'
 
@@ -16,7 +17,8 @@ function Chat(props) {
         <div className="chat" style={{height: `${display}`, display: `${props.display ? props.display : 'none'}`}}>
             <div className="top">
                 <div className="image">
-                    <div className="dot" style={{backgroundColor: 'green', width: '10px', height: '10px', marginTop: '27px', marginLeft: '25px', borderRadius: '50%', border: '3px solid white'}}>
+                    <img alt='' src={mem6} height='40px' />
+                    <div className="dot" style={{backgroundColor: 'green', width: '10px', height: '10px', marginTop: '-18px', marginLeft: '25px', borderRadius: '50%', border: '3px solid white'}}>
 
                         </div>
                 </div>

@@ -10,6 +10,7 @@ import Pagination from '../../../Shared/Pagination/Pagination'
 import './Jobs.css'
 import Messaging from '../../Messaging/Messaging'
 import { Amazon, Apple, Benz, Facebook, Google, Instagram, Linkedin, Microsoft, Safaricom, Slack, Tesla } from '../../../Assets/icons'
+import SearchBar from '../../../Shared/SearchBar/searchBar'
 
 const fields = [
     {
@@ -133,6 +134,7 @@ function Jobs() {
             <div className="section" style={{backgroundColor: '#FAFAFB'}}>
                 <div className="container">
                     <Messaging />
+                    <SearchBar job />
                     <div className="jobs-wrapper">
                         <div className="filters">
                             <div className="job-alert">

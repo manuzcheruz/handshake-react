@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Bookmark, Calendar } from '../../../../Assets/icons'
+import { mem1, mem2, mem3} from '../../../../Assets/Images'
 
 import './JobCard.css'
 
@@ -49,10 +50,17 @@ function JobCard(props) {
                         </Link> 
                     </div>
                     <div className="others">
-                        <div className="item"></div>
-                        <div className="items"></div>
-                        <div className="items"></div>
+                        <div className="item">
+                            <img alt='' src={mem2} height='35px' />
+                            {/* <img alt='' src={mem8} height='35px' /> */}
+                        </div>
                         <div className="items">
+                            <img alt='' src={mem1} height='35px' />
+                        </div>
+                        <div className="items">
+                            <img alt='' src={mem3} height='35px' />
+                        </div>
+                        <div className="items" style={{backgroundColor: '#FF9066'}}>
                             <div style={{marginLeft: '5px', fontSize: '0.75rem', marginTop: '11px'}}>
                                 107+
                             </div>

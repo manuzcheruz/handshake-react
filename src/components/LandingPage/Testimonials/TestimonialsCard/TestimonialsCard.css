@@ -24,7 +24,7 @@
     margin-left: 100px;
     width: 100px;
     height: 100px;
-    background-color: grey;
+    /* background-color: grey; */
     border-radius: 50%;
 }
 
@@ -35,7 +35,7 @@
     background-color: green;
     z-index: 2;
     position: absolute;
-    margin-top: 55px;
+    margin-top: -40px;
     margin-left: 60px;
 }
 

@@ -4,6 +4,7 @@ import Fade from 'react-reveal/Fade';
 import './IntroSection.css'
 import handshake from '../../../Assets/Images/handshake2.png'
 import { Mail, Check, Pdf, Heart, Google, Instagram, Microsoft, Search, Plus, Apple } from '../../../Assets/icons'
+import { me, mem1, mem4, mem6, me2} from '../../../Assets/Images'
 
 function IntroSection() {
     return (
@@ -98,13 +99,21 @@ function IntroSection() {
                                         10k+ Jobholder Get job
                                     </div>
                                     <div className="job-holder-images">
-                                        <div className="item"></div>
-                                        <div className="items"></div>
-                                        <div className="items"></div>
-                                        <div className="items"></div>
+                                        <div className="item">
+                                            <img alt='' src={me2} height='50px' />
+                                        </div>
+                                        <div className="items">
+                                            <img alt='' src={mem4} height='50px' />
+                                        </div>
+                                        <div className="items">
+                                            <img alt='' src={mem6} height='50px' />
+                                        </div>
+                                        <div className="items">
+                                            <img alt='' src={me} height='50px' />
+                                        </div>
                                         <div className="items">
                                             <div className="icon-plus">
-                                                <Plus height={20} color="white" />
+                                                <Plus height={20} color="grey" />
                                             </div>
                                         </div>
                                     </div>
@@ -113,7 +122,7 @@ function IntroSection() {
                             <Fade bottom>
                                 <div className="heart">
                                     <div className="heart-icon" style={{marginTop: '5px', marginLeft: '5px'}}>
-                                        <Heart height={20} />
+                                        <Heart height={20} color='#FF9066' />
                                     </div>
                                 </div>
                             </Fade>
@@ -134,7 +143,9 @@ function IntroSection() {
                             </Fade>
                             <Fade right>
                                 <div className="mini-profile">
-                                    <div className="mini-profile-image"></div>
+                                    <div className="mini-profile-image">
+                                        <img alt='' src={mem1} height='20px' />
+                                    </div>
                                 </div>
                             </Fade>
                             <div className="thumb">

@@ -2,12 +2,13 @@ import React from 'react'
 import { Quotes } from '../../../../Assets/icons'
 import './TestimonialsCard.css'
 
-function TestimonialsCard() {
+function TestimonialsCard({image}) {
     return (
         <div>
             <div className="testimonial-card">
                 <div className="testimonial-card-body">
                     <div className="top">
+                        {image}
                         <div className="icon-quotes">
                             <span>
                                 <Quotes height={20} color="white" />
