@@ -3,19 +3,27 @@ const router = express.Router();
 const students = require('../models/students');
 
 router.get('/', (req, res) => {
-    res.send('still here');
-})
+    res.send('listing students');
+});
 
-router.post('/', (req, res) => {
-    const s = new students(req.body);
-    console.log(s);
-    s.save()
+router.post('/create', (req, res) => {
+    const student = new students(req.body);
+    console.log(student);
+    student.save()
         .then(data => {
-            res.status(200).send('success')
+            res.status(200).send('student saved successfully')
         })
         .catch(err => {
-            res.status(400).send('unable to save to the database');
-        })
+            res.status(400).send('unable to save student to the database');
+        });
+});
+
+router.get('/update', (req, res) => {
+    res.send('update student');
 })
+
+router.get('/delete', (req, res) => {
+    res.send('deleting student');
+});
 
 module.exports = router;

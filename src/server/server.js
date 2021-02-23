@@ -5,6 +5,9 @@ const bodyParser = require('body-parser');
 require('dotenv/config');
 
 const studentsRouter = require('./routes/students');
+const jobsRouter = require('./routes/jobs');
+const companiesRouter = require('./routes/companies');
+const centersRouter = require('./routes/centers');
 
 // middleware
 app.use(bodyParser.json());
@@ -14,6 +17,9 @@ app.get('/home', (req, res) => {
     res.send('testing express');
 })
 app.use('/students', studentsRouter);
+app.use('/jobs', jobsRouter);
+app.use('/companies', companiesRouter);
+app.use('/centers', centersRouter);
 
 
 // connecting to mongodb

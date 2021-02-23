@@ -1,15 +1,11 @@
 const mongoose = require('mongoose');
 
-const studentSchema = mongoose.Schema({
+const CompanySchema = mongoose.Schema({
     name: {
         type: String,
         required: true
     },
-    campus: {
-        type: String,
-        required: true
-    },
-    profileImage: {
+    logo: {
         type: String,
         required: true
     },
@@ -17,11 +13,15 @@ const studentSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    dateRegistered: {
+    date: {
         type: Date,
         default: Date.now
     },
-    description: {
+    location: {
+        type: String,
+        required: true
+    },
+    overview: {
         type: String,
         required: true
     },
@@ -35,4 +35,4 @@ const studentSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Students', studentSchema);
+module.exports = mongoose.model('Companies', CompanySchema);
