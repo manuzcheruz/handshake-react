@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Cap, Student } from '../../../Assets/illustrators'
 import Aux from '../../../hoc/Aux'
 import Navbar from '../../Navbar/Navbar'
@@ -12,18 +12,54 @@ const fields = [
         name: 'name',
         elementName: 'input',
         elementType: 'text',
-        placeholder: 'John Doe',
-        label: 'Full Name'
+        placeholder: 'e.g John Doe',
+        label: 'Full Name',
+        displayNum: 0
     },
     {
-        name: 'Course',
+        name: 'campus',
         elementName: 'input',
         elementType: 'text',
-        placeholder: 'Bsc. Geomatic Engineering',
-        label: 'Course'
+        placeholder: 'e.g University of Nairobi',
+        label: 'Campus',
+        displayNum: 0
+    },
+    {
+        name: 'course',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'e.g Bsc. Geomatic Engineering',
+        label: 'Course',
+        displayNum: 0
+    },
+    {
+        name: 'description',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'describe yourself in 1000 characters or less',
+        label: 'Description',
+        displayNum: 1
+    },
+    {
+        name: 'twitter',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'e.g @johndoe',
+        label: 'Course',
+        displayNum: 1
     }
 ]
 function StudentForm(props) {
+    let [formNum, setFormNum] = useState(0);
+    const [btnText, setBtnText] = useState('Next');
+    const onBtnClick = () => {
+        alert('clicked');
+        if (formNum < 2 ){
+            setFormNum(formNum++);
+        } else {
+            setBtnText('Submit');
+        }
+    } 
     return (
         <Aux>
             <Navbar bgColor='#FAFAFB' core />
@@ -51,16 +87,19 @@ function StudentForm(props) {
                         </span> */}
                         <div className="inputs">
                             {fields.map((item, i) => {
-                                return (
-                                    <Field
-                                        key={item.name}
-                                        {...item} />
-                                )
+                                let displayItem;
+                                if (item.displayNum === formNum){
+                                    displayItem = <Field
+                                                    key={item.name}
+                                                    {...item} />
+                                }
+                                return displayItem;
                             })}
                         </div>
                         <div className="btn">
                             <Button
-                                name="Next"
+                                click={onBtnClick}
+                                name={btnText}
                                 size='1.2rem'
                                 bgcolor='#55BC7E'
                                 color='white'

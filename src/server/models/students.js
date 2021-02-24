@@ -9,6 +9,14 @@ const studentSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    course: {
+        type: String,
+        required: true
+    },
+    year: {
+        type: String,
+        required: true
+    },
     profileImage: {
         type: String,
         required: true
@@ -26,10 +34,6 @@ const studentSchema = mongoose.Schema({
         required: true
     },
     twitter: {
-        type: String,
-        required: false
-    },
-    email: {
         type: String,
         required: false
     }

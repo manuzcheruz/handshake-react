@@ -13,7 +13,7 @@ function Button(props) {
                 fontSize: `${props.size}`,
                 padding: '5px 10px'
             }}
-            onClick={props.createMessage}
+            onClick={props.click}
             >
                 {props.name}
                 {props.icon && <span style={{
