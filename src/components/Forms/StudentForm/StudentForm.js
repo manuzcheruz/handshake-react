@@ -3,6 +3,7 @@ import { Cap, Student } from '../../../Assets/illustrators'
 import Aux from '../../../hoc/Aux'
 import Navbar from '../../Navbar/Navbar'
 import Button from '../../../Shared/Button/Button'
+import Fade from 'react-reveal/Fade';
 
 import './StudentForm.css'
 import Field from '../../../Shared/Field/Field'
@@ -52,12 +53,32 @@ const fields = [
 function StudentForm(props) {
     let [formNum, setFormNum] = useState(0);
     const [btnText, setBtnText] = useState('Next');
+    const [backBtnShow, setBackBtnShow] = useState('none');
+    const [fadeDirection, setFadeDirection] = useState('start');
+    // next btn click
     const onBtnClick = () => {
-        alert('clicked');
-        if (formNum < 2 ){
-            setFormNum(formNum++);
-        } else {
+        setFadeDirection('right');
+        const newFormNum = ++formNum;
+        if (newFormNum <= 1 ){
+            setFormNum(newFormNum);
+            setBackBtnShow('block');
+        } 
+        if (newFormNum === 1){
             setBtnText('Submit');
+        }
+    } 
+    // back btn
+    const onBackBtnClick = () => {
+        setFadeDirection('left');
+        const newFormNum = --formNum;
+        if (newFormNum <= 1 ){
+            setFormNum(newFormNum);
+        } 
+        if (newFormNum === 0){
+            setBackBtnShow('none');
+            setBtnText('Next');
+        } else if (newFormNum < 1){
+            setBtnText('Next');
         }
     } 
     return (
@@ -82,20 +103,61 @@ function StudentForm(props) {
                         </div>
                         <div className="image-top">
                         </div>
-                        {/* <span className="edit" style={{marginLeft: '400px', marginTop: '-20px'}}>
-                            <Edit height={20} color='grey' />
-                        </span> */}
                         <div className="inputs">
                             {fields.map((item, i) => {
                                 let displayItem;
                                 if (item.displayNum === formNum){
-                                    displayItem = <Field
-                                                    key={item.name}
-                                                    {...item} />
+                                    displayItem = {...fadeDirection === 'right' ?
+                                                    <Fade right key={item.name}>
+                                                        <Field
+                                                            {...item} />
+                                                    </Fade>
+                                                    : fadeDirection === 'left' ?
+                                                    <Fade left key={item.name}>
+                                                        <Field
+                                                            {...item} />
+                                                    </Fade>
+                                                    :
+                                                    <Fade key={item.name}>
+                                                        <Field
+                                                            {...item} />
+                                                    </Fade>
+                                                    }
                                 }
                                 return displayItem;
                             })}
                         </div>
+                        {fadeDirection === 'right' ?
+                            <Fade right>
+                                <div className="btn" style={{display: `${backBtnShow}`}}>
+                                    <Button
+                                        click={onBackBtnClick}
+                                        name='Back'
+                                        size='1.2rem'
+                                        bgcolor='#FF9066'
+                                        color='white'
+                                        border='none'
+                                        width='367px'
+                                        radius='5px'
+                                        height='40px' />
+                                </div>
+                            </Fade>
+                        :
+                        <Fade left>
+                            <div className="btn" style={{display: `${backBtnShow}`}}>
+                                <Button
+                                    click={onBackBtnClick}
+                                    name='back'
+                                    size='1.2rem'
+                                    bgcolor='#55BC7E'
+                                    color='white'
+                                    border='none'
+                                    width='367px'
+                                    radius='5px'
+                                    height='40px' />
+                            </div>
+                        </Fade>
+                    }
                         <div className="btn">
                             <Button
                                 click={onBtnClick}
