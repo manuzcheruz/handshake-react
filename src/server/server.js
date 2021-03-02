@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.get('/home', (req, res) => {
     res.send('testing express');
 })
-app.use('/students', studentsRouter);
+app.use('/student', studentsRouter);
 app.use('/jobs', jobsRouter);
 app.use('/companies', companiesRouter);
 app.use('/centers', centersRouter);

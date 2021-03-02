@@ -60,3 +60,11 @@
     margin-top: 10px;
     margin-left: 5%;
 }
+
+/* making the page responsive */
+@media only screen and (max-width: 400px){
+    .container-student-form {
+        width: 95%;
+        
+    }
+}

@@ -1,4 +1,6 @@
 import React from 'react'
+import { withFormik } from 'formik';
+import * as Yup from 'yup';
 import { JobHunt, JobOffer } from '../../../Assets/illustrators'
 import Aux from '../../../hoc/Aux'
 import Navbar from '../../Navbar/Navbar'
@@ -9,7 +11,7 @@ import Field from '../../../Shared/Field/Field'
 
 const fields = [
     {
-        name: 'name',
+        name: 'title',
         elementName: 'input',
         elementType: 'text',
         placeholder: 'e.g Software Engineer',
@@ -37,22 +39,7 @@ const fields = [
         label: 'Description'
     }
 ]
-
-// const fields2 = [
-//     {
-//         name: 'description',
-//         elementName: 'editor',
-//         elementType: 'editor',
-//         placeholder: 'Describe your job listing here',
-//         label: 'Description'
-//     }
-// ]
 function StudentForm(props) {
-    // const [show, setShow] = useState('block')
-
-    // const onClickBtn = () => {
-    //     setShow('');
-    // }
     return (
         <Aux>
             <Navbar bgColor='#FAFAFB' core />
@@ -83,19 +70,13 @@ function StudentForm(props) {
                                 return (
                                     <Field
                                         key={item.name}
-                                        {...item} />
+                                        {...item}
+                                        {...props}
+                                        value={props.values[item.name]}
+                                        onChange={props.onChange} />
                                 )
                             })}
                         </div>
-                        {/* <div className="inputs2" style={{display: `${show ? 'none' : 'block'}`}}>
-                            {fields2.map((item, i) => {
-                                return (
-                                    <Field
-                                        key={item.name}
-                                        {...item} />
-                                )
-                            })}
-                        </div> */}
                         <div className="btn">
                             <Button
                                 name="Next"
@@ -106,7 +87,7 @@ function StudentForm(props) {
                                 width='367px'
                                 radius='5px'
                                 height='40px'
-                                // createMessage={onClickBtn} 
+                                // click={onBtnClick} 
                                     />
                         </div>
                     </div>
@@ -116,4 +97,27 @@ function StudentForm(props) {
     )
 }
 
-export default StudentForm
+export default withFormik({
+    mapPropsToValues: () => ({
+        title: '',
+        location: '',
+        slots: null,
+        description: '',
+        company: '',
+        logo: null,
+        backgroundImage: null,
+        twitter: '',
+        category: ''
+    }),
+    validationSchema: Yup.object().shape({
+        title: Yup.string(),
+        location: Yup.string(),
+        slots: Yup.string(),
+        description: Yup.string(),
+        company: Yup.string(),
+        logo: Yup.string(),
+        backgroundImage: Yup.string(),
+        twitter: Yup.string(),
+        category: Yup.string()
+    })
+})(StudentForm);

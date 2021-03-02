@@ -31,7 +31,10 @@ function Field(props) {
                     type={props.elementType}
                     placeholder={props.placeholder}
                     style={{height: `${props.height}`, width: `${props.width}`, border: `${props.border}`}}
+                    value={props.value}
+                    onChange={props.onChange}
                 />
+                {(props.touched && props.errors[props.name]) && <small style={{fontSize: '0.6rem', color: 'red'}}>{props.errors[props.name]}</small>}
             </div>
         )
     } else {

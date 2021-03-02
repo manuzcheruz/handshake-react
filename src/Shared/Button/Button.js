@@ -14,6 +14,7 @@ function Button(props) {
                 padding: '5px 10px'
             }}
             onClick={props.click}
+            type={props.type}
             >
                 {props.name}
                 {props.icon && <span style={{
