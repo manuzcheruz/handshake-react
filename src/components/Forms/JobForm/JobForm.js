@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
 import { JobHunt, JobOffer } from '../../../Assets/illustrators'
@@ -15,29 +15,81 @@ const fields = [
         elementName: 'input',
         elementType: 'text',
         placeholder: 'e.g Software Engineer',
-        label: 'Job Title'
+        label: 'Job Title',
+        level: 0
     },
     {
         name: 'location',
         elementName: 'input',
         elementType: 'text',
         placeholder: 'e.g Nairobi, Kenya',
-        label: 'Location'
+        label: 'Location',
+        level: 0
     },
     {
         name: 'slots',
         elementName: 'input',
         elementType: 'text',
         placeholder: 'e.g 25 slots available',
-        label: 'Slots'
+        label: 'Slots',
+        level: 1
     },
     {
         name: 'description',
-        elementName: 'editor',
+        elementName: 'input',
         elementType: '',
         placeholder: 'Describe your job listing here',
-        label: 'Description'
-    }
+        label: 'Description',
+        level: 1
+    },
+    {
+        name: 'company',
+        elementName: 'input',
+        elementType: '',
+        placeholder: 'e.g Apple',
+        label: 'Company',
+        level: 0
+    },
+    {
+        name: 'category',
+        elementName: 'input',
+        elementType: '',
+        placeholder: '',
+        label: 'Category',
+        level: 0
+    },
+    {
+        name: 'salary',
+        elementName: 'input',
+        elementType: '',
+        placeholder: 'e.g $200/month',
+        label: 'Salary',
+        level: 2
+    },
+    {
+        name: 'type',
+        elementName: 'input',
+        elementType: '',
+        placeholder: '',
+        label: 'Employment type',
+        level: 2
+    },
+    {
+        name: 'experience',
+        elementName: 'input',
+        elementType: '',
+        placeholder: '',
+        label: 'Experience',
+        level: 2
+    },
+    {
+        name: 'level',
+        elementName: 'input',
+        elementType: '',
+        placeholder: '',
+        label: 'Work Level',
+        level: 2
+    },
 ]
 function StudentForm(props) {
     return (
@@ -67,6 +119,7 @@ function StudentForm(props) {
                         </span> */}
                         <div className="inputs">
                             {fields.map((item, i) => {
+
                                 return (
                                     <Field
                                         key={item.name}
@@ -104,10 +157,11 @@ export default withFormik({
         slots: null,
         description: '',
         company: '',
-        logo: null,
-        backgroundImage: null,
-        twitter: '',
-        category: ''
+        category: '',
+        salary: '',
+        type: '',
+        level: '',
+        experience: ''
     }),
     validationSchema: Yup.object().shape({
         title: Yup.string(),

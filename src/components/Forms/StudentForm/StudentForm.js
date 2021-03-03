@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Cap, Student } from '../../../Assets/illustrators'
+import { Cap, Student, Teacher, Deal, JobOffer, JobHunt, Hiring, BookLover } from '../../../Assets/illustrators'
 import Aux from '../../../hoc/Aux'
 import Navbar from '../../Navbar/Navbar'
 import Button from '../../../Shared/Button/Button'
@@ -10,14 +10,14 @@ import * as Yup from 'yup';
 import './StudentForm.css'
 import Field from '../../../Shared/Field/Field'
 
-const fields = [
+const studentFields = [
     {
         name: 'name',
         elementName: 'input',
         elementType: 'text',
         placeholder: 'e.g John Doe',
         label: 'Full Name',
-        displayNum: 0
+        level: 0
     },
     {
         name: 'campus',
@@ -25,7 +25,7 @@ const fields = [
         elementType: 'text',
         placeholder: 'e.g University of Nairobi',
         label: 'Campus',
-        displayNum: 0
+        level: 0
     },
     {
         name: 'course',
@@ -33,7 +33,7 @@ const fields = [
         elementType: 'text',
         placeholder: 'e.g Bsc. Geomatic Engineering',
         label: 'Course',
-        displayNum: 0
+        level: 0
     },
     {
         name: 'description',
@@ -41,7 +41,7 @@ const fields = [
         elementType: 'text',
         placeholder: 'describe yourself in 1000 characters or less',
         label: 'Description',
-        displayNum: 1
+        level: 1
     },
     {
         name: 'twitter',
@@ -49,10 +49,207 @@ const fields = [
         elementType: 'text',
         placeholder: 'e.g @johndoe',
         label: 'Course',
-        displayNum: 1
+        level: 1
     }
 ]
-function StudentForm(props) {
+
+const jobFields = [
+    {
+        name: 'title',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'e.g Software Engineer',
+        label: 'Job Title',
+        level: 0
+    },
+    {
+        name: 'location',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'e.g Nairobi, Kenya',
+        label: 'Location',
+        level: 0
+    },
+    {
+        name: 'slots',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'e.g 25 slots available',
+        label: 'Slots',
+        level: 1
+    },
+    {
+        name: 'description',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'Describe your job listing here',
+        label: 'Description',
+        level: 1
+    },
+    {
+        name: 'company',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'e.g Apple',
+        label: 'Company',
+        level: 0
+    },
+    {
+        name: 'category',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: '',
+        label: 'Category',
+        level: 0
+    },
+    {
+        name: 'salary',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'e.g $200/month',
+        label: 'Salary',
+        level: 2
+    },
+    {
+        name: 'type',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: '',
+        label: 'Employment type',
+        level: 2
+    },
+    {
+        name: 'experience',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: '',
+        label: 'Experience',
+        level: 2
+    },
+    {
+        name: 'level',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: '',
+        label: 'Work Level',
+        level: 2
+    },
+]
+
+const centerFields = [
+    {
+        name: 'name',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'e.g Univeristy of Nairobi',
+        label: 'Campus Name',
+        level: 0
+    },
+    {
+        name: 'logo',
+        elementName: 'input',
+        elementType: 'file',
+        placeholder: '',
+        label: 'Campus Logo',
+        level: 0
+    },
+    {
+        name: 'backgroundImage',
+        elementName: 'input',
+        elementType: 'file',
+        placeholder: '',
+        label: 'Background Image',
+        level: 0
+    },
+    {
+        name: 'location',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: '',
+        label: 'Location',
+        level: 0
+    },
+    {
+        name: 'description',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'Describe your campus here',
+        label: 'Description',
+        level: 1
+    },
+    {
+        name: 'twitter',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'e.g @uon',
+        label: 'Twitter',
+        level: 1
+    }
+]
+
+const companyFields = [
+    {
+        name: 'name',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'e.g Apple Inc.',
+        label: 'Company Name',
+        level: 0
+    },
+    {
+        name: 'logo',
+        elementName: 'input',
+        elementType: 'file',
+        placeholder: '',
+        label: 'Company Logo',
+        level: 0
+    },
+    {
+        name: 'backgroundImage',
+        elementName: 'input',
+        elementType: 'file',
+        placeholder: '',
+        label: 'Background Image',
+        level: 0
+    },
+    {
+        name: 'location',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: '',
+        label: 'Location',
+        level: 0
+    },
+    {
+        name: 'description',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'Describe your company here',
+        label: 'Description',
+        level: 1
+    },
+    {
+        name: 'twitter',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'e.g @apple',
+        label: 'Twitter',
+        level: 1
+    }
+]
+function RegistrationForm(props) {
+    // first assign the fields to the right form first
+    let fields;
+    if (props.job){
+        fields = jobFields;
+    } else if (props.student){
+        fields = studentFields;
+    } else if (props.center){
+        fields = centerFields;
+    } else if (props.company){
+        fields = companyFields
+    }
+
     let [formNum, setFormNum] = useState(0);
     const [btnText, setBtnText] = useState('Next');
     const [btnType, setBtnType] = useState('button');
@@ -62,16 +259,27 @@ function StudentForm(props) {
     // submit the form and send a copy of it to redux store so as to be accessed in the student detail without server request
     const onFormSubmit = (event) => {
         event.preventDefault();
-        const data = {
-            name: props.values.name,
-            campus: props.values.campus,
-            course: props.values.course,
-            description: props.values.description,
-            twitter: props.values.twitter
-        }
         if (props.values.description !== ''){
+            let url;
+            let data;
+            if (props.job){
+                url = '/job/create';
+            } else if (props.student){
+                url = 'student/create';
+                data = {
+                    name: props.values.name,
+                    campus: props.values.campus,
+                    course: props.values.course,
+                    description: props.values.description,
+                    twitter: props.values.twitter
+                }
+            } else if (props.center){
+                url = 'center/create';
+            } else if (props.company){
+                url = 'company/create';
+            }
             // grab the values of the fields in the props, make a request to express js to save it in the db
-            fetch('/student/create', {
+            fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -91,27 +299,50 @@ function StudentForm(props) {
     const onBtnClick = () => {
         setFadeDirection('right');
         const newFormNum = ++formNum;
-        if (newFormNum <= 1 ){
-            setFormNum(newFormNum);
-            setBackBtnShow('block');
-        } 
-        if (newFormNum === 1){
-            setBtnText('Submit');
-            setBtnType('submit');
+        if (props.job){
+            if (newFormNum <= 2 ){
+                setFormNum(newFormNum);
+                setBackBtnShow('block');
+            } 
+            if (newFormNum === 2){
+                setBtnText('Submit');
+                setBtnType('submit');
+            }
+        } else if (props.student || props.center || props.company){
+            if (newFormNum <= 1 ){
+                setFormNum(newFormNum);
+                setBackBtnShow('block');
+            } 
+            if (newFormNum === 1){
+                setBtnText('Submit');
+                setBtnType('submit');
+            }
         }
     } 
     // back btn
     const onBackBtnClick = () => {
         setFadeDirection('left');
         const newFormNum = --formNum;
-        if (newFormNum <= 1 ){
-            setFormNum(newFormNum);
-        } 
-        if (newFormNum === 0){
-            setBackBtnShow('none');
-            setBtnText('Next');
-        } else if (newFormNum < 1){
-            setBtnText('Next');
+        if (props.job){
+            if (newFormNum <= 2 ){
+                setFormNum(newFormNum);
+            } 
+            if (newFormNum === 0){
+                setBackBtnShow('none');
+                setBtnText('Next');
+            } else if (newFormNum < 2){
+                setBtnText('Next');
+            }
+        } else if (props.student || props.center || props.company){
+            if (newFormNum <= 1 ){
+                setFormNum(newFormNum);
+            } 
+            if (newFormNum === 0){
+                setBackBtnShow('none');
+                setBtnText('Next');
+            } else if (newFormNum < 1){
+                setBtnText('Next');
+            }
         }
     }
     return (
@@ -121,26 +352,50 @@ function StudentForm(props) {
                 <div className='container-student-form'>
                     <div className="bottom-student-form">
                         <div className="student">
-                            <Student height={500} />
+                            {props.job ? 
+                                <JobOffer height={500} /> :
+                                props.student ? 
+                                <Student height={500} /> :
+                                props.center ?
+                                <Teacher height={500} /> :
+                                <Deal height={500} />
+                            }
                         </div>
                         <div className="cap" style={{marginLeft: '455px', marginTop: '200px'}}>
-                            <Cap height={150} />
+                            {props.job ? 
+                                <JobHunt height={150} /> :
+                                props.student ? 
+                                <Cap height={150} /> :
+                                props.center ?
+                                <BookLover height={150} /> :
+                                <Hiring height={150} />
+                            }
                         </div>
                     </div>
                     <div className="top-student-form">
                         <form onSubmit={event => onFormSubmit(event)}>
                             <div className="title">
-                                Student Registration
+                                {props.job ? 'Job Registration' : props.student ? 'Student Registration' : props.center ? 'Center Registration' : 'Company Registration'}
                             </div>
                             <div className='sub-title'>
-                                Tell us abit about yourself so we can easily match you with the best jobs and everything really
+                                {props.job ? 
+                                'Describe the job listing below so it can be easy to match it with the right candidates, you want that right?' :
+                                props.student ?
+                                'Tell us abit about yourself so we can easily match you with the best jobs and everything really' :
+                                props.center ?
+                                'Tell us abit about your campus so students and employers can easily interract with you':
+                                'Tell us abit about your company so we can easily match you with the best students and everything really'
+                                }
                             </div>
-                            <div className="image-top">
-                            </div>
+                            {!props.job 
+                                && 
+                                <div className="image-top">
+                                </div>
+                            }
                             <div className="inputs">
                                 {fields.map((item, i) => {
                                     let displayItem;
-                                    if (item.displayNum === formNum){
+                                    if (item.level === formNum){
                                         displayItem = {...fadeDirection === 'right' ?
                                                         <Fade right key={item.name}>
                                                             <Field
@@ -251,4 +506,4 @@ export default withFormik({
             .required('required!'),
         twitter: Yup.string()
     })
-})(StudentForm);
+})(RegistrationForm);
