@@ -38,18 +38,20 @@ function Field(props) {
             </div>
         )
     } else {
-        <div className="field-item-">
-                <div className="label">
-                    {props.label}
+        field = (
+            <div className="field-item-">
+                    <div className="label">
+                        {props.label}
+                    </div>
+                    <Editor
+                        name={props.name}
+                        type={props.elementType}
+                        placeholder={props.placeholder}
+                        apiKey="doh7uvi94w8ejme39aoeql00wr4wtwf5303k0o30lw2751ez"
+                        // style={{height: `${props.height}`, width: `${props.width}`, border: `${props.border}`}}
+                    />
                 </div>
-                <Editor
-                    name={props.name}
-                    type={props.elementType}
-                    placeholder={props.placeholder}
-                    apiKey="doh7uvi94w8ejme39aoeql00wr4wtwf5303k0o30lw2751ez"
-                    // style={{height: `${props.height}`, width: `${props.width}`, border: `${props.border}`}}
-                />
-            </div>
+                )
     }
     return field
 }

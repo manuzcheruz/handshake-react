@@ -37,7 +37,7 @@ const studentFields = [
     },
     {
         name: 'description',
-        elementName: 'input',
+        elementName: 'editor',
         elementType: 'text',
         placeholder: 'describe yourself in 1000 characters or less',
         label: 'Description',
@@ -351,89 +351,116 @@ function RegistrationForm(props) {
             <div className="section" style={{backgroundColor: '#FAFAFB'}}>
                 <div className='container-student-form'>
                     <div className="bottom-student-form">
-                        <div className="student">
-                            {props.job ? 
-                                <JobOffer height={500} /> :
-                                props.student ? 
-                                <Student height={500} /> :
-                                props.center ?
-                                <Teacher height={500} /> :
-                                <Deal height={500} />
-                            }
-                        </div>
-                        <div className="cap" style={{marginLeft: '455px', marginTop: '200px'}}>
-                            {props.job ? 
-                                <JobHunt height={150} /> :
-                                props.student ? 
-                                <Cap height={150} /> :
-                                props.center ?
-                                <BookLover height={150} /> :
-                                <Hiring height={150} />
-                            }
-                        </div>
-                    </div>
-                    <div className="top-student-form">
-                        <form onSubmit={event => onFormSubmit(event)}>
-                            <div className="title">
-                                {props.job ? 'Job Registration' : props.student ? 'Student Registration' : props.center ? 'Center Registration' : 'Company Registration'}
-                            </div>
-                            <div className='sub-title'>
+                        <Fade left>
+                            <div className="student">
                                 {props.job ? 
-                                'Describe the job listing below so it can be easy to match it with the right candidates, you want that right?' :
-                                props.student ?
-                                'Tell us abit about yourself so we can easily match you with the best jobs and everything really' :
-                                props.center ?
-                                'Tell us abit about your campus so students and employers can easily interract with you':
-                                'Tell us abit about your company so we can easily match you with the best students and everything really'
+                                    <JobOffer height={500} /> :
+                                    props.student ? 
+                                    <Student height={500} /> :
+                                    props.center ?
+                                    <Teacher height={500} /> :
+                                    <Deal height={500} />
                                 }
                             </div>
-                            {!props.job 
-                                && 
-                                <div className="image-top">
-                                </div>
-                            }
-                            <div className="inputs">
-                                {fields.map((item, i) => {
-                                    let displayItem;
-                                    if (item.level === formNum){
-                                        displayItem = {...fadeDirection === 'right' ?
-                                                        <Fade right key={item.name}>
-                                                            <Field
-                                                                {...item}
-                                                                {...props}
-                                                                value={props.values[item.name]}
-                                                                onChange={props.handleChange} />
-                                                        </Fade>
-                                                        : fadeDirection === 'left' ?
-                                                        <Fade left key={item.name}>
-                                                            <Field
-                                                                {...item}
-                                                                {...props}
-                                                                value={props.values[item.name]}
-                                                                onChange={props.handleChange} />
-                                                        </Fade>
-                                                        :
-                                                        <Fade key={item.name}>
-                                                            <Field
-                                                                {...item}
-                                                                {...props}
-                                                                value={props.values[item.name]}
-                                                                onChange={props.handleChange} />
-                                                        </Fade>
-                                                        }
-                                    }
-                                    return displayItem;
-                                })}
+                        </Fade>
+                        <Fade right>
+                            <div className="cap" style={{marginLeft: '455px', marginTop: '200px'}}>
+                                {props.job ? 
+                                    <JobHunt height={150} /> :
+                                    props.student ? 
+                                    <Cap height={150} /> :
+                                    props.center ?
+                                    <BookLover height={150} /> :
+                                    <Hiring height={150} />
+                                }
                             </div>
-                            {fadeDirection === 'right' ?
-                                <Fade right>
+                        </Fade>
+                    </div>
+                    <Fade>
+                        <div className="top-student-form">
+                            <form onSubmit={event => onFormSubmit(event)}>
+                                <div className="title">
+                                    {props.job ? 'Job Registration' : props.student ? 'Student Registration' : props.center ? 'Center Registration' : 'Company Registration'}
+                                </div>
+                                <div className='sub-title'>
+                                    {props.job ? 
+                                    'Describe the job listing below so it can be easy to match it with the right candidates, you want that right?' :
+                                    props.student ?
+                                    'Tell us abit about yourself so we can easily match you with the best jobs and everything really' :
+                                    props.center ?
+                                    'Tell us abit about your campus so students and employers can easily interract with you':
+                                    'Tell us abit about your company so we can easily match you with the best students and everything really'
+                                    }
+                                </div>
+                                {/* {!props.job 
+                                    && 
+                                    <div className="image-top">
+                                    </div>
+                                } */}
+                                <div className="inputs">
+                                    {/* <div className="input-wrapper" style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '20px'}}>
+                                        <div style={{width: '200px'}}>
+
+                                        </div>
+
+                                    </div> */}
+                                    {fields.map((item, i) => {
+                                        let displayItem;
+                                        if (item.level === formNum){
+                                            displayItem = {...fadeDirection === 'right' ?
+                                                            <Fade right key={item.name}>
+                                                                <Field
+                                                                    {...item}
+                                                                    {...props}
+                                                                    value={props.values[item.name]}
+                                                                    onChange={props.handleChange} />
+                                                            </Fade>
+                                                            : fadeDirection === 'left' ?
+                                                            <Fade left key={item.name}>
+                                                                <Field
+                                                                    {...item}
+                                                                    {...props}
+                                                                    value={props.values[item.name]}
+                                                                    onChange={props.handleChange} />
+                                                            </Fade>
+                                                            :
+                                                            <Fade key={item.name}>
+                                                                <Field
+                                                                    {...item}
+                                                                    {...props}
+                                                                    value={props.values[item.name]}
+                                                                    onChange={props.handleChange} />
+                                                            </Fade>
+                                                            }
+                                        }
+                                        return displayItem;
+                                    })}
+                                </div>
+                                {fadeDirection === 'right' ?
+                                    <Fade right>
+                                        <div className="btn" style={{display: `${backBtnShow}`}}>
+                                            <Button
+                                                type="button"
+                                                click={onBackBtnClick}
+                                                name='Back'
+                                                size='1.2rem'
+                                                bgcolor='#FF9066'
+                                                color='white'
+                                                border='none'
+                                                width='367px'
+                                                radius='5px'
+                                                height='40px' />
+                                        </div>
+                                    </Fade>
+                                :
+                                <Fade left>
                                     <div className="btn" style={{display: `${backBtnShow}`}}>
                                         <Button
                                             type="button"
                                             click={onBackBtnClick}
-                                            name='Back'
+                                            name='back'
                                             size='1.2rem'
-                                            bgcolor='#FF9066'
+                                            bgcolor='#55BC7E'
                                             color='white'
                                             border='none'
                                             width='367px'
@@ -441,13 +468,12 @@ function RegistrationForm(props) {
                                             height='40px' />
                                     </div>
                                 </Fade>
-                            :
-                            <Fade left>
-                                <div className="btn" style={{display: `${backBtnShow}`}}>
+                            }
+                                <div className="btn">
                                     <Button
-                                        type="button"
-                                        click={onBackBtnClick}
-                                        name='back'
+                                        type={btnType}
+                                        click={onBtnClick}
+                                        name={btnText}
                                         size='1.2rem'
                                         bgcolor='#55BC7E'
                                         color='white'
@@ -456,23 +482,9 @@ function RegistrationForm(props) {
                                         radius='5px'
                                         height='40px' />
                                 </div>
-                            </Fade>
-                        }
-                            <div className="btn">
-                                <Button
-                                    type={btnType}
-                                    click={onBtnClick}
-                                    name={btnText}
-                                    size='1.2rem'
-                                    bgcolor='#55BC7E'
-                                    color='white'
-                                    border='none'
-                                    width='367px'
-                                    radius='5px'
-                                    height='40px' />
-                            </div>
-                        </form>
-                    </div>
+                            </form>
+                        </div>
+                    </Fade>
                 </div>
             </div>
         </Aux>
