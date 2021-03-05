@@ -48,7 +48,7 @@ const studentFields = [
         elementName: 'input',
         elementType: 'text',
         placeholder: 'e.g @johndoe',
-        label: 'Course',
+        label: 'Twitter',
         level: 1
     }
 ]
