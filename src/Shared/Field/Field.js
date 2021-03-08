@@ -20,7 +20,7 @@ function Field(props) {
                 </label>
             </div>
         )
-    } else if (props.elementName === 'input') {
+    } else if (props.elementName === 'input' && props.elementType !== 'file') {
         field = (
             <div className="field-item">
                 <div className="label">
@@ -37,6 +37,23 @@ function Field(props) {
                 {(props.touched && props.errors[props.name]) && <small style={{fontSize: '0.6rem', color: 'red'}}>{props.errors[props.name]}</small>}
             </div>
         )
+    } else if (props.elementType === 'file') {
+        field = (
+            <div className="field-item">
+                <div className="label">
+                    {props.label}
+                </div>
+                <input
+                    name={props.name}
+                    type={props.elementType}
+                    // placeholder={props.placeholder}
+                    style={{height: `${props.height}`, width: `${props.width}`, border: 'none', borderRadius: '0px'}}
+                    value={props.value}
+                    onChange={event => props.onFileChange(event)}
+                />
+                {(props.touched && props.errors[props.name]) && <small style={{fontSize: '0.6rem', color: 'red'}}>{props.errors[props.name]}</small>}
+            </div>
+        )
     } else {
         field = (
             <div className="field-item-">
@@ -44,11 +61,20 @@ function Field(props) {
                         {props.label}
                     </div>
                     <Editor
-                        name={props.name}
-                        type={props.elementType}
-                        placeholder={props.placeholder}
+                        initialValue="<p>Describe yourself here</p>"
+                        init={{
+                            // height: 300,
+                            menubar: false,
+                            plugins: [
+                                'advlist autolink lists link image charmap print preview anchor',
+                                'searchreplace visualblocks code fullscreen',
+                                'insertdatetime media table paste code help wordcount'
+                            ],
+                            toolbar:
+                                'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help'
+                        }}
+                        onEditorChange={props.handleEditorChange}
                         apiKey="doh7uvi94w8ejme39aoeql00wr4wtwf5303k0o30lw2751ez"
-                        // style={{height: `${props.height}`, width: `${props.width}`, border: `${props.border}`}}
                     />
                 </div>
                 )

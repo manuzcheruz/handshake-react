@@ -14,12 +14,13 @@
     position: absolute;
     z-index: 2;
     height: 600px;
-    width: 400px;
-    /* background-color: white; */
+    width: 800px;
+    background-color: rgba(250, 245, 245, 0.7);
     margin-top: 10px;
-    margin-left: 40%;
+    margin-left: 23%;
     border-radius: 15px;
-    /* opacity: 0.9; */
+    /* opacity: 0.2; */
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 
 }
 
@@ -38,12 +39,36 @@
 }
 
 .top-student-form .image-top {
-    margin-top: 20px;
-    height: 150px;
-    width: 150px;
-    background-color: grey;
+    margin-top: 30px;
+    height: 110px;
+    width: 110px;
+    /* background-color: grey; */
+    border: '2px solid grey';
     border-radius: 50%;
-    margin-left: 34%;
+    margin-left: 42%;
+    position: absolute;
+    z-index: 5;
+}
+
+.top-student-form .image-top img {
+    overflow: hidden;
+    height: 100%;
+    border: '2px solid grey';
+    border-radius: 50%;
+}
+
+.top-student-form .image-bg {
+    margin-top: 10px;
+    height: 100px;
+    width: 90%;
+    overflow-y: hidden;
+    margin-left: 5%;
+}
+
+.top-student-form .image-bg img {
+    width: 100%;
+    border-radius: 10px;
+    /* overflow: hidden; */
 }
 
 .top-student-form .inputs {

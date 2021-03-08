@@ -17,8 +17,7 @@ const fields = [
         name: 'search',
         elementName: 'input',
         elementType: 'text',
-        placeholder: 'Enter job keyword',
-        // label: 'Your e-mail'
+        placeholder: 'Enter job keyword'
     }
 ]
 
@@ -66,25 +65,25 @@ const levelFilters = [
         name: 'freshman',
         elementName: 'input',
         elementType: 'checkbox',
-        label: 'Freshman Level'
+        label: 'First Year'
     },
     {
         name: 'sophomore',
         elementName: 'input',
         elementType: 'checkbox',
-        label: 'Sophomore Level'
+        label: 'Second Year'
     },
     {
         name: 'junior',
         elementName: 'input',
         elementType: 'checkbox',
-        label: 'Junior Level'
+        label: 'Third Year'
     },
     {
         name: 'senior',
         elementName: 'input',
         elementType: 'checkbox',
-        label: 'Senior Level'
+        label: 'Final Year'
     },
     {
         name: 'graduate',
@@ -99,31 +98,31 @@ const salaryFilters = [
         name: 'first',
         elementName: 'input',
         elementType: 'checkbox',
-        label: 'less than $100'
+        label: 'less than ksh 10,000'
     },
     {
         name: 'second',
         elementName: 'input',
         elementType: 'checkbox',
-        label: '$100 - $200'
+        label: 'ksh 10,000 - ksh 20,000'
     },
     {
         name: 'third',
         elementName: 'input',
         elementType: 'checkbox',
-        label: '$200 - $300'
+        label: 'ksh 20,000 - ksh 30,000'
     },
     {
         name: 'senior',
         elementName: 'input',
         elementType: 'checkbox',
-        label: '$300 - $500'
+        label: 'ksh 30,000 - ksh 50,000'
     },
     {
         name: 'graduate',
         elementName: 'input',
         elementType: 'checkbox',
-        label: 'over $500'
+        label: 'over ksh 50,000'
     }
 ]
 

@@ -12,12 +12,31 @@ import Field from '../../../Shared/Field/Field'
 
 const studentFields = [
     {
+        name: 'logo',
+        elementName: 'input',
+        elementType: 'file',
+        // placeholder: 'e.g John Doe',
+        label: 'Profile Image',
+        level: 0,
+        position: 'left'
+    },
+    {
+        name: 'backgroundImage',
+        elementName: 'input',
+        elementType: 'file',
+        // placeholder: 'e.g John Doe',
+        label: 'Background Image',
+        level: 0,
+        position: 'right'
+    },
+    {
         name: 'name',
         elementName: 'input',
         elementType: 'text',
         placeholder: 'e.g John Doe',
         label: 'Full Name',
-        level: 0
+        level: 0,
+        position: 'left'
     },
     {
         name: 'campus',
@@ -25,7 +44,8 @@ const studentFields = [
         elementType: 'text',
         placeholder: 'e.g University of Nairobi',
         label: 'Campus',
-        level: 0
+        level: 0,
+        position: 'right'
     },
     {
         name: 'course',
@@ -33,7 +53,8 @@ const studentFields = [
         elementType: 'text',
         placeholder: 'e.g Bsc. Geomatic Engineering',
         label: 'Course',
-        level: 0
+        level: 1,
+        position: 'left'
     },
     {
         name: 'description',
@@ -49,7 +70,17 @@ const studentFields = [
         elementType: 'text',
         placeholder: 'e.g @johndoe',
         label: 'Twitter',
-        level: 1
+        level: 1,
+        position: 'right'
+    },
+    {
+        name: 'year',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: '',
+        label: 'Study Year',
+        level: 1,
+        position: 'left'
     }
 ]
 
@@ -255,9 +286,29 @@ function RegistrationForm(props) {
     const [btnType, setBtnType] = useState('button');
     const [backBtnShow, setBackBtnShow] = useState('none');
     const [fadeDirection, setFadeDirection] = useState('start');
+    const [logo, setLogo] = useState('');
+    const [bgImg, setBgImg] = useState('');
+
+    // handle the content in the editor and assign to description
+    const handleEditorChange = ( content, editor ) => {
+        props.values.description = content;
+    }
+
+    // handle file change and render its preview
+    const handleFileChange = (event) => {
+        if (!props.values.logo){
+            props.values.logo = event.target.value;
+            setLogo(URL.createObjectURL(event.target.files[0]));
+        } else {
+            props.values.backgroundImage = event.target.value;
+            setBgImg(URL.createObjectURL(event.target.files[0]));
+            // console.log(props.values.backgroundImage, props.values.logo);
+        }
+    }
 
     // submit the form and send a copy of it to redux store so as to be accessed in the student detail without server request
     const onFormSubmit = (event) => {
+        // alert('hapa')
         event.preventDefault();
         if (props.values.description !== ''){
             let url;
@@ -265,7 +316,7 @@ function RegistrationForm(props) {
             if (props.job){
                 url = '/job/create';
             } else if (props.student){
-                url = 'student/create';
+                url = '/student/create';
                 data = {
                     name: props.values.name,
                     campus: props.values.campus,
@@ -274,9 +325,9 @@ function RegistrationForm(props) {
                     twitter: props.values.twitter
                 }
             } else if (props.center){
-                url = 'center/create';
+                url = '/center/create';
             } else if (props.company){
-                url = 'company/create';
+                url = '/company/create';
             }
             // grab the values of the fields in the props, make a request to express js to save it in the db
             fetch(url, {
@@ -392,18 +443,18 @@ function RegistrationForm(props) {
                                     'Tell us abit about your company so we can easily match you with the best students and everything really'
                                     }
                                 </div>
-                                {/* {!props.job 
+                                {!props.job 
                                     && 
-                                    <div className="image-top">
-                                    </div>
-                                } */}
-                                <div className="inputs">
-                                    {/* <div className="input-wrapper" style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '20px'}}>
-                                        <div style={{width: '200px'}}>
-
+                                    <Aux>
+                                        <div className="image-top">
+                                            <img alt='' src={logo} />
                                         </div>
-
-                                    </div> */}
+                                        <div className="image-bg">
+                                            <img alt='' src={bgImg} />
+                                        </div>
+                                    </Aux>
+                                }
+                                <div className="inputs">
                                     {fields.map((item, i) => {
                                         let displayItem;
                                         if (item.level === formNum){
@@ -413,7 +464,10 @@ function RegistrationForm(props) {
                                                                     {...item}
                                                                     {...props}
                                                                     value={props.values[item.name]}
-                                                                    onChange={props.handleChange} />
+                                                                    onChange={props.handleChange}
+                                                                    onFileChange={handleFileChange}
+                                                                    handleEditorChange={handleEditorChange}
+                                                                    width='350px' />
                                                             </Fade>
                                                             : fadeDirection === 'left' ?
                                                             <Fade left key={item.name}>
@@ -421,7 +475,10 @@ function RegistrationForm(props) {
                                                                     {...item}
                                                                     {...props}
                                                                     value={props.values[item.name]}
-                                                                    onChange={props.handleChange} />
+                                                                    onChange={props.handleChange}
+                                                                    onFileChange={handleFileChange}
+                                                                    handleEditorChange={handleEditorChange}
+                                                                    width='350px' />
                                                             </Fade>
                                                             :
                                                             <Fade key={item.name}>
@@ -429,7 +486,10 @@ function RegistrationForm(props) {
                                                                     {...item}
                                                                     {...props}
                                                                     value={props.values[item.name]}
-                                                                    onChange={props.handleChange} />
+                                                                    onChange={props.handleChange}
+                                                                    onFileChange={handleFileChange}
+                                                                    handleEditorChange={handleEditorChange}
+                                                                    width='350px' />
                                                             </Fade>
                                                             }
                                         }
@@ -447,7 +507,7 @@ function RegistrationForm(props) {
                                                 bgcolor='#FF9066'
                                                 color='white'
                                                 border='none'
-                                                width='367px'
+                                                width='100px'
                                                 radius='5px'
                                                 height='40px' />
                                         </div>
@@ -463,7 +523,7 @@ function RegistrationForm(props) {
                                             bgcolor='#55BC7E'
                                             color='white'
                                             border='none'
-                                            width='367px'
+                                            width='100px'
                                             radius='5px'
                                             height='40px' />
                                     </div>
@@ -478,7 +538,7 @@ function RegistrationForm(props) {
                                         bgcolor='#55BC7E'
                                         color='white'
                                         border='none'
-                                        width='367px'
+                                        width='100px'
                                         radius='5px'
                                         height='40px' />
                                 </div>
@@ -512,10 +572,10 @@ export default withFormik({
             .min(1, 'course name cannot be empty!')
             .max(200, 'course name is too long!')
             .required('required!'),
-        description: Yup.string()
-            .min(1, 'description cannot be empty!')
-            .max(1000, 'description is too long!')
-            .required('required!'),
+        // description: Yup.string()
+        //     .min(1, 'description cannot be empty!')
+        //     .max(1000, 'description is too long!')
+        //     .required('required!'),
         twitter: Yup.string()
     })
 })(RegistrationForm);
