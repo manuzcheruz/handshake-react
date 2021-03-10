@@ -53,14 +53,14 @@ const studentFields = [
         elementType: 'text',
         placeholder: 'e.g Bsc. Geomatic Engineering',
         label: 'Course',
-        level: 1,
+        level: 0,
         position: 'left'
     },
     {
         name: 'description',
         elementName: 'editor',
-        elementType: 'text',
-        placeholder: 'describe yourself in 1000 characters or less',
+        elementType: '',
+        placeholder: '',
         label: 'Description',
         level: 1
     },
@@ -70,16 +70,16 @@ const studentFields = [
         elementType: 'text',
         placeholder: 'e.g @johndoe',
         label: 'Twitter',
-        level: 1,
+        level: 0,
         position: 'right'
     },
     {
         name: 'year',
         elementName: 'input',
         elementType: 'text',
-        placeholder: '',
+        placeholder: 'e.g 5th year',
         label: 'Study Year',
-        level: 1,
+        level: 0,
         position: 'left'
     }
 ]
@@ -288,6 +288,8 @@ function RegistrationForm(props) {
     const [fadeDirection, setFadeDirection] = useState('start');
     const [logo, setLogo] = useState('');
     const [bgImg, setBgImg] = useState('');
+    const [formHeight, setFormHeight] = useState('360px');
+    const [showImage, setShowImage] = useState('none');
 
     // handle the content in the editor and assign to description
     const handleEditorChange = ( content, editor ) => {
@@ -296,13 +298,16 @@ function RegistrationForm(props) {
 
     // handle file change and render its preview
     const handleFileChange = (event) => {
+        setFormHeight('360px');
         if (!props.values.logo){
             props.values.logo = event.target.value;
             setLogo(URL.createObjectURL(event.target.files[0]));
+            setShowImage('block');
         } else {
             props.values.backgroundImage = event.target.value;
             setBgImg(URL.createObjectURL(event.target.files[0]));
             // console.log(props.values.backgroundImage, props.values.logo);
+            setShowImage('block');
         }
     }
 
@@ -443,18 +448,15 @@ function RegistrationForm(props) {
                                     'Tell us abit about your company so we can easily match you with the best students and everything really'
                                     }
                                 </div>
-                                {!props.job 
-                                    && 
-                                    <Aux>
-                                        <div className="image-top">
-                                            <img alt='' src={logo} />
-                                        </div>
-                                        <div className="image-bg">
-                                            <img alt='' src={bgImg} />
-                                        </div>
-                                    </Aux>
-                                }
-                                <div className="inputs">
+                                
+                                <div className="image-top" style={{display: `${showImage}`}}>
+                                    <img alt='' src={logo} />
+                                </div>
+                                <div className="image-bg" style={{display: `${showImage}`}}>
+                                    <img alt='' src={bgImg} />
+                                </div>
+
+                                <div className="inputs" style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', height: `${formHeight}`}}>
                                     {fields.map((item, i) => {
                                         let displayItem;
                                         if (item.level === formNum){
@@ -467,7 +469,7 @@ function RegistrationForm(props) {
                                                                     onChange={props.handleChange}
                                                                     onFileChange={handleFileChange}
                                                                     handleEditorChange={handleEditorChange}
-                                                                    width='350px' />
+                                                                    width='330px' />
                                                             </Fade>
                                                             : fadeDirection === 'left' ?
                                                             <Fade left key={item.name}>
@@ -478,7 +480,7 @@ function RegistrationForm(props) {
                                                                     onChange={props.handleChange}
                                                                     onFileChange={handleFileChange}
                                                                     handleEditorChange={handleEditorChange}
-                                                                    width='350px' />
+                                                                    width='330px' />
                                                             </Fade>
                                                             :
                                                             <Fade key={item.name}>
@@ -489,7 +491,7 @@ function RegistrationForm(props) {
                                                                     onChange={props.handleChange}
                                                                     onFileChange={handleFileChange}
                                                                     handleEditorChange={handleEditorChange}
-                                                                    width='350px' />
+                                                                    width='330px' />
                                                             </Fade>
                                                             }
                                         }
@@ -529,7 +531,7 @@ function RegistrationForm(props) {
                                     </div>
                                 </Fade>
                             }
-                                <div className="btn">
+                                <div className="btn" style={{marginBottom: '10px'}}>
                                     <Button
                                         type={btnType}
                                         click={onBtnClick}

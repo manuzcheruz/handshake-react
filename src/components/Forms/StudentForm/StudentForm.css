@@ -13,7 +13,7 @@
 .top-student-form {
     position: absolute;
     z-index: 2;
-    height: 600px;
+    /* height: 600px; */
     width: 800px;
     background-color: rgba(250, 245, 245, 0.7);
     margin-top: 10px;
@@ -39,9 +39,9 @@
 }
 
 .top-student-form .image-top {
-    margin-top: 30px;
-    height: 110px;
-    width: 110px;
+    margin-top: 15px;
+    height: 100px;
+    width: 100px;
     /* background-color: grey; */
     border: '2px solid grey';
     border-radius: 50%;

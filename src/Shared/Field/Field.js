@@ -56,14 +56,14 @@ function Field(props) {
         )
     } else {
         field = (
-            <div className="field-item-">
+            <div className="field-item-" style={{marginRight: '-360px'}}>
                     <div className="label">
                         {props.label}
                     </div>
                     <Editor
                         initialValue="<p>Describe yourself here</p>"
                         init={{
-                            // height: 300,
+                            height: 300,
                             menubar: false,
                             plugins: [
                                 'advlist autolink lists link image charmap print preview anchor',
