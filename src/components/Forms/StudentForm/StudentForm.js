@@ -94,6 +94,14 @@ const jobFields = [
         level: 0
     },
     {
+        name: 'company',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'e.g Apple',
+        label: 'Company',
+        level: 0
+    },
+    {
         name: 'location',
         elementName: 'input',
         elementType: 'text',
@@ -107,29 +115,21 @@ const jobFields = [
         elementType: 'text',
         placeholder: 'e.g 25 slots available',
         label: 'Slots',
-        level: 1
+        level: 0
     },
     {
         name: 'description',
-        elementName: 'input',
-        elementType: 'text',
-        placeholder: 'Describe your job listing here',
+        elementName: 'editor',
+        elementType: '',
+        placeholder: '',
         label: 'Description',
         level: 1
-    },
-    {
-        name: 'company',
-        elementName: 'input',
-        elementType: 'text',
-        placeholder: 'e.g Apple',
-        label: 'Company',
-        level: 0
     },
     {
         name: 'category',
         elementName: 'input',
         elementType: 'text',
-        placeholder: '',
+        placeholder: 'e.g engineering',
         label: 'Category',
         level: 0
     },
@@ -139,31 +139,31 @@ const jobFields = [
         elementType: 'text',
         placeholder: 'e.g $200/month',
         label: 'Salary',
-        level: 2
+        level: 0
     },
     {
         name: 'type',
         elementName: 'input',
         elementType: 'text',
-        placeholder: '',
+        placeholder: 'e.g part time',
         label: 'Employment type',
-        level: 2
+        level: 0
     },
     {
         name: 'experience',
         elementName: 'input',
         elementType: 'text',
-        placeholder: '',
+        placeholder: 'e.g 1 year',
         label: 'Experience',
-        level: 2
+        level: 0
     },
     {
         name: 'level',
         elementName: 'input',
         elementType: 'text',
-        placeholder: '',
+        placeholder: 'e.g junior',
         label: 'Work Level',
-        level: 2
+        level: 0
     },
 ]
 
@@ -288,7 +288,7 @@ function RegistrationForm(props) {
     const [fadeDirection, setFadeDirection] = useState('start');
     const [logo, setLogo] = useState('');
     const [bgImg, setBgImg] = useState('');
-    const [formHeight, setFormHeight] = useState('360px');
+    const [formHeight, setFormHeight] = useState('550px');
     const [showImage, setShowImage] = useState('none');
 
     // handle the content in the editor and assign to description
@@ -298,7 +298,7 @@ function RegistrationForm(props) {
 
     // handle file change and render its preview
     const handleFileChange = (event) => {
-        setFormHeight('360px');
+        setFormHeight('650px');
         if (!props.values.logo){
             props.values.logo = event.target.value;
             setLogo(URL.createObjectURL(event.target.files[0]));
@@ -321,7 +321,7 @@ function RegistrationForm(props) {
             if (props.job){
                 url = '/job/create';
             } else if (props.student){
-                url = '/student/create';
+                url = 'https://fanaka-sasa-default-rtdb.firebaseio.com/students.json';
                 data = {
                     name: props.values.name,
                     campus: props.values.campus,
@@ -433,7 +433,7 @@ function RegistrationForm(props) {
                         </Fade>
                     </div>
                     <Fade>
-                        <div className="top-student-form">
+                        <div className="top-student-form" style={{height: `${formHeight}`}}>
                             <form onSubmit={event => onFormSubmit(event)}>
                                 <div className="title">
                                     {props.job ? 'Job Registration' : props.student ? 'Student Registration' : props.center ? 'Center Registration' : 'Company Registration'}
@@ -456,7 +456,7 @@ function RegistrationForm(props) {
                                     <img alt='' src={bgImg} />
                                 </div>
 
-                                <div className="inputs" style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', height: `${formHeight}`}}>
+                                <div className="inputs" style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)'}}>
                                     {fields.map((item, i) => {
                                         let displayItem;
                                         if (item.level === formNum){

@@ -13,7 +13,7 @@
 .top-student-form {
     position: absolute;
     z-index: 2;
-    /* height: 600px; */
+    height: 600px;
     width: 800px;
     background-color: rgba(250, 245, 245, 0.7);
     margin-top: 10px;
