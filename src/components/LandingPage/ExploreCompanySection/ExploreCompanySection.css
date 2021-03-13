@@ -1,6 +1,7 @@
 .company-wrapper {
     margin-top: 70px;
     height: 600px;
+    margin-left: 10%;
     width: 80%;
     display: grid;
     grid-template-columns: 0.8fr 1fr;

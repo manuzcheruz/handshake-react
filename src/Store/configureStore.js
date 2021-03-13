@@ -1,15 +1,16 @@
 import { createStore, compose, applyMiddleware, combineReducers} from 'redux';
 import thunk from 'redux-thunk';
-import { persistStore, persistReducer } from 'redux-persist'
+import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 
-import messageReducer from './reducers/message'
-import utilityReducer from './reducers/utitlites'
+import messageReducer from './reducers/message';
+import utilityReducer from './reducers/utitlites';
+import studentReducer from './reducers/students';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
-    // student: studentReducer,
+    student: studentReducer,
     // company: companyReducer,
     // center: centerReducer,
     // job: jobReducer,

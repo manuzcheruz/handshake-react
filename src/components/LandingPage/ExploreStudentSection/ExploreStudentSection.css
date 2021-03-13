@@ -1,6 +1,7 @@
 .students-wrapper {
     margin-top: 60px;
     height: 600px;
+    margin-left: 10%;
     width: 80%;
     display: grid;
     grid-template-columns: 1fr 0.7fr;

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
 
 import { me, mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8 } from '../../../Assets/Images'
 import Field from '../../../Shared/Field/Field'
@@ -214,10 +215,9 @@ function Students() {
                     </div>
                 </div>
             </div>
-
         </Aux>
     )
 }
 
-export default Students
+export default connect(null, null)(Students);
 

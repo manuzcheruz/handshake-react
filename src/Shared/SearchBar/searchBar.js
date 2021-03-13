@@ -3,7 +3,7 @@ import { Marker, Search} from '../../Assets/icons'
 
 function SearchBar({job, student, center}) {
     return (
-        <div className="search-filter" style={{display: 'grid', gridTemplateColumns: '1fr 0.6fr 0.6fr 0.6fr 0.25fr', height: '50px', backgroundColor: 'white', borderRadius: '10px', width: '92%', marginBottom: '20px', marginLeft: `${student && '4%'}`}}>
+        <div className="search-filter" style={{display: 'grid', gridTemplateColumns: '1fr 0.6fr 0.6fr 0.6fr 0.25fr', height: '50px', backgroundColor: 'white', borderRadius: '10px', width: '92%', marginBottom: '20px', marginLeft: '4%'}}>
             <div className="search-input-1" style={{borderRight: '3px solid #FAFAFB'}}>
                 <div style={{padding: '15px 40px', color: 'grey', fontSize: '0.9rem'}}>
                     <span style={{marginRight: '10px'}}>

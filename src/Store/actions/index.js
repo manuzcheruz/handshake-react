@@ -1,7 +1,11 @@
 export {
     toggleNightMode
-} from './utilities'
+} from './utilities';
 
 export {
     initMessages
-} from './message'
+} from './message';
+
+export {
+    initStudentForm
+} from './students';

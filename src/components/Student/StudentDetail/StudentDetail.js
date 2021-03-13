@@ -1,6 +1,7 @@
-import React from 'react'
-import { Map, Marker as GoogleMarker, GoogleApiWrapper } from 'google-maps-react';
+import React from 'react';
+import { connect } from 'react-redux';
 
+import { Map, Marker as GoogleMarker, GoogleApiWrapper } from 'google-maps-react';
 import { Apple, Benz, Facebook, Google, Heart, Instagram, Linkedin, Microsoft, School, Share, Slack } from '../../../Assets/icons'
 import Aux from '../../../hoc/Aux'
 import Pagination from '../../../Shared/Pagination/Pagination'
@@ -54,6 +55,9 @@ const skills = [
 ]
 
 function CompanyDetail(props) {
+    if (props.student) {
+        console.log(JSON.stringify(null, 2, props.student));
+    }
     return (
         <Aux>
             <Navbar bgColor='#FAFAFB' core />
@@ -241,4 +245,10 @@ function CompanyDetail(props) {
     )
 }
 
-export default GoogleApiWrapper({apiKey: 'AIzaSyAok6R5nza1EEHCpuPHj8m6sV5HiQGH4o4'})(CompanyDetail)
+const mapPropsToState = state => {
+    return {
+        student: state.student.student
+    }
+}
+
+export default connect(mapPropsToState)(GoogleApiWrapper({apiKey: 'AIzaSyAok6R5nza1EEHCpuPHj8m6sV5HiQGH4o4'})(CompanyDetail));

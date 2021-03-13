@@ -1,4 +1,8 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux';
+import * as actions from '../../../Store/actions';
+
+
 import { Cap, Student, Teacher, Deal, JobOffer, JobHunt, Hiring, BookLover } from '../../../Assets/illustrators'
 import Aux from '../../../hoc/Aux'
 import Navbar from '../../Navbar/Navbar'
@@ -220,14 +224,6 @@ const centerFields = [
 
 const companyFields = [
     {
-        name: 'name',
-        elementName: 'input',
-        elementType: 'text',
-        placeholder: 'e.g Apple Inc.',
-        label: 'Company Name',
-        level: 0
-    },
-    {
         name: 'logo',
         elementName: 'input',
         elementType: 'file',
@@ -244,18 +240,34 @@ const companyFields = [
         level: 0
     },
     {
+        name: 'name',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'e.g Apple Inc.',
+        label: 'Company Name',
+        level: 0
+    },
+    {
+        name: 'category',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'e.g Agriculture',
+        label: 'Category',
+        level: 0
+    },
+    {
         name: 'location',
         elementName: 'input',
         elementType: 'text',
-        placeholder: '',
+        placeholder: 'e.g Nairobi, Kenya',
         label: 'Location',
         level: 0
     },
     {
         name: 'description',
-        elementName: 'input',
-        elementType: 'text',
-        placeholder: 'Describe your company here',
+        elementName: 'editor',
+        elementType: '',
+        placeholder: '',
         label: 'Description',
         level: 1
     },
@@ -265,7 +277,7 @@ const companyFields = [
         elementType: 'text',
         placeholder: 'e.g @apple',
         label: 'Twitter',
-        level: 1
+        level: 0
     }
 ]
 function RegistrationForm(props) {
@@ -311,46 +323,27 @@ function RegistrationForm(props) {
         }
     }
 
-    // submit the form and send a copy of it to redux store so as to be accessed in the student detail without server request
+    // submit the form and send it to redux store to handle its upload process
     const onFormSubmit = (event) => {
-        // alert('hapa')
         event.preventDefault();
-        if (props.values.description !== ''){
-            let url;
-            let data;
-            if (props.job){
-                url = '/job/create';
-            } else if (props.student){
-                url = 'https://fanaka-sasa-default-rtdb.firebaseio.com/students.json';
-                data = {
-                    name: props.values.name,
-                    campus: props.values.campus,
-                    course: props.values.course,
-                    description: props.values.description,
-                    twitter: props.values.twitter
-                }
-            } else if (props.center){
-                url = '/center/create';
-            } else if (props.company){
-                url = '/company/create';
+        if (props.student && props.values.description !== ''){
+            const data = {
+                name: props.values.name,
+                campus: props.values.campus,
+                course: props.values.course,
+                description: props.values.description,
+                twitter: props.values.twitter
             }
-            // grab the values of the fields in the props, make a request to express js to save it in the db
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(res => {
-                return res.json();
-            })
-            .then(response => {
-                console.log(response);
-            })
-            .catch(() => console.log("unable to save the data to the db"));
+            props.onStudentFormSubmit(data);
         }
     }
+    console.log(props);
+
+    // route to student detail page after form successfull submit
+    // if (props.student){
+
+    // }
+
     // next btn click
     const onBtnClick = () => {
         setFadeDirection('right');
@@ -553,7 +546,19 @@ function RegistrationForm(props) {
     )
 }
 
-export default withFormik({
+const mapPropsToState = state => {
+    return {
+        spinner: state.student.formSumbitStart
+    }
+}
+
+const mapPropsToDispatch = dispatch => {
+    return {
+        onStudentFormSubmit: (data) => dispatch(actions.initStudentForm(data))
+    }
+}
+
+export default connect(mapPropsToState, mapPropsToDispatch)(withFormik({
     mapPropsToValues: () => ({
         name: '',
         campus: '',
@@ -580,4 +585,4 @@ export default withFormik({
         //     .required('required!'),
         twitter: Yup.string()
     })
-})(RegistrationForm);
+})(RegistrationForm));
