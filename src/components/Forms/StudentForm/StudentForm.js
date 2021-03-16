@@ -182,14 +182,6 @@ const jobFields = [
 
 const centerFields = [
     {
-        name: 'name',
-        elementName: 'input',
-        elementType: 'text',
-        placeholder: 'e.g Univeristy of Nairobi',
-        label: 'Campus Name',
-        level: 0
-    },
-    {
         name: 'logo',
         elementName: 'input',
         elementType: 'file',
@@ -206,6 +198,22 @@ const centerFields = [
         level: 0
     },
     {
+        name: 'name',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'e.g Univeristy of Nairobi',
+        label: 'Campus Name',
+        level: 0
+    },
+    {
+        name: 'category',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: '',
+        label: 'Category',
+        level: 0
+    },
+    {
         name: 'location',
         elementName: 'input',
         elementType: 'text',
@@ -215,9 +223,9 @@ const centerFields = [
     },
     {
         name: 'description',
-        elementName: 'input',
-        elementType: 'text',
-        placeholder: 'Describe your campus here',
+        elementName: 'editor',
+        elementType: '',
+        placeholder: '',
         label: 'Description',
         level: 1
     },
@@ -227,7 +235,7 @@ const centerFields = [
         elementType: 'text',
         placeholder: 'e.g @uon',
         label: 'Twitter',
-        level: 1
+        level: 0
     }
 ]
 
@@ -362,6 +370,7 @@ function RegistrationForm(props) {
     // submit the form and send it to redux store to handle its upload process
     const onFormSubmit = (event) => {
         event.preventDefault();
+        // student
         if (props.student && props.values.description !== ''){
             if (props.logo && props.bg){
                 const data = {
@@ -375,6 +384,23 @@ function RegistrationForm(props) {
                     resume: props.pdf
                 }
                 props.onStudentFormSubmit(data);
+            }
+        }
+
+        // center
+        if (props.center && props.values.description !== ''){
+            if (props.logo && props.bg){
+                const data = {
+                    name: props.values.name,
+                    category: props.values.category,
+                    course: props.values.course,
+                    description: props.values.description,
+                    twitter: props.values.twitter,
+                    logo: props.logo,
+                    backgroundImage: props.bg,
+                    location: props.values.location
+                }
+                props.onCenterFormSubmit(data);
             }
         }
     }
@@ -604,7 +630,9 @@ const mapPropsToDispatch = dispatch => {
         onStudentFormSubmit: (data) => dispatch(actions.initStudentForm(data)),
         onLogoUpload: (logo) => dispatch(actions.logoTemp(logo)),
         onBgUpload: (bg) => dispatch(actions.bgTemp(bg)),
-        onPdfUpload: (pdf) => dispatch(actions.pdfUpload(pdf))
+        onPdfUpload: (pdf) => dispatch(actions.pdfUpload(pdf)),
+        // centers
+        onCenterFormSubmit: (data) => dispatch(actions.initCenterForm(data)),
     }
 }
 
@@ -614,7 +642,9 @@ export default connect(mapPropsToState, mapPropsToDispatch)(withFormik({
         campus: '',
         course: '',
         description: '',
-        twitter: ''
+        twitter: '',
+        category: '',
+        location: ''
     }),
     validationSchema: Yup.object().shape({
         name: Yup.string()
@@ -633,6 +663,8 @@ export default connect(mapPropsToState, mapPropsToDispatch)(withFormik({
         //     .min(1, 'description cannot be empty!')
         //     .max(1000, 'description is too long!')
         //     .required('required!'),
-        twitter: Yup.string()
+        twitter: Yup.string(),
+        category: Yup.string(),
+        location: Yup.string()
     })
 })(RegistrationForm));

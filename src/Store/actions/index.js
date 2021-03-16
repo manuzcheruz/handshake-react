@@ -25,3 +25,11 @@ export {
 export {
     initStudentDetailFetch
 } from './students';
+
+export {
+    initCenterForm
+} from './centers';
+
+export {
+    initCenterDetailFetch
+} from './centers';

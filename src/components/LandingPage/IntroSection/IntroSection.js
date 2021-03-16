@@ -2,7 +2,7 @@ import React from 'react'
 import Fade from 'react-reveal/Fade';
 
 import './IntroSection.css'
-import handshake from '../../../Assets/Images/handshake2.png'
+import handshake from '../../../Assets/Images/winald.png';
 import { Mail, Check, Pdf, Heart, Google, Instagram, Microsoft, Search, Plus, Apple } from '../../../Assets/icons'
 import { me, mem1, mem4, mem6, me2} from '../../../Assets/Images'
 

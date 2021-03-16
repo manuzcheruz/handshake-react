@@ -6,13 +6,14 @@ import storage from 'redux-persist/lib/storage' // defaults to localStorage for 
 import messageReducer from './reducers/message';
 import utilityReducer from './reducers/utitlites';
 import studentReducer from './reducers/students';
+import centerReducer from './reducers/centers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
     student: studentReducer,
     // company: companyReducer,
-    // center: centerReducer,
+    center: centerReducer,
     // job: jobReducer,
     message: messageReducer,
     utility: utilityReducer

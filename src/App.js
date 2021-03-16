@@ -44,7 +44,7 @@ function App(props) {
         <Route path="/jobs/job" exact render={() => <Suspense fallback={<h1>loading..</h1>}><JobDetail /></Suspense>} />
         <Route path="/job-registration" exact render={() => <Suspense fallback={<h1>loading..</h1>}><StudentForm job /></Suspense>} />
         <Route path="/centers" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Centers /></Suspense>} />
-        <Route path="/centers/center" exact render={() => <Suspense fallback={<h1>loading..</h1>}><CenterDetail /></Suspense>} />
+        <Route path="/centers/:id" exact render={() => <Suspense fallback={<h1>loading..</h1>}><CenterDetail /></Suspense>} />
         <Route path="/center-registration" exact render={() => <Suspense fallback={<h1>loading..</h1>}><StudentForm center /></Suspense>} />
         <Route path="/companies" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Companies /></Suspense>} />
         <Route path="/companies/company" exact render={() => <Suspense fallback={<h1>loading..</h1>}><CompanyDetail /></Suspense>} />
