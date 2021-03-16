@@ -206,3 +206,7 @@ export {
     default as Grin
 } from './grin';
 
+export {
+    default as Whatsapp
+} from './whatsapp';
+

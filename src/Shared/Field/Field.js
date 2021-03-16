@@ -49,7 +49,8 @@ function Field(props) {
                     // placeholder={props.placeholder}
                     style={{height: `${props.height}`, width: `${props.width}`, border: 'none', borderRadius: '0px'}}
                     value={props.value}
-                    onChange={event => props.onFileChange(event)}
+                    // onChange={event => props.onFileChange(event)}
+                    onChange={event => props.name === 'resume' ? props.handlePdfChange(event) : props.onFileChange(event)}
                 />
                 {(props.touched && props.errors[props.name]) && <small style={{fontSize: '0.6rem', color: 'red'}}>{props.errors[props.name]}</small>}
             </div>

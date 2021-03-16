@@ -133,7 +133,7 @@ const studentArr = [
 
 ]
 
-function Students() {
+function Students(props) {
     return (
         <Aux>
             <Navbar bgColor='#FAFAFB' core />

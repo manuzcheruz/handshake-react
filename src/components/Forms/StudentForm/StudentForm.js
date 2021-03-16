@@ -69,15 +69,6 @@ const studentFields = [
         level: 1
     },
     {
-        name: 'twitter',
-        elementName: 'input',
-        elementType: 'text',
-        placeholder: 'e.g @johndoe',
-        label: 'Twitter',
-        level: 0,
-        position: 'right'
-    },
-    {
         name: 'year',
         elementName: 'input',
         elementType: 'text',
@@ -85,6 +76,24 @@ const studentFields = [
         label: 'Study Year',
         level: 0,
         position: 'left'
+    },
+    {
+        name: 'resume',
+        elementName: 'input',
+        elementType: 'file',
+        placeholder: '',
+        label: 'Resume',
+        level: 0,
+        position: 'right'
+    },
+    {
+        name: 'twitter',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'e.g @johndoe',
+        label: 'Twitter',
+        level: 0,
+        position: 'right'
     }
 ]
 
@@ -311,37 +320,68 @@ function RegistrationForm(props) {
     // handle file change and render its preview
     const handleFileChange = (event) => {
         setFormHeight('650px');
-        if (!props.values.logo){
-            props.values.logo = event.target.value;
+        if (!props.values.logo1){
+            const files = Array.from(event.target.files);
+            files.forEach((file) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function () {
+                    props.onLogoUpload(reader.result);
+                };
+            });
+            props.values.logo1 = true;
             setLogo(URL.createObjectURL(event.target.files[0]));
             setShowImage('block');
         } else {
-            props.values.backgroundImage = event.target.value;
+            const files = Array.from(event.target.files);
+            files.forEach((file) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function () {
+                    props.onBgUpload(reader.result);
+                };
+            });
             setBgImg(URL.createObjectURL(event.target.files[0]));
             // console.log(props.values.backgroundImage, props.values.logo);
             setShowImage('block');
         }
     }
 
+    // handling the pdf upload and converting it to base64
+    const handlePdfChange = (event) => {
+        const files = Array.from(event.target.files);
+        files.forEach((file) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function () {
+                props.onPdfUpload(reader.result);
+            };
+        });
+    }
+
     // submit the form and send it to redux store to handle its upload process
     const onFormSubmit = (event) => {
         event.preventDefault();
         if (props.student && props.values.description !== ''){
-            const data = {
-                name: props.values.name,
-                campus: props.values.campus,
-                course: props.values.course,
-                description: props.values.description,
-                twitter: props.values.twitter
+            if (props.logo && props.bg){
+                const data = {
+                    name: props.values.name,
+                    campus: props.values.campus,
+                    course: props.values.course,
+                    description: props.values.description,
+                    twitter: props.values.twitter,
+                    logo: props.logo,
+                    backgroundImage: props.bg,
+                    resume: props.pdf
+                }
+                props.onStudentFormSubmit(data);
             }
-            props.onStudentFormSubmit(data);
         }
     }
-    console.log(props);
 
     // route to student detail page after form successfull submit
-    // if (props.student){
-
+    // if (props.student && props.studentData){
+    //     props.push(`/students/${props.values.name.split(' ')[0]}`);
     // }
 
     // next btn click
@@ -462,6 +502,7 @@ function RegistrationForm(props) {
                                                                     onChange={props.handleChange}
                                                                     onFileChange={handleFileChange}
                                                                     handleEditorChange={handleEditorChange}
+                                                                    handlePdfChange={handlePdfChange}
                                                                     width='330px' />
                                                             </Fade>
                                                             : fadeDirection === 'left' ?
@@ -473,6 +514,7 @@ function RegistrationForm(props) {
                                                                     onChange={props.handleChange}
                                                                     onFileChange={handleFileChange}
                                                                     handleEditorChange={handleEditorChange}
+                                                                    handlePdfChange={handlePdfChange}
                                                                     width='330px' />
                                                             </Fade>
                                                             :
@@ -484,6 +526,7 @@ function RegistrationForm(props) {
                                                                     onChange={props.handleChange}
                                                                     onFileChange={handleFileChange}
                                                                     handleEditorChange={handleEditorChange}
+                                                                    handlePdfChange={handlePdfChange}
                                                                     width='330px' />
                                                             </Fade>
                                                             }
@@ -548,13 +591,20 @@ function RegistrationForm(props) {
 
 const mapPropsToState = state => {
     return {
-        spinner: state.student.formSumbitStart
+        studentData: state.student.student !== [],
+        spinner: state.student.formSumbitStart,
+        logo: state.student.logo,
+        bg: state.student.bg,
+        pdf: state.student.pdf
     }
 }
 
 const mapPropsToDispatch = dispatch => {
     return {
-        onStudentFormSubmit: (data) => dispatch(actions.initStudentForm(data))
+        onStudentFormSubmit: (data) => dispatch(actions.initStudentForm(data)),
+        onLogoUpload: (logo) => dispatch(actions.logoTemp(logo)),
+        onBgUpload: (bg) => dispatch(actions.bgTemp(bg)),
+        onPdfUpload: (pdf) => dispatch(actions.pdfUpload(pdf))
     }
 }
 

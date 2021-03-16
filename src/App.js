@@ -50,8 +50,8 @@ function App(props) {
         <Route path="/companies/company" exact render={() => <Suspense fallback={<h1>loading..</h1>}><CompanyDetail /></Suspense>} />
         <Route path="/company-registration" exact render={() => <Suspense fallback={<h1>loading..</h1>}><StudentForm company /></Suspense>} />
         <Route path="/students" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Students /></Suspense>} />
-        <Route path="/students/student" exact render={() => <Suspense fallback={''}><StudentDetail /></Suspense>} />
-        <Route path="/student-registration" exact render={() => <Suspense fallback={<h1>loading..</h1>}><StudentForm student /></Suspense>} />
+        <Route path="/students/:id" exact render={() => <Suspense fallback={''}><StudentDetail /></Suspense>} />
+        <Route path="/student-registration" exact render={(props) => <Suspense fallback={<h1>loading..</h1>}><StudentForm {...props.history} student /></Suspense>} />
         <Layout>
           {/* going to add routes here and enable lazy loading for them */}
           <Route path="/" component={LandingPage} />

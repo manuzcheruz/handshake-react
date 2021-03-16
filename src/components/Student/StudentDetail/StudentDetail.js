@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import * as actions from '../../../Store/actions'
+import PDFViewer from 'pdf-viewer-reactjs'
 
 import { Map, Marker as GoogleMarker, GoogleApiWrapper } from 'google-maps-react';
-import { Apple, Benz, Facebook, Google, Heart, Instagram, Linkedin, Microsoft, School, Share, Slack } from '../../../Assets/icons'
+import { Apple, Benz, Facebook, Google, Heart, Instagram, Linkedin, Microsoft, School, Share, Slack, Briefcase, Whatsapp } from '../../../Assets/icons'
 import Aux from '../../../hoc/Aux'
 import Pagination from '../../../Shared/Pagination/Pagination'
 import CenterCard from '../../Center/CenterCard/CenterCard'
@@ -10,8 +12,8 @@ import JobCard from '../../LandingPage/JobSection/JobCard/JobCard'
 import Navbar from '../../Navbar/Navbar'
 import Messaging from '../../Messaging/Messaging'
 
-import appleImage from '../../../Assets/Images/mebg.png'
-import me from '../../../Assets/Images/me.png';
+// import appleImage from '../../../Assets/Images/mebg.png'
+// import me from '../../../Assets/Images/me.png';
 import mem1 from '../../../Assets/Images/mem1.png';
 import mem2 from '../../../Assets/Images/mem2.png';
 import mem3 from '../../../Assets/Images/mem3.jpg';
@@ -21,8 +23,7 @@ import mem6 from '../../../Assets/Images/mem6.png';
 import mem7 from '../../../Assets/Images/mem7.jpg';
 import mem8 from '../../../Assets/Images/mem8.jpg';
 
-import '../../Company/CompanyDetail/CompanyDetail.css'
-
+import '../../Company/CompanyDetail/CompanyDetail.css';
 const skills = [
     {
         name: 'React Js',
@@ -55,9 +56,24 @@ const skills = [
 ]
 
 function CompanyDetail(props) {
-    if (props.student) {
-        console.log(JSON.stringify(null, 2, props.student));
+    const { onStudentDetailFetch, studentFromReg } = props;
+
+    useEffect(() => {
+        if (!studentFromReg){
+            onStudentDetailFetch()
+        }
+    }, [onStudentDetailFetch, studentFromReg]);
+
+    let student = [];
+    if (props.studentFromReg){
+        student = props.studentFromReg
+    } else {
+        student = props.studentFromFetch
     }
+
+    const resume = student.resume;
+    const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=check%20out%20${student.name}%20profile`
+
     return (
         <Aux>
             <Navbar bgColor='#FAFAFB' core />
@@ -65,127 +81,148 @@ function CompanyDetail(props) {
                 <div className="container">
                     <Messaging />
                     <div className="company-detail-wrapper">
-                        <div className="profile">
-                            <div className="top">
-                                <div className="bg-image">
-                                    <img alt='' src={appleImage} height='auto' width='100%' />
-                                </div>
-                                <div className="top-bottom-block">
-                                    <div className="small-image-block">
-                                        <div className="image">
-                                            <div className="logo" style={{marginLeft: '-5px'}}>
-                                                <img alt='' src={me} height='100px' />
+                        {student && (
+                                <div className="profile">
+                                    <div className="top">
+                                        <div className="bg-image">
+                                            <img alt='' src={student.backgroundImage} height='auto' width='100%' />
+                                        </div>
+                                        <div className="top-bottom-block">
+                                            <div className="small-image-block">
+                                                <div className="image">
+                                                    <div className="logo" style={{marginLeft: '-5px'}}>
+                                                        <img alt='' src={student.logo} height='100px' />
+                                                    </div>
+                                                </div>
+                                                <div className="name">
+                                                    <div className="title">
+                                                        {student.name}
+                                                    </div>
+                                                    <div className="subtitle">
+                                                        <span><Briefcase height={15} /></span>
+                                                        {student.course}
+                                                    </div>
+                                                    <div className="subtitle">
+                                                        <span><School height={15} /></span>
+                                                        {student.campus}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="social">
+                                                <div className="icons">
+                                                    <span>
+                                                        <Share height={20} color='grey' />
+                                                    </span>
+                                                </div>
+                                                <div className="icons">
+                                                    <span>
+                                                        <Linkedin height={20} />
+                                                    </span>
+                                                </div>
+                                                <div className="icons">
+                                                    <a href={facebookUrl}
+                                                        target="_blank" rel="noreferrer">
+                                                        <span>
+                                                            <Facebook height={20} />
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                                <div className="icons">
+                                                    <a href="e">
+                                                        <span>
+                                                            <Whatsapp height={20} />
+                                                        </span>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className="name">
+                                    </div>
+                                    <div className="middle" style={{height: '300px'}}>
+                                        <div className="about">
                                             <div className="title">
-                                                John Doe
+                                                About <span>Me</span>
                                             </div>
-                                            <div className="subtitle">
-                                                <span><School height={15} /></span>
-                                                University of Nairobi
+                                            <div className="content" dangerouslySetInnerHTML={{__html: student.description}}></div>
+                                        </div>
+                                        <div className="activity">
+                                            <div className="title">
+                                                Activity
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div className="social">
-                                        <div className="icons">
-                                            <span>
-                                                <Share height={20} color='grey' />
-                                            </span>
-                                        </div>
-                                        <div className="icons">
-                                            <span>
-                                                <Linkedin height={20} />
-                                            </span>
-                                        </div>
-                                        <div className="icons">
-                                            <span>
-                                                <Facebook height={20} />
-                                            </span>
-                                        </div>
-                                        <div className="icons">
-                                            <span>
-                                                <Instagram height={20} />
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="middle">
-                                <div className="about">
-                                    <div className="title">
-                                        About <span>Me</span>
-                                    </div>
-                                    <div className="content">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus semper turpis id dignissim vehicula. Nam at lacus arcu. Phasellus non velit quis justo maximus fringilla ac id neque. Nam eu auctor nisi, ut volutpat erat. Ut sit amet pulvinar mi, eget efficitur metus. Cras mattis pharetra sem ac pulvinar. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus ac tempus nisi.
-                                    </div>
-                                </div>
-                                <div className="activity">
-                                    <div className="title">
-                                        Activity
-                                    </div>
-                                    <div className="content" style={{marginTop: '15px'}}>
-                                        <div className="item" style={{height: '70px', width: '100%', display: 'grid', gridTemplateColumns: '0.3fr 1fr', gridGap: '20px', marginBottom: '10px'}}>
-                                            <div className="image" style={{height: '70px', width: '100%', borderRadius: '10px'}}>
-                                                <img src={mem7} height="70px" alt="" style={{borderRadius: '10px'}} />
-                                            </div>
-                                            <div className="cont">
-                                                <div className="time" style={{height: '20px', width: '100%', marginTop: '3px', fontSize: '0.6rem', color: 'grey'}}>
-                                                    October 13, 2020
+                                            <div className="content" style={{marginTop: '15px'}}>
+                                                <div className="item" style={{height: '70px', width: '100%', display: 'grid', gridTemplateColumns: '0.3fr 1fr', gridGap: '20px', marginBottom: '10px'}}>
+                                                    <div className="image" style={{height: '70px', width: '100%', borderRadius: '10px'}}>
+                                                        <img src={mem7} height="70px" alt="" style={{borderRadius: '10px'}} />
+                                                    </div>
+                                                    <div className="cont">
+                                                        <div className="time" style={{height: '20px', width: '100%', marginTop: '3px', fontSize: '0.6rem', color: 'grey'}}>
+                                                            October 13, 2020
+                                                        </div>
+                                                        <div className="title" style={{height: '35px', width: '100%', fontSize: '1rem', lineHeight: '18px'}}>
+                                                            The best student and employer interaction platform
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div className="title" style={{height: '35px', width: '100%', fontSize: '1rem', lineHeight: '18px'}}>
-                                                    The best student and employer interaction platform
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="item" style={{height: '70px', width: '100%', display: 'grid', gridTemplateColumns: '0.3fr 1fr', gridGap: '20px'}}>
-                                            <div className="image" style={{height: '70px', width: '100%', borderRadius: '10px'}}>
-                                                <img src={mem8} height="70px" alt="" style={{borderRadius: '10px'}} />
-                                            </div>
-                                            <div className="cont">
-                                                <div className="time" style={{height: '20px', width: '100%', marginTop: '3px', fontSize: '0.6rem', color: 'grey'}}>
-                                                    September 15, 2020
-                                                </div>
-                                                <div className="title" style={{height: '35px', width: '100%', fontSize: '1rem', lineHeight: '18px'}}>
-                                                    This design is really clean and beautiful
+                                                <div className="item" style={{height: '70px', width: '100%', display: 'grid', gridTemplateColumns: '0.3fr 1fr', gridGap: '20px'}}>
+                                                    <div className="image" style={{height: '70px', width: '100%', borderRadius: '10px'}}>
+                                                        <img src={mem8} height="70px" alt="" style={{borderRadius: '10px'}} />
+                                                    </div>
+                                                    <div className="cont">
+                                                        <div className="time" style={{height: '20px', width: '100%', marginTop: '3px', fontSize: '0.6rem', color: 'grey'}}>
+                                                            September 15, 2020
+                                                        </div>
+                                                        <div className="title" style={{height: '35px', width: '100%', fontSize: '1rem', lineHeight: '18px'}}>
+                                                            This design is really clean and beautiful
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
 
-                            <div className="jobs-block">
-                                <div className="title-job-bottom">
-                                    My <span>Skills</span>
+                                    <div className="jobs-block">
+                                        <div className="title-job-bottom">
+                                            My <span>Skills</span>
+                                        </div>
+                                        <div className="skills" style={{display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gridGap: '10px', marginTop: '15px'}}>
+                                            {skills.map((item, i) => {
+                                                return (
+                                                    <div className="item" style={{height: '30px', width: '200px', borderRadius: '10px', padding: '5px 10px', backgroundColor: 'white', display: 'grid', gridTemplateColumns: '1fr 0.3fr'}}>
+                                                        <span>{item.name}</span>
+                                                        <span style={{color: 'grey'}}><span style={{marginRight: '5px'}}><Heart height='12' /></span>{item.num}</span>
+                                                    </div>
+                                                )
+                                            })}
+                                        </div>
+                                    </div>
+
+                                    <div className="jobs-block">
+                                        <div>
+                                            <PDFViewer
+                                                document={{
+                                                    url: {resume},
+                                                }}
+                                            />
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="jobs-block">
+                                        <div className="title-job-bottom">
+                                            Recently <span>Applied</span> Jobs
+                                        </div>
+                                        <div className="jobs">
+                                            <JobCard logo={<Apple height={60} />} />
+                                            <JobCard logo={<Instagram height={60} />} />
+                                            <JobCard logo={<Microsoft height={60} />} />
+                                            <JobCard logo={<Benz height={60} />} />
+                                            <JobCard logo={<Google height={60} />} />
+                                            <JobCard logo={<Slack height={60} />} />
+                                        </div>
+                                    </div>
+                                    <Pagination />
                                 </div>
-                                <div className="skills" style={{display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gridGap: '10px', marginTop: '15px'}}>
-                                    {skills.map((item, i) => {
-                                        return (
-                                            <div className="item" style={{height: '30px', width: '200px', borderRadius: '10px', padding: '5px 10px', backgroundColor: 'white', display: 'grid', gridTemplateColumns: '1fr 0.3fr'}}>
-                                                <span>{item.name}</span>
-                                                <span style={{color: 'grey'}}><span style={{marginRight: '5px'}}><Heart height='12' /></span>{item.num}</span>
-                                            </div>
-                                        )
-                                    })}
-                                </div>
-                            </div>
-                            
-                            <div className="jobs-block">
-                                <div className="title-job-bottom">
-                                    Recently <span>Applied</span> Jobs
-                                </div>
-                                <div className="jobs">
-                                    <JobCard logo={<Apple height={60} />} />
-                                    <JobCard logo={<Instagram height={60} />} />
-                                    <JobCard logo={<Microsoft height={60} />} />
-                                    <JobCard logo={<Benz height={60} />} />
-                                    <JobCard logo={<Google height={60} />} />
-                                    <JobCard logo={<Slack height={60} />} />
-                                </div>
-                            </div>
-                            <Pagination />
-                        </div>
+                            )
+                        }
+
                         <div className="similar-companies">
                             <div className="title">
                                 Similar <span>Students</span>
@@ -247,8 +284,15 @@ function CompanyDetail(props) {
 
 const mapPropsToState = state => {
     return {
-        student: state.student.student
+        studentFromReg: state.student.student,
+        studentFromFetch: state.student.studentDetail
     }
 }
 
-export default connect(mapPropsToState)(GoogleApiWrapper({apiKey: 'AIzaSyAok6R5nza1EEHCpuPHj8m6sV5HiQGH4o4'})(CompanyDetail));
+const mapDispatchToProps = dispatch => {
+    return {
+        onStudentDetailFetch: () => dispatch(actions.initStudentDetailFetch())
+    }
+}
+
+export default connect(mapPropsToState, mapDispatchToProps)(GoogleApiWrapper({apiKey: 'AIzaSyAok6R5nza1EEHCpuPHj8m6sV5HiQGH4o4'})(CompanyDetail));

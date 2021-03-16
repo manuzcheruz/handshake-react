@@ -9,3 +9,19 @@ export {
 export {
     initStudentForm
 } from './students';
+
+export {
+    logoTemp
+} from './students';
+
+export {
+    bgTemp
+} from './students';
+
+export {
+    pdfUpload
+} from './students';
+
+export {
+    initStudentDetailFetch
+} from './students';
