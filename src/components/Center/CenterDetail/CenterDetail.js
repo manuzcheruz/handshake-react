@@ -9,7 +9,6 @@ import CenterCard from '../../Center/CenterCard/CenterCard'
 import Navbar from '../../Navbar/Navbar'
 import Messaging from '../../Messaging/Messaging'
 
-import uon from '../../../Assets/Images/uon.jpg'
 import uon1 from '../../../Assets/Images/uon1.png';
 import uon2 from '../../../Assets/Images/uon2.png';
 import uon3 from '../../../Assets/Images/uon3.png';

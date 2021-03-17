@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux';
 import * as actions from '../../../Store/actions';
 
@@ -131,11 +131,11 @@ const jobFields = [
         level: 0
     },
     {
-        name: 'description',
-        elementName: 'editor',
-        elementType: '',
-        placeholder: '',
-        label: 'Description',
+        name: 'shortDescription',
+        elementName: 'input',
+        elementType: 'text',
+        placeholder: 'Briefly describe your job listing',
+        label: 'Short Description',
         level: 1
     },
     {
@@ -176,8 +176,16 @@ const jobFields = [
         elementType: 'text',
         placeholder: 'e.g junior',
         label: 'Work Level',
-        level: 0
+        level: 1
     },
+    {
+        name: 'description',
+        elementName: 'editor',
+        elementType: '',
+        placeholder: '',
+        label: 'Long Description',
+        level: 1
+    }
 ]
 
 const centerFields = [
@@ -297,6 +305,7 @@ const companyFields = [
         level: 0
     }
 ]
+
 function RegistrationForm(props) {
     // first assign the fields to the right form first
     let fields;
@@ -319,6 +328,29 @@ function RegistrationForm(props) {
     const [bgImg, setBgImg] = useState('');
     const [formHeight, setFormHeight] = useState('550px');
     const [showImage, setShowImage] = useState('none');
+
+    // fetching stuff from firebase
+    const [courses, setCourses] = useState([]);
+
+    // fetch the courses and senior level of the student
+    const { student, company } = props;
+    useEffect(() => {
+        if (student){
+            const url = 'https://fanaka-sasa-default-rtdb.firebaseio.com/students.json';
+            fetch(url)
+                .then(res => {
+                    // setCourses(res.data);
+                    console.log(res);
+                    console.log('hapa');
+                })
+                .catch(err => {
+                    console.log(err.message);
+                    console.log('error');
+                })
+        } else if (company){
+
+        }
+    }, [student, company])
 
     // handle the content in the editor and assign to description
     const handleEditorChange = ( content, editor ) => {
@@ -524,6 +556,7 @@ function RegistrationForm(props) {
                                                                 <Field
                                                                     {...item}
                                                                     {...props}
+                                                                    {...courses}
                                                                     value={props.values[item.name]}
                                                                     onChange={props.handleChange}
                                                                     onFileChange={handleFileChange}
@@ -536,6 +569,7 @@ function RegistrationForm(props) {
                                                                 <Field
                                                                     {...item}
                                                                     {...props}
+                                                                    {...courses}
                                                                     value={props.values[item.name]}
                                                                     onChange={props.handleChange}
                                                                     onFileChange={handleFileChange}
@@ -548,6 +582,7 @@ function RegistrationForm(props) {
                                                                 <Field
                                                                     {...item}
                                                                     {...props}
+                                                                    {...courses}
                                                                     value={props.values[item.name]}
                                                                     onChange={props.handleChange}
                                                                     onFileChange={handleFileChange}
