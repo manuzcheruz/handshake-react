@@ -11,7 +11,7 @@ import './App.css';
 
 // lazy loading other routes for better performance
 const Login = React.lazy(() => import('./components/Auth/Login/Login'))
-const Signup = React.lazy(() => import('./components/Auth/Signup/Signup'))
+// const Signup = React.lazy(() => import('./components/Auth/Signup/Signup'))
 const Logout = React.lazy(() => import('./components/Auth/Logout/Logout'))
 const Jobs = React.lazy(() => import('./components/Job/Jobs/Jobs'))
 const JobDetail = React.lazy(() => import('./components/Job/JobDetail/JobDetail'))
@@ -37,8 +37,8 @@ function App(props) {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/login" exact render={() => <Suspense fallback={<h1>loading...</h1>}><Login /></Suspense>} />
-        <Route path="/signup" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Signup /></Suspense>} />
+        <Route path="/login" exact render={() => <Suspense fallback={<h1>loading...</h1>}><Login login /></Suspense>} />
+        <Route path="/signup" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Login signup /></Suspense>} />
         <Route path="/logout" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Logout /></Suspense>} />
         <Route path="/jobs" exact render={() => <Suspense fallback={<h1>loading..</h1>}><Jobs /></Suspense>} />
         <Route path="/jobs/job" exact render={() => <Suspense fallback={<h1>loading..</h1>}><JobDetail /></Suspense>} />

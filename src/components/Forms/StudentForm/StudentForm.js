@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../Store/actions';
 
 
-import { Cap, Student, Teacher, Deal, JobOffer, JobHunt, Hiring, BookLover } from '../../../Assets/illustrators'
-import Aux from '../../../hoc/Aux'
-import Navbar from '../../Navbar/Navbar'
-import Button from '../../../Shared/Button/Button'
+import { Cap, Student, Teacher, Deal, JobOffer, JobHunt, Hiring, BookLover } from '../../../Assets/illustrators';
+import Aux from '../../../hoc/Aux';
+import Navbar from '../../Navbar/Navbar';
+import Button from '../../../Shared/Button/Button';
 import Fade from 'react-reveal/Fade';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
 
-import './StudentForm.css'
-import Field from '../../../Shared/Field/Field'
+import './StudentForm.css';
+import Field from '../../../Shared/Field/Field';
 
 const studentFields = [
     {
@@ -330,27 +330,30 @@ function RegistrationForm(props) {
     const [showImage, setShowImage] = useState('none');
 
     // fetching stuff from firebase
-    const [courses, setCourses] = useState([]);
+    // const [courses, setCourses] = useState([]);
 
-    // fetch the courses and senior level of the student
-    const { student, company } = props;
-    useEffect(() => {
-        if (student){
-            const url = 'https://fanaka-sasa-default-rtdb.firebaseio.com/students.json';
-            fetch(url)
-                .then(res => {
-                    // setCourses(res.data);
-                    console.log(res);
-                    console.log('hapa');
-                })
-                .catch(err => {
-                    console.log(err.message);
-                    console.log('error');
-                })
-        } else if (company){
+    // // fetch the courses and senior level of the student
+    // const { student, company } = props;
+    // useEffect(() => {
+    //     if (student){
+    //         const url = 'https://fanaka-sasa-default-rtdb.firebaseio.com/students.json';
+    //         fetch(url)
+    //             .then(res => {
+    //                 return res.json()
+    //             })
+    //             .then(res => {
+    //                 // setCourses(res.data);
+    //                 console.log(res);
+    //                 console.log('hapa');
+    //             })
+    //             .catch(err => {
+    //                 console.log(err.message);
+    //                 console.log('error');
+    //             })
+    //     } else if (company){
 
-        }
-    }, [student, company])
+    //     }
+    // }, [student, company])
 
     // handle the content in the editor and assign to description
     const handleEditorChange = ( content, editor ) => {
@@ -556,7 +559,7 @@ function RegistrationForm(props) {
                                                                 <Field
                                                                     {...item}
                                                                     {...props}
-                                                                    {...courses}
+                                                                    // {...courses}
                                                                     value={props.values[item.name]}
                                                                     onChange={props.handleChange}
                                                                     onFileChange={handleFileChange}
@@ -569,7 +572,7 @@ function RegistrationForm(props) {
                                                                 <Field
                                                                     {...item}
                                                                     {...props}
-                                                                    {...courses}
+                                                                    // {...courses}
                                                                     value={props.values[item.name]}
                                                                     onChange={props.handleChange}
                                                                     onFileChange={handleFileChange}
@@ -582,7 +585,7 @@ function RegistrationForm(props) {
                                                                 <Field
                                                                     {...item}
                                                                     {...props}
-                                                                    {...courses}
+                                                                    // {...courses}
                                                                     value={props.values[item.name]}
                                                                     onChange={props.handleChange}
                                                                     onFileChange={handleFileChange}

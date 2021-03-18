@@ -7,10 +7,12 @@ import messageReducer from './reducers/message';
 import utilityReducer from './reducers/utitlites';
 import studentReducer from './reducers/students';
 import centerReducer from './reducers/centers';
+import authReducer from './reducers/auth';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
+    auth: authReducer,
     student: studentReducer,
     // company: companyReducer,
     center: centerReducer,
