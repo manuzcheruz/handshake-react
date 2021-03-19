@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
+import * as actions from '../../../Store/actions';
 
 import Button from '../../../Shared/Button/Button'
 import Field from '../../../Shared/Field/Field'
@@ -37,11 +38,18 @@ const loginFields = [
 
 const SignupFields = [
     {
+        name: 'userCat',
+        elementName: 'select',
+        elementType: '',
+        placeholder: '',
+        label: 'Select your category'
+    },
+    {
         name: 'email',
         elementName: 'input',
         elementType: 'email',
         placeholder: 'Your e-mail',
-        label: 'Your e-mail'
+        label: 'Your E-mail'
     },
     {
         name: 'password1',
@@ -66,18 +74,59 @@ const SignupFields = [
 ]
 
 function Login(props) {
-    const [passWeight, setPassWeight] = useState('5px solid #ECF1FA');
-    const [toggleBtn, setToggleBtn] = useState('Submit');
+    // the password strength indicator
+    const [passWeight1, setPassWeight1] = useState('5px solid #ECF1FA');
+    const [passWeight2, setPassWeight2] = useState('5px solid #ECF1FA');
+    const [passWeight3, setPassWeight3] = useState('5px solid #ECF1FA');
+    const [passWeight4, setPassWeight4] = useState('5px solid #ECF1FA');
+    // const [toggleBtn, setToggleBtn] = useState('Submit');
 
     let fields;
     if (props.login){
         fields = loginFields;
-        setToggleBtn('Log In');
-        setPassWeight('');
+        // setToggleBtn('Log In');
+        // setPassWeight('');
     } else if (props.signup){
         fields = SignupFields;
-        setToggleBtn('Sign Up');
+        // setToggleBtn('Sign Up');
     }
+
+    const regextTest1 = /[A-Z]/gm;
+    const regextTest2 = /[a-z]/gm;
+    const regextTest3 = /[0-9!@#$%^&*()_+\-=\]{};':"\\|,.<>?]*$/gm;
+
+    console.log(props.values.password1.length);
+    if (props.values.password1.length > 6){
+        setPassWeight1('5px solid red');
+    } else if (regextTest1.test(props.values.password1)){
+        // setPassWeight2('5px solid red')
+    } else if (regextTest2.test(props.values.password1)){
+        // setPassWeight3('5px solid red')
+    } else if (regextTest3.test(props.values.password1)){
+        // setPassWeight4('5px solid red')
+    }
+
+    const onFormSubmit = event => {
+        event.preventDefault();
+        if (props.signup){
+            if (props.values.password1 !== props.values.password2){
+                alert('Your passwords do not match!')
+            } else if (!props.values.terms){
+                alert('You have to accept the terms and condtions to proceed!')
+            } else {
+                const data = {
+                    email: props.values.email,
+                    password: props.values.password1,
+                    returnSecureToken: true
+                }
+                props.onAuthFormSubmit(data, props.values.userCat, props.signup);
+            }
+        } else if (props.login){
+
+        }
+    }
+
+    // console.log(props);
 
     return (
         <div className="section">
@@ -94,38 +143,40 @@ function Login(props) {
                             <div className="subtitle">
                                 {props.login ? 'Login in with your email and password' : props.signup ? 'Fill in the following fields to get access to Fanaka and secure your dream job.' : ''}
                             </div>
-                            <form className="form">
+                            <form className="form" onSubmit={event => onFormSubmit(event)}>
                                 {fields && fields.map( item => {
                                     return (
                                         <Field
                                             key={item.name}
                                             {...item}
+                                            signup
+                                            value={props.values[item.name]}
+                                            onChange={props.handleChange}
                                             />
                                     )
                                 })}
                                 {props.signup && 
                                     <div className="line">
-                                        <div className="line1" style={{borderBottom: `${passWeight}`}}></div>
-                                        <div className="line1" style={{borderBottom: `${passWeight}`}}></div>
-                                        <div className="line1" style={{borderBottom: `${passWeight}`}}></div>
-                                        <div className="line1" style={{borderBottom: `${passWeight}`}}></div>
+                                        <div className="line1" style={{borderBottom: `${passWeight1}`}}></div>
+                                        <div className="line1" style={{borderBottom: `${passWeight2}`}}></div>
+                                        <div className="line1" style={{borderBottom: `${passWeight3}`}}></div>
+                                        <div className="line1" style={{borderBottom: `${passWeight4}`}}></div>
                                     </div>
                                 }
                                 <div className="button">
-                                    <Link to="/jobs">
-                                        <Button
-                                            name={toggleBtn}
-                                            size='1.1rem'
-                                            color='white'
-                                            width='100%'
-                                            height='40px'
-                                            bgcolor='#55BC7E'
-                                            radius='7px'
-                                            border='none'
-                                            iconMarginLeft='20px'
-                                            // iconMarginTop='5px'
-                                            icon={<LoginIcon height={18} color='white' />} />
-                                    </Link>
+                                    <Button
+                                        name='Log In'
+                                        type='submit'
+                                        size='1.1rem'
+                                        color='white'
+                                        width='100%'
+                                        height='40px'
+                                        bgcolor='#55BC7E'
+                                        radius='7px'
+                                        border='none'
+                                        iconMarginLeft='20px'
+                                        // iconMarginTop='5px'
+                                        icon={<LoginIcon height={18} color='white' />} />
                                 </div>
                             </form>
                         </div>
@@ -212,20 +263,23 @@ const mapStateToProps = state => {
     }
 }
 
-const mapPropsToDispatch = state => {
+const mapPropsToDispatch = dispatch => {
     return {
-
+        onAuthFormSubmit: (data, cat, isSignUp) => dispatch(actions.auth(data, cat, isSignUp))
     }
 }
 
 export default connect(mapStateToProps,mapPropsToDispatch)(withFormik({
     mapPropsToValues: () => ({
+        userCat: '',
         email: '',
         password1: '',
         password2: '',
-        terms: ''
+        terms: false
     }),
     validationSchema: Yup.object().shape({
+        userCat: Yup.string()
+            .required('required!'),
         email: Yup.string()
             .required('required!'),
         password1: Yup.string()

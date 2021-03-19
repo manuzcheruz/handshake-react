@@ -39,29 +39,44 @@ const authLogout = (expiryTime) => {
     }
 }
 
-export const auth = (email, password, isSignUp) => {
+export const auth = (data, cat, isSignUp) => {
     return dispatch => {
         dispatch(authStart());
-        const authData = {
-            email: email,
-            password: password,
-            returnSecureToken: true
-        }
         let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyASOm_aUV9fSkVX820e-nef0Gi8u6C9w70';
         if (!isSignUp) {
             url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyASOm_aUV9fSkVX820e-nef0Gi8u6C9w70';
         }
-        fetch(url, authData)
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => {
+                return res.json();
+            })
             .then(response => {
-                const expiryDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
-                localStorage.setItem('token', response.data.idToken);
-                localStorage.setItem('expirationDate', expiryDate);
-                localStorage.setItem('userId', response.data.localId);
-                dispatch(authSuccess(response.data.localId, response.data.idToken, expiryDate));
-                dispatch(authLogout(response.data.expiresIn));
+                console.log(response);
+                const expiryDate = new Date(new Date().getTime() + response.expiresIn * 1000);
+                dispatch(authSuccess(response.localId, response.idToken, expiryDate));
+                dispatch(authLogout(response.expiresIn));
+                // new request to store the user category
+                const newUrl = 'https://fanaka-sasa-default-rtdb.firebaseio.com/userCategory.json'
+                fetch(newUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        userId: response.localId,
+                        category: 'student'
+                    })
+                })
             })
             .catch(error => {
-                dispatch(authFail(error.response.data.error))
+                console.log(error.message);
+                dispatch(authFail(error.message))
             })
     }
 }
