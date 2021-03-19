@@ -95,15 +95,17 @@ function Login(props) {
     const regextTest2 = /[a-z]/gm;
     const regextTest3 = /[0-9!@#$%^&*()_+\-=\]{};':"\\|,.<>?]*$/gm;
 
-    console.log(props.values.password1.length);
-    if (props.values.password1.length > 6){
-        setPassWeight1('5px solid red');
-    } else if (regextTest1.test(props.values.password1)){
-        // setPassWeight2('5px solid red')
-    } else if (regextTest2.test(props.values.password1)){
-        // setPassWeight3('5px solid red')
-    } else if (regextTest3.test(props.values.password1)){
-        // setPassWeight4('5px solid red')
+    const handlePasswordChange = event => {
+        console.log(event.target.value);
+        if (event.target.value.length > 6){
+            setPassWeight1('5px solid red');
+        } else if (regextTest1.test(event.target.value)){
+            setPassWeight2('5px solid red')
+        } else if (regextTest2.test(event.target.value)){
+            setPassWeight3('5px solid red')
+        } else if (regextTest3.test(event.target.value)){
+            setPassWeight4('5px solid red')
+        }
     }
 
     const onFormSubmit = event => {
@@ -149,9 +151,11 @@ function Login(props) {
                                         <Field
                                             key={item.name}
                                             {...item}
+                                            {...props}
                                             signup
                                             value={props.values[item.name]}
                                             onChange={props.handleChange}
+                                            onPasswordChange={handlePasswordChange}
                                             />
                                     )
                                 })}
