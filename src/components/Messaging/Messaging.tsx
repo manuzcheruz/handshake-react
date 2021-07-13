@@ -1,21 +1,11 @@
-import React, { useState } from 'react'
-import { Edit, Menu, Chevron, Google, Amazon, Campus2, Tesla, Facebook } from '../../Assets/icons'
-import Aux from '../../hoc/Aux'
-import Chat from './Chat/Chat'
-import { me, mem5, mem6} from '../../Assets/Images'
+import React, { useState } from 'react';
+import { Edit, Menu, Chevron, Google, Amazon, Campus2, Tesla, Facebook } from '../../Assets/icons';
+import Aux from '../../hoc/Aux';
+import Chat from './Chat/Chat';
+import { me, mem5, mem6} from '../../Assets/Images';
+import { PropsMessage } from './interfaces';
 
 import './Messaging.css'
-
-/**
- * sample message properties to be fetched from the server
- */
-export interface PropsMessage {
-    image: any;
-    name: string;
-    time: string;
-    message: string;
-    active?: boolean;
-}
 
 const messageArr: PropsMessage[] = [
     {
@@ -66,27 +56,28 @@ const messageArr: PropsMessage[] = [
 ]
 
 /**
- * renders the 
+ * renders the messaging section with the various chats as a component within
  * @param props 
  * @returns 
  */
 function Messaging(props: PropsMessage): JSX.Element {
-    const [height, setHeight] = useState('50px')
-    const [active, setActive] = useState(false)
-    let [show, setShow] = useState('none')
+    const [height, setHeight] = useState('50px');
+    const [active, setActive] = useState(false);
+    let [show, setShow] = useState('none');
 
-    const onSelectMessage = () => {
-        setActive(!active)
+    const onSelectMessage: () => void = () => {
+        setActive(!active);
         if (active === true) {
-            setHeight('550px')
+            setHeight('550px');
         } else {
-            setHeight('50px')
+            setHeight('50px');
         }
     }
 
-    const onSelectChat = () => {
+    const onSelectChat: () => void = () => {
         setShow('block')
     }
+
     return (
         <Aux>
             <Chat display={show} />
@@ -147,4 +138,4 @@ function Messaging(props: PropsMessage): JSX.Element {
     )
 }
 
-export default Messaging
+export default Messaging;

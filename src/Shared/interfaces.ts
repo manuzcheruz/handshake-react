@@ -10,9 +10,9 @@ export interface PropsButton {
     radius?: string;
     size?: string;
     click?: () => void;
-    type?: "button" | "submit" | "reset";
+    type?: any;
     name?: string;
-    icon?: () => void;
+    icon?: any;
     iconMarginLeft?: string;
     iconMarginTop?: string;
     padding?: string;
@@ -49,10 +49,10 @@ export interface PropsField extends AuthType {
     onChange: any; //will fix all these 'any' later
     touched: any;
     errors: any;
-    onPasswordChange: (e: any) => void;
-    handlePdfChange: (e: any) => void;
-    onFileChange: (e: any) => void;
-    handleEditorChange?: (e: any) => void;
+    onPasswordChange: any;
+    handlePdfChange: any;
+    onFileChange: any;
+    handleEditorChange?: any;
 }
 
 /**

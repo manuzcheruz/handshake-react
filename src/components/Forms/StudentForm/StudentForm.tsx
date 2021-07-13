@@ -306,7 +306,50 @@ const companyFields = [
     }
 ]
 
-function RegistrationForm(props) {
+/**
+ * interfacing student data sent to the server during registration
+ */
+export interface StudentData {
+    name: string;
+    campus: string;
+    course: string;
+    description: string;
+    twitter: string;
+    logo: any;
+    backgroundImage: any;
+    resume: any;
+}
+
+/**
+ * interfacing center data sent to the server during registration
+ */
+export interface CenterData {
+    name: string;
+    category: string;
+    course: string;
+    description: string;
+    twitter: string;
+    logo: any;
+    backgroundImage: any;
+    location: any;
+}
+
+/**
+ * redifining this but have to reuse one used in the navbar
+ */
+export interface PropsRegistration {
+    job?: boolean;
+    student?: boolean;
+    center?: boolean;
+    company?: boolean;
+}
+
+/**
+ * This component handles the registration of new users and jobs
+ * @param props 
+ * @returns 
+ */
+function RegistrationForm(props: PropsRegistration): JSX.Element {
     // first assign the fields to the right form first
     let fields;
     if (props.job){
@@ -316,7 +359,7 @@ function RegistrationForm(props) {
     } else if (props.center){
         fields = centerFields;
     } else if (props.company){
-        fields = companyFields
+        fields = companyFields;
     }
 
     let [formNum, setFormNum] = useState(0);
@@ -356,15 +399,15 @@ function RegistrationForm(props) {
     // }, [student, company])
 
     // handle the content in the editor and assign to description
-    const handleEditorChange = ( content, editor ) => {
+    const handleEditorChange: (content: any, editor: any) => void = (content, editor) => {
         props.values.description = content;
     }
 
     // handle file change and render its preview
-    const handleFileChange = (event) => {
+    const handleFileChange: (event: any) => void = (event) => {
         setFormHeight('650px');
         if (!props.values.logo1){
-            const files = Array.from(event.target.files);
+            const files: any[] = Array.from(event.target.files);
             files.forEach((file) => {
                 const reader = new FileReader();
                 reader.readAsDataURL(file);
@@ -376,7 +419,7 @@ function RegistrationForm(props) {
             setLogo(URL.createObjectURL(event.target.files[0]));
             setShowImage('block');
         } else {
-            const files = Array.from(event.target.files);
+            const files: any[] = Array.from(event.target.files);
             files.forEach((file) => {
                 const reader = new FileReader();
                 reader.readAsDataURL(file);
@@ -391,8 +434,8 @@ function RegistrationForm(props) {
     }
 
     // handling the pdf upload and converting it to base64
-    const handlePdfChange = (event) => {
-        const files = Array.from(event.target.files);
+    const handlePdfChange: (event: any) => void = (event) => {
+        const files: any[] = Array.from(event.target.files);
         files.forEach((file) => {
             const reader = new FileReader();
             reader.readAsDataURL(file);
@@ -403,12 +446,12 @@ function RegistrationForm(props) {
     }
 
     // submit the form and send it to redux store to handle its upload process
-    const onFormSubmit = (event) => {
+    const onFormSubmit: (event: any) => void = (event) => {
         event.preventDefault();
         // student
         if (props.student && props.values.description !== ''){
             if (props.logo && props.bg){
-                const data = {
+                const data: StudentData = {
                     name: props.values.name,
                     campus: props.values.campus,
                     course: props.values.course,
@@ -425,7 +468,7 @@ function RegistrationForm(props) {
         // center
         if (props.center && props.values.description !== ''){
             if (props.logo && props.bg){
-                const data = {
+                const data: CenterData = {
                     name: props.values.name,
                     category: props.values.category,
                     course: props.values.course,
@@ -445,8 +488,10 @@ function RegistrationForm(props) {
     //     props.push(`/students/${props.values.name.split(' ')[0]}`);
     // }
 
-    // next btn click
-    const onBtnClick = () => {
+    /**
+     * next button onClick funtionality
+     */
+    const onBtnClick: () => void = () => {
         setFadeDirection('right');
         const newFormNum = ++formNum;
         if (props.job){
@@ -469,8 +514,11 @@ function RegistrationForm(props) {
             }
         }
     } 
-    // back btn
-    const onBackBtnClick = () => {
+    
+    /**
+     * back button onClick funtionality
+     */
+    const onBackBtnClick: () => void = () => {
         setFadeDirection('left');
         const newFormNum = --formNum;
         if (props.job){
@@ -653,7 +701,15 @@ function RegistrationForm(props) {
     )
 }
 
-const mapPropsToState = state => {
+// interface StateRegistration {
+//     studentData: string[];
+//     spinner: boolean;
+//     logo: string;
+//     bg: string;
+//     pdf: string;
+// }
+
+const mapPropsToState: (state: any) => {} = state => {
     return {
         studentData: state.student.student !== [],
         spinner: state.student.formSumbitStart,
@@ -663,14 +719,14 @@ const mapPropsToState = state => {
     }
 }
 
-const mapPropsToDispatch = dispatch => {
+const mapPropsToDispatch: (dispatch: any) => {} = dispatch => {
     return {
-        onStudentFormSubmit: (data) => dispatch(actions.initStudentForm(data)),
-        onLogoUpload: (logo) => dispatch(actions.logoTemp(logo)),
-        onBgUpload: (bg) => dispatch(actions.bgTemp(bg)),
-        onPdfUpload: (pdf) => dispatch(actions.pdfUpload(pdf)),
+        onStudentFormSubmit: (data: StudentData) => dispatch(actions.initStudentForm(data)),
+        onLogoUpload: (logo: any) => dispatch(actions.logoTemp(logo)),
+        onBgUpload: (bg: any) => dispatch(actions.bgTemp(bg)),
+        onPdfUpload: (pdf: any) => dispatch(actions.pdfUpload(pdf)),
         // centers
-        onCenterFormSubmit: (data) => dispatch(actions.initCenterForm(data)),
+        onCenterFormSubmit: (data: CenterData) => dispatch(actions.initCenterForm(data)),
     }
 }
 

@@ -5,22 +5,26 @@ import { mem6 } from '../../../Assets/Images';
 
 import './Chat.css'
 
-function Chat(props) {
+/**
+ * this component displays a singel chat
+ * @param props 
+ * @returns 
+ */
+function Chat(props: { display: string}): JSX.Element {
 
-    let [display, setDisplay] = useState('300px') 
+    let [displayHeight, setDisplayHeight] = useState('300px');
     
-    const onSelectClose = () => {
-        setDisplay('0px')
+    const onSelectClose: () => void = () => {
+        setDisplayHeight('0px');
     }
 
     return (
-        <div className="chat" style={{height: `${display}`, display: `${props.display ? props.display : 'none'}`}}>
+        <div className="chat" style={{ height: `${displayHeight}`, display: `${props.display ? props.display : 'none'}`}}>
             <div className="top">
                 <div className="image">
                     <img alt='' src={mem6} height='40px' />
                     <div className="dot" style={{backgroundColor: 'green', width: '10px', height: '10px', marginTop: '-18px', marginLeft: '25px', borderRadius: '50%', border: '3px solid white'}}>
-
-                        </div>
+                    </div>
                 </div>
                 <div className="name">
                     Collins Cheruiyot
@@ -79,7 +83,7 @@ function Chat(props) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Chat
