@@ -59,7 +59,7 @@ function Field(props) {
                     value={props.name === 'password1' ? event => props.onPasswordChange(event) : props.value}
                     onChange={props.onChange}
                 />
-                {(props.touched && props.errors[props.name]) && <small style={{fontSize: '0.6rem', color: 'red'}}>{props.errors[props.name]}</small>}
+                {(props.touched[props.name] && props.errors[props.name]) && <small style={{fontSize: '0.6rem', color: 'red'}}>{props.errors[props.name]}</small>}
             </div>
         )
     } else if (props.elementType === 'file') {
@@ -77,7 +77,7 @@ function Field(props) {
                     // onChange={event => props.onFileChange(event)}
                     onChange={event => props.name === 'resume' ? props.handlePdfChange(event) : props.onFileChange(event)}
                 />
-                {(props.touched && props.errors[props.name]) && <small style={{fontSize: '0.6rem', color: 'red'}}>{props.errors[props.name]}</small>}
+                {(props.touched[props.name] && props.errors[props.name]) && <small style={{fontSize: '0.6rem', color: 'red'}}>{props.errors[props.name]}</small>}
             </div>
         )
      } else if (props.elementName === 'select') {
@@ -95,7 +95,7 @@ function Field(props) {
                         : ''
                         }
                     </select>
-                {(props.touched && props.errors[props.name]) && <small style={{fontSize: '0.6rem', color: 'red'}}>{props.errors[props.name]}</small>}
+                {(props.touched[props.name] && props.errors[props.name]) && <small style={{fontSize: '0.6rem', color: 'red'}}>{props.errors[props.name]}</small>}
             </div>
         )
     } else {

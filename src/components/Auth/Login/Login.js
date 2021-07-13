@@ -96,7 +96,7 @@ function Login(props) {
     const regextTest3 = /[0-9!@#$%^&*()_+\-=\]{};':"\\|,.<>?]*$/gm;
 
     const handlePasswordChange = event => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         if (event.target.value.length > 6){
             setPassWeight1('5px solid red');
         } else if (regextTest1.test(event.target.value)){
@@ -107,6 +107,8 @@ function Login(props) {
             setPassWeight4('5px solid red')
         }
     }
+
+    console.log(props);
 
     const onFormSubmit = event => {
         event.preventDefault();
