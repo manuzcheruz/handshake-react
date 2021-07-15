@@ -1,9 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Sad } from '../../../Assets/illustrators'
-import Button from '../../../Shared/Button/Button'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Sad } from '../../../Assets/illustrators';
+import Button from '../../../Shared/Button/Button';
 
-function Logout(props) {
+function Logout(): JSX.Element {
     return (
         <div className="section">
             <div className="container">
@@ -46,4 +46,4 @@ function Logout(props) {
     )
 }
 
-export default Logout
+export default Logout;

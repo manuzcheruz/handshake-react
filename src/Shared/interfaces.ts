@@ -41,17 +41,17 @@ export interface PropsField extends AuthType {
     elementType: string;
     name: string;
     placeholder?: string;
-    label: string;
+    label?: string;
     height?: string;
     width?: string;
     border?: string;
-    value: any;
-    onChange: any; //will fix all these 'any' later
-    touched: any;
-    errors: any;
-    onPasswordChange: any;
-    handlePdfChange: any;
-    onFileChange: any;
+    value?: any;
+    onChange?: any; //will fix all these 'any' later
+    touched?: any;
+    errors?: any;
+    onPasswordChange?: any;
+    handlePdfChange?: any;
+    onFileChange?: any;
     handleEditorChange?: any;
 }
 

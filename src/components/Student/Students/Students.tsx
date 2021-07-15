@@ -13,6 +13,8 @@ import Aux from '../../../hoc/Aux'
 import Navbar from '../../Navbar/Navbar'
 import { Link } from 'react-router-dom'
 import SearchBar from '../../../Shared/SearchBar/searchBar'
+import { PropsStudentCard } from '../interfaces';
+import { PropsField } from '../../../Shared/interfaces';
 
 const fields = [
     {
@@ -24,7 +26,7 @@ const fields = [
     }
 ]
 
-const studentFilters = [
+const studentFilters: PropsField[] = [
     {
         name: 'freshman',
         elementName: 'input',
@@ -57,7 +59,7 @@ const studentFilters = [
     }
 ]
 
-const studentArr = [
+const studentArr: PropsStudentCard[] = [
     {
         name: 'John Doe',
         center: 'University of Nairobi',
@@ -133,7 +135,7 @@ const studentArr = [
 
 ]
 
-function Students(props) {
+function Students(props: any): JSX.Element {
     return (
         <Aux>
             <Navbar bgColor='#FAFAFB' core />

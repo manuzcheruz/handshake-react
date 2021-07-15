@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-import { Menu, CheckSlim, Message, School } from '../../../Assets/icons'
-import './StudentCard.css'
+import { Menu, CheckSlim, Message, School } from '../../../Assets/icons';
+import './StudentCard.css';
 
-function StudentCard({name, img, role, friends, posts, center}) {
+/**
+ * properties recieved by the student card to customize it
+ * @param param0 
+ * @returns 
+ */
+function StudentCard({name, img, role, friends, posts, center} : PropsStudentCard): JSX.Element {
     return (
         <div className="jobholder-profile">
             <div className="profile-wrapper">
@@ -57,7 +62,7 @@ function StudentCard({name, img, role, friends, posts, center}) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default StudentCard
+export default StudentCard;

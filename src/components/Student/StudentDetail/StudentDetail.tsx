@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../Store/actions'
-import PDFViewer from 'pdf-viewer-reactjs'
+import PDFViewer from 'pdf-viewer-reactjs';
+import { StudentSkills, } from '../interfaces';
 
 import { Map, Marker as GoogleMarker, GoogleApiWrapper } from 'google-maps-react';
-import { Apple, Benz, Facebook, Google, Heart, Instagram, Linkedin, Microsoft, School, Share, Slack, Briefcase, Whatsapp } from '../../../Assets/icons'
+import { Apple, Benz, Facebook, Google, Heart, Instagram, Linkedin, Microsoft, School, Share, Slack, Briefcase, Whatsapp } from '../../../Assets/icons';
 import Aux from '../../../hoc/Aux'
 import Pagination from '../../../Shared/Pagination/Pagination'
 import CenterCard from '../../Center/CenterCard/CenterCard'
@@ -12,6 +13,9 @@ import JobCard from '../../LandingPage/JobSection/JobCard/JobCard'
 import Navbar from '../../Navbar/Navbar'
 import Messaging from '../../Messaging/Messaging'
 
+/**
+ * need index import here, later absolute one
+ */
 // import appleImage from '../../../Assets/Images/mebg.png'
 // import me from '../../../Assets/Images/me.png';
 import mem1 from '../../../Assets/Images/mem1.png';
@@ -24,7 +28,8 @@ import mem7 from '../../../Assets/Images/mem7.jpg';
 import mem8 from '../../../Assets/Images/mem8.jpg';
 
 import '../../Company/CompanyDetail/CompanyDetail.css';
-const skills = [
+
+const skills: StudentSkills[] = [
     {
         name: 'React Js',
         num: 34
@@ -55,7 +60,13 @@ const skills = [
     }
 ]
 
-function CompanyDetail(props) {
+/**
+ * Shared component by the student and company detail pages. 
+ * Is customized based on the props passed to it.
+ * @param {*} props 
+ * @returns 
+ */
+function CompanyDetail(props: any): JSX.Element {
     const { onStudentDetailFetch, studentFromReg } = props;
 
     useEffect(() => {
@@ -282,14 +293,14 @@ function CompanyDetail(props) {
     )
 }
 
-const mapPropsToState = state => {
+const mapPropsToState: (state: any) => {} = state => {
     return {
         studentFromReg: state.student.student,
         studentFromFetch: state.student.studentDetail
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps: (dispatch: any) => { } = dispatch => {
     return {
         onStudentDetailFetch: () => dispatch(actions.initStudentDetailFetch())
     }

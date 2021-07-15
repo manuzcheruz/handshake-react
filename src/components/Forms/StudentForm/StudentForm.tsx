@@ -14,7 +14,17 @@ import * as Yup from 'yup';
 import './StudentForm.css';
 import Field from '../../../Shared/Field/Field';
 
-const studentFields = [
+interface SingleField {
+    name: string;
+    elementName: string;
+    elementType: string;
+    // placeholder: 'e.g John Doe',
+    label: string;
+    level: number;
+    position: string;
+}
+
+const studentFields: SingleField[] = [
     {
         name: 'logo',
         elementName: 'input',
@@ -97,7 +107,7 @@ const studentFields = [
     }
 ]
 
-const jobFields = [
+const jobFields: SingleField[] = [
     {
         name: 'title',
         elementName: 'input',
@@ -188,7 +198,7 @@ const jobFields = [
     }
 ]
 
-const centerFields = [
+const centerFields: SingleField[] = [
     {
         name: 'logo',
         elementName: 'input',
@@ -247,7 +257,7 @@ const centerFields = [
     }
 ]
 
-const companyFields = [
+const companyFields: SingleField[] = [
     {
         name: 'logo',
         elementName: 'input',
@@ -337,21 +347,21 @@ export interface CenterData {
 /**
  * redifining this but have to reuse one used in the navbar
  */
-export interface PropsRegistration {
-    job?: boolean;
-    student?: boolean;
-    center?: boolean;
-    company?: boolean;
-}
+// export interface PropsRegistration {
+//     job?: boolean;
+//     student?: boolean;
+//     center?: boolean;
+//     company?: boolean;
+// }
 
 /**
  * This component handles the registration of new users and jobs
  * @param props 
  * @returns 
  */
-function RegistrationForm(props: PropsRegistration): JSX.Element {
+function RegistrationForm(props: any): JSX.Element {
     // first assign the fields to the right form first
-    let fields;
+    let fields: SingleField[] = [];
     if (props.job){
         fields = jobFields;
     } else if (props.student){

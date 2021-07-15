@@ -2202,6 +2202,13 @@
   "resolved" "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz"
   "version" "4.0.0"
 
+"@types/pdf-viewer-reactjs@^2.2.2":
+  "integrity" "sha512-pqZURKFhlxU7aVJA0ugXgu5mmHjCI0ppp3nqN4rDFCH168JOZNwEB9uerf2u881dViyASLfwUWDIEd3wESOnWg=="
+  "resolved" "https://registry.npmjs.org/@types/pdf-viewer-reactjs/-/pdf-viewer-reactjs-2.2.2.tgz"
+  "version" "2.2.2"
+  dependencies:
+    "@types/react" "*"
+
 "@types/prettier@^2.0.0":
   "integrity" "sha512-6gOkRe7OIioWAXfnO/2lFiv+SJichKVSys1mSsgyrYHSEjk8Ctv4tSR/Odvnu+HWlH2C8j53dahU03XmQdd5fA=="
   "resolved" "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.1.6.tgz"
