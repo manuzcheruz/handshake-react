@@ -16,6 +16,7 @@ export interface PropsButton {
     iconMarginLeft?: string;
     iconMarginTop?: string;
     padding?: string;
+    createMessage?: () => void;
 }
 
 /**
@@ -30,7 +31,7 @@ export interface UserCats {
  * determine whether the user is creating acc or loging in.
  */
 export interface AuthType {
-    signup: boolean;
+    signup?: boolean;
 }
 
 /**

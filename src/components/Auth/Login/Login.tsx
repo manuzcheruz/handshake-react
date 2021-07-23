@@ -12,8 +12,9 @@ import { Briefcase, Cap, School, LoginIcon } from '../../../Assets/icons'
 import { LoginSVG, CoWorkers } from '../../../Assets/illustrators'
 import './Login.css'
 import Aux from '../../../hoc/Aux';
+import { PropsField } from '../../../Shared/interfaces';
 
-const loginFields = [
+const loginFields: PropsField[] = [
     {
         name: 'email',
         elementName: 'input',
@@ -36,7 +37,7 @@ const loginFields = [
     }
 ]
 
-const SignupFields = [
+const SignupFields: PropsField[] = [
     {
         name: 'userCat',
         elementName: 'select',
