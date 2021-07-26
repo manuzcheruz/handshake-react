@@ -1,26 +1,26 @@
 import * as actionTypes from './actionTypes';
 
-const formSumbitStart = () => {
+const formSumbitStart: () => {} = () => {
     return {
         type: actionTypes.STUDENT_FORM_SUBMIT_START
     }
 }
 
-const formSumbitSuccess = (data) => {
+const formSumbitSuccess: (data: any) => {} = (data) => {
     return {
         type: actionTypes.STUDENT_FORM_SUBMIT_SUCCESS,
         data: data
     }
 }
 
-const formSumbitFail = (error) => {
+const formSumbitFail: (error: any) => {} = (error) => {
     return {
         type: actionTypes.STUDENT_FORM_SUBMIT_FAIL,
         error: error
     }
 }
 
-export const initStudentForm = (data, dispatch) => {
+export const initStudentForm: (data: any, dispatch: any) => {} = (data, dispatch) => {
     return dispatch => {
         // we have started sumiting the form here
         dispatch(formSumbitStart());
@@ -44,21 +44,21 @@ export const initStudentForm = (data, dispatch) => {
     }
 }
 
-export const logoTemp = (logo) => {
+export const logoTemp: (logo: any) => {} = (logo) => {
     return {
         type: actionTypes.STUDENT_FORM_LOGO,
         logo: logo
     }
 }
 
-export const bgTemp = (bg) => {
+export const bgTemp: (bg: any) => {} = (bg) => {
     return {
         type: actionTypes.STUDENT_FORM_BG,
         bg: bg
     }
 }
 
-export const pdfUpload = (pdf) => {
+export const pdfUpload: (pdf: any) => {} = (pdf) => {
     return {
         type: actionTypes.STUDENT_FORM_PDF,
         pdf: pdf
@@ -66,27 +66,27 @@ export const pdfUpload = (pdf) => {
 }
 
 // student detail page
-const studentFetchStart = () => {
+const studentFetchStart: () => {} = () => {
     return {
         type: actionTypes.STUDENT_DETAIL_FETCH_START
     }
 }
 
-const studentFetchSuccess = (data) => {
+const studentFetchSuccess: (data: any) => {} = (data) => {
     return {
         type: actionTypes.STUDENT_DETAIL_FETCH_SUCCESS,
         data: data
     }
 }
 
-const studentFetchError = (error) => {
+const studentFetchError: (error: any) => {} = (error) => {
     return {
         type: actionTypes.STUDENT_DETAIL_FETCH_FAIL,
         error: error
     }
 }
 
-export const initStudentDetailFetch = (dispatch) => {
+export const initStudentDetailFetch: (dispatch: any) => {} = (dispatch) => {
     return dispatch => {
         dispatch(studentFetchStart());
 

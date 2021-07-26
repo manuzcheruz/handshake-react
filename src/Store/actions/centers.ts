@@ -80,14 +80,14 @@ const centerFetchSuccess: (center: CenterInitialState) => {} = (data) => {
     }
 }
 
-const centerFetchError = (error) => {
+const centerFetchError: (error: any) => {} = (error) => {
     return {
         type: actionTypes.CENTER_DETAIL_FETCH_FAIL,
         error: error
     }
 }
 
-export const initCenterDetailFetch = (dispatch) => {
+export const initCenterDetailFetch: (dispatch: any) => {} = (dispatch) => {
     return dispatch => {
         dispatch(centerFetchStart());
 

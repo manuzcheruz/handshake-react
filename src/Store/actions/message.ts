@@ -1,32 +1,33 @@
 
-const postMessageStart = () => {
+const postMessageStart: () => {} = () => {
     return {
         type: 'POST_MESSAGE_START'
     }
 }
 
-const postMessageSuccess = (data) => {
+const postMessageSuccess: (data: any) => {} = (data) => {
     return {
         type: 'POST_MESSAGE_SUCCESS',
         data: data
     }
 }
 
-const postMessageFail = (error) => {
+const postMessageFail: (error: any) => {} = (error) => {
     return {
         type: 'POST_MESSAGE_FAIL',
         error: error
     }
 }
 
-export const initMessages = (data) => {
+export const initMessages: (data: any) => {} = (data) => {
     return dispatch => {
         postMessageStart()
         fetch('', {
             method: 'POST',
-            body: {
-                data
-            }
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
         })
         .then(response => {
             return response.json()
