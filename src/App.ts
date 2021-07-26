@@ -1,11 +1,11 @@
-import React, { Suspense, useEffect } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { toggleNightMode } from './Store/actions'
+import React, { Suspense, useEffect } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { toggleNightMode } from './Store/actions';
 
 import Layout from './hoc/Layout/Layout';
-import LandingPage from './components/LandingPage/LandingPage'
-// import StudentDetailSkeleton from './components/Student/StudentDetail/StudentDetailSkeleton'
+import LandingPage from './components/LandingPage/LandingPage';
+// import StudentDetailSkeleton from './components/Student/StudentDetail/StudentDetailSkeleton';
 
 import './App.css';
 
@@ -26,7 +26,7 @@ const StudentForm = React.lazy(() => import('./components/Forms/StudentForm/Stud
 // const CompanyForm = React.lazy(() => import('./components/Forms/CompanyForm/CompanyForm'))
 // const JobForm = React.lazy(() => import('./components/Forms/JobForm/JobForm'))
 
-function App(props) {
+function App(props: any) {
   const { onToggleNightMode } = props
   useEffect(() => {
     let time = new Date().getHours()
@@ -61,7 +61,7 @@ function App(props) {
   );
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps: (dispatch: any) => {} = dispatch => {
   return {
     onToggleNightMode: () => dispatch(toggleNightMode())
   }
