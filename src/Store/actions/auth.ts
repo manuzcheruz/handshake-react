@@ -1,3 +1,4 @@
+import { Dispatch } from 'redux';
 import { AuthInitialState } from '../reducers/auth';
 import * as actionTypes from './actionTypes';
 
@@ -33,7 +34,7 @@ export const logout: () => {} = () => {
 }
 
 const authLogout: (expiryTime: number) => {} = (expiryTime) => {
-    return dispatch => {
+    return (dispatch: Dispatch) => {
         setTimeout(() => {
             dispatch(logout());
         }, expiryTime * 1000);
@@ -41,7 +42,7 @@ const authLogout: (expiryTime: number) => {} = (expiryTime) => {
 }
 
 export const auth = (data: any, cat: any, isSignUp: boolean) => {
-    return dispatch => {
+    return (dispatch: Dispatch) => {
         dispatch(authStart());
         let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyASOm_aUV9fSkVX820e-nef0Gi8u6C9w70';
         if (!isSignUp) {
@@ -94,7 +95,7 @@ export const setAuthRedirectPath: (authRedirectPath: AuthInitialState) => {} = a
 
 // utility method to help us login and logout users from the root app
 export const authCheckState: () => {} = () => {
-    return dispatch => {
+    return (dispatch: Dispatch) => {
         const token = localStorage.getItem('token');
         if (!token) {
             dispatch(logout());
