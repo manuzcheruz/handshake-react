@@ -1,28 +1,29 @@
+import { AnyAction, Dispatch } from 'redux';
 import { CenterInitialState } from '../reducers/centers';
 import * as actionTypes from './actionTypes';
 
-const formSumbitStart: () => {} = () => {
+const formSumbitStart: () => AnyAction = () => {
     return {
         type: actionTypes.CENTER_FORM_SUBMIT_START
     }
 }
 
-const formSumbitSuccess: (center: CenterInitialState) => {} = (center) => {
+const formSumbitSuccess: (center: CenterInitialState) => AnyAction = (center) => {
     return {
         type: actionTypes.CENTER_FORM_SUBMIT_SUCCESS,
         data: center
     }
 }
 
-const formSumbitFail: (error: CenterInitialState) => {} = (error) => {
+const formSumbitFail: (error: CenterInitialState) => AnyAction = (error) => {
     return {
         type: actionTypes.CENTER_FORM_SUBMIT_FAIL,
         error: error
     }
 }
 
-export const initCenterForm: (center: CenterInitialState, dispatch: any) => {} = (center, dispatch) => {
-    return dispatch => {
+export const initCenterForm: (center: CenterInitialState, dispatch: Dispatch) => {} = (center, dispatch) => {
+    return (dispatch: Dispatch) => {
         // we have started sumiting the form here
         dispatch(formSumbitStart());
 
@@ -67,20 +68,20 @@ export const pdfUpload: (pdf: CenterInitialState) => {} = (pdf) => {
 }
 
 // CENTER detail page
-const centerFetchStart: () => {} = () => {
+const centerFetchStart: () => AnyAction = () => {
     return {
         type: actionTypes.CENTER_DETAIL_FETCH_START
     }
 }
 
-const centerFetchSuccess: (center: CenterInitialState) => {} = (data) => {
+const centerFetchSuccess: (center: CenterInitialState) => AnyAction = (data) => {
     return {
         type: actionTypes.CENTER_DETAIL_FETCH_SUCCESS,
         data: data
     }
 }
 
-const centerFetchError: (error: any) => {} = (error) => {
+const centerFetchError: (error: any) => AnyAction = (error) => {
     return {
         type: actionTypes.CENTER_DETAIL_FETCH_FAIL,
         error: error
@@ -88,12 +89,12 @@ const centerFetchError: (error: any) => {} = (error) => {
 }
 
 export const initCenterDetailFetch: (dispatch: any) => {} = (dispatch) => {
-    return dispatch => {
+    return (dispatch: Dispatch) => {
         dispatch(centerFetchStart());
 
         const url = 'https://fanaka-sasa-default-rtdb.firebaseio.com/centers.json'
         fetch(url)
-        .then(res => {
+        .then((res: any) => {
             const newData = res.data.slice(-1);
             dispatch(centerFetchSuccess(newData));
         })
