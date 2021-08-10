@@ -1,19 +1,20 @@
+import { AnyAction, Dispatch } from 'redux';
 import * as actionTypes from './actionTypes';
 
-const formSumbitStart: () => {} = () => {
+const formSumbitStart: () => AnyAction = () => {
     return {
         type: actionTypes.STUDENT_FORM_SUBMIT_START
     }
 }
 
-const formSumbitSuccess: (data: any) => {} = (data) => {
+const formSumbitSuccess: (data: any) => AnyAction = (data) => {
     return {
         type: actionTypes.STUDENT_FORM_SUBMIT_SUCCESS,
         data: data
     }
 }
 
-const formSumbitFail: (error: any) => {} = (error) => {
+const formSumbitFail: (error: any) => AnyAction = (error) => {
     return {
         type: actionTypes.STUDENT_FORM_SUBMIT_FAIL,
         error: error
@@ -21,7 +22,7 @@ const formSumbitFail: (error: any) => {} = (error) => {
 }
 
 export const initStudentForm: (data: any, dispatch: any) => {} = (data, dispatch) => {
-    return dispatch => {
+    return (dispatch: Dispatch) => {
         // we have started sumiting the form here
         dispatch(formSumbitStart());
 
@@ -44,21 +45,21 @@ export const initStudentForm: (data: any, dispatch: any) => {} = (data, dispatch
     }
 }
 
-export const logoTemp: (logo: any) => {} = (logo) => {
+export const logoTemp: (logo: any) => AnyAction = (logo) => {
     return {
         type: actionTypes.STUDENT_FORM_LOGO,
         logo: logo
     }
 }
 
-export const bgTemp: (bg: any) => {} = (bg) => {
+export const bgTemp: (bg: any) => AnyAction = (bg) => {
     return {
         type: actionTypes.STUDENT_FORM_BG,
         bg: bg
     }
 }
 
-export const pdfUpload: (pdf: any) => {} = (pdf) => {
+export const pdfUpload: (pdf: any) => AnyAction = (pdf) => {
     return {
         type: actionTypes.STUDENT_FORM_PDF,
         pdf: pdf
@@ -66,20 +67,20 @@ export const pdfUpload: (pdf: any) => {} = (pdf) => {
 }
 
 // student detail page
-const studentFetchStart: () => {} = () => {
+const studentFetchStart: () => AnyAction = () => {
     return {
         type: actionTypes.STUDENT_DETAIL_FETCH_START
     }
 }
 
-const studentFetchSuccess: (data: any) => {} = (data) => {
+const studentFetchSuccess: (data: any) => AnyAction = (data) => {
     return {
         type: actionTypes.STUDENT_DETAIL_FETCH_SUCCESS,
         data: data
     }
 }
 
-const studentFetchError: (error: any) => {} = (error) => {
+const studentFetchError: (error: any) => AnyAction = (error) => {
     return {
         type: actionTypes.STUDENT_DETAIL_FETCH_FAIL,
         error: error
@@ -87,12 +88,12 @@ const studentFetchError: (error: any) => {} = (error) => {
 }
 
 export const initStudentDetailFetch: (dispatch: any) => {} = (dispatch) => {
-    return dispatch => {
+    return (dispatch: Dispatch) => {
         dispatch(studentFetchStart());
 
         const url = 'https://fanaka-sasa-default-rtdb.firebaseio.com/students.json'
         fetch(url)
-        .then(res => {
+        .then((res: any) => {
             const newData = res.data.slice(-1);
             dispatch(studentFetchSuccess(newData));
         })

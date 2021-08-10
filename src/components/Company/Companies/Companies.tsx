@@ -280,4 +280,3 @@ function Companies(): JSX.Element {
 }
 
 export default Companies;
-

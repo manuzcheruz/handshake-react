@@ -740,6 +740,19 @@ const mapPropsToDispatch: (dispatch: any) => {} = dispatch => {
     }
 }
 
+/**
+ * fields that are going to be present in the form
+ */
+interface FormFields {
+    name: string;
+    campus: string;
+    course: string;
+    description: string;
+    twitter: string;
+    category: string;
+    location: string;
+}
+
 export default connect(mapPropsToState, mapPropsToDispatch)(withFormik({
     mapPropsToValues: () => ({
         name: '',

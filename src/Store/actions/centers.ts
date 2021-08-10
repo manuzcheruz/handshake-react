@@ -22,7 +22,7 @@ const formSumbitFail: (error: CenterInitialState) => AnyAction = (error) => {
     }
 }
 
-export const initCenterForm: (center: CenterInitialState, dispatch: Dispatch) => {} = (center, dispatch) => {
+export const initCenterForm: (center: CenterInitialState) => {} = (center) => {
     return (dispatch: Dispatch) => {
         // we have started sumiting the form here
         dispatch(formSumbitStart());
