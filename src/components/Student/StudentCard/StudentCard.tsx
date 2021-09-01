@@ -7,8 +7,8 @@ export interface PropsStudentCard {
     name: string;
     img: any;
     role: string;
-    friends: string;
-    posts: string;
+    friends: number;
+    posts: number;
     center: string;
 }
 

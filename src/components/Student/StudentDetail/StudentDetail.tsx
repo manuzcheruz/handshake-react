@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../Store/actions'
-import PDFViewer from 'pdf-viewer-reactjs';
+// import PDFViewer from 'pdf-viewer-reactjs';
 import { StudentSkills, } from '../interfaces';
 
 import { Map, Marker as GoogleMarker, GoogleApiWrapper } from 'google-maps-react';
@@ -82,7 +82,7 @@ function CompanyDetail(props: any): JSX.Element {
         student = props.studentFromFetch
     }
 
-    const resume = student.resume;
+    // const resume: string = student.resume;
     const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=check%20out%20${student.name}%20profile`
 
     return (
@@ -208,11 +208,11 @@ function CompanyDetail(props: any): JSX.Element {
 
                                     <div className="jobs-block">
                                         <div>
-                                            <PDFViewer
+                                            {/* <PDFViewer
                                                 document={{
                                                     url: {resume},
                                                 }}
-                                            />
+                                            /> */}
                                         </div>
                                     </div>
                                     

@@ -33,13 +33,14 @@ export const logout: () => AnyAction = () => {
     }
 }
 
-const authLogout: (expiryTime: number) => void = (expiryTime) => {
-    return (dispatch: Dispatch) => {
-        setTimeout(() => {
-            dispatch(logout());
-        }, expiryTime * 1000);
-    }
-}
+//this function and its related uses is proving to be a handful
+// const authLogout: (expiryTime: number) => AnyAction = (expiryTime) => {
+//     return (dispatch: Dispatch) => {
+//         setTimeout(() => {
+//             dispatch(logout());
+//         }, expiryTime * 1000);
+//     }
+// }
 
 export const auth = (data: any, cat: any, isSignUp: boolean) => {
     return (dispatch: Dispatch) => {
@@ -65,7 +66,7 @@ export const auth = (data: any, cat: any, isSignUp: boolean) => {
                 let userId = localId; 
                 let token = idToken;
                 dispatch(authSuccess({userId, token, expiryDate}));
-                dispatch(authLogout(response.expiresIn));
+                // dispatch(authLogout(response.expiresIn));
                 // new request to store the user category
                 const newUrl = 'https://fanaka-sasa-default-rtdb.firebaseio.com/userCategory.json'
                 fetch(newUrl, {
@@ -111,7 +112,7 @@ export const authCheckState: () => {} = () => {
             if (expirationDate >= new Date()) {
                 const userId = localStorage.getItem('userId')
                 dispatch(authSuccess({userId, token}));
-                dispatch(authLogout((expirationDate.getTime() - new Date().getTime()) / 1000))
+                // dispatch(authLogout((expirationDate.getTime() - new Date().getTime()) / 1000))
             } else {
                 dispatch(logout());
             }

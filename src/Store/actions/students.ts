@@ -87,7 +87,7 @@ const studentFetchError: (error: any) => AnyAction = (error) => {
     }
 }
 
-export const initStudentDetailFetch: (dispatch: any) => {} = (dispatch) => {
+export const initStudentDetailFetch: (dispatch?: any) => {} = (dispatch) => {
     return (dispatch: Dispatch) => {
         dispatch(studentFetchStart());
 
