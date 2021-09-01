@@ -7,10 +7,10 @@ function Logout(): JSX.Element {
     return (
         <div className="section">
             <div className="container">
-                <div className="illustration-sad"  style={{zIndex: '1', position: 'absolute', marginTop: '230px', marginLeft: '450px'}}>
+                <div className="illustration-sad"  style={{zIndex: 1, position: 'absolute', marginTop: '230px', marginLeft: '450px'}}>
                     <Sad height={400} />
                 </div>
-                <div className="logout-wrapper" style={{zIndex: '2', position: 'absolute', marginTop: '100px', marginLeft: '490px'}}>
+                <div className="logout-wrapper" style={{zIndex: 2, position: 'absolute', marginTop: '100px', marginLeft: '490px'}}>
                     <div className="title" style={{fontSize: '1rem', fontWeight: 'bold'}}>
                         We are sad to see you leave, are you sure you want to quit?
                     </div>

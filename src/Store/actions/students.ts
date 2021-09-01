@@ -21,7 +21,7 @@ const formSumbitFail: (error: any) => AnyAction = (error) => {
     }
 }
 
-export const initStudentForm: (data: any, dispatch: any) => {} = (data, dispatch) => {
+export const initStudentForm: (data: any, dispatch?: any) => {} = (data, dispatch) => {
     return (dispatch: Dispatch) => {
         // we have started sumiting the form here
         dispatch(formSumbitStart());

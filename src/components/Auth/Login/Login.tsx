@@ -297,5 +297,8 @@ export default connect(mapStateToProps,mapPropsToDispatch)(withFormik({
             .min(4, 'Too Short!'),
         terms: Yup.string()
             .required('required!')
-    })
+    }),
+    handleSubmit: () => {
+        
+    }
 })(Login));

@@ -3,6 +3,15 @@ import React from 'react';
 import { Menu, CheckSlim, Message, School } from '../../../Assets/icons';
 import './StudentCard.css';
 
+export interface PropsStudentCard {
+    name: string;
+    img: any;
+    role: string;
+    friends: string;
+    posts: string;
+    center: string;
+}
+
 /**
  * properties recieved by the student card to customize it
  * @param param0 

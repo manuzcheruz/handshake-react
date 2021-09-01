@@ -18,10 +18,10 @@ interface SingleField {
     name: string;
     elementName: string;
     elementType: string;
-    // placeholder: 'e.g John Doe',
+    placeholder?: string,
     label: string;
     level: number;
-    position: string;
+    position?: string;
 }
 
 const studentFields: SingleField[] = [
@@ -736,22 +736,22 @@ const mapPropsToDispatch: (dispatch: any) => {} = dispatch => {
         onBgUpload: (bg: any) => dispatch(actions.bgTemp(bg)),
         onPdfUpload: (pdf: any) => dispatch(actions.pdfUpload(pdf)),
         // centers
-        onCenterFormSubmit: (data: CenterData) => dispatch(actions.initCenterForm(data)),
+        onCenterFormSubmit: (data: any) => dispatch(actions.initCenterForm(data)),
     }
 }
 
 /**
  * fields that are going to be present in the form
  */
-interface FormFields {
-    name: string;
-    campus: string;
-    course: string;
-    description: string;
-    twitter: string;
-    category: string;
-    location: string;
-}
+// interface FormFields {
+//     name: string;
+//     campus: string;
+//     course: string;
+//     description: string;
+//     twitter: string;
+//     category: string;
+//     location: string;
+// }
 
 export default connect(mapPropsToState, mapPropsToDispatch)(withFormik({
     mapPropsToValues: () => ({
@@ -783,5 +783,8 @@ export default connect(mapPropsToState, mapPropsToDispatch)(withFormik({
         twitter: Yup.string(),
         category: Yup.string(),
         location: Yup.string()
-    })
+    }),
+    handleSubmit: () => {
+        
+    }
 })(RegistrationForm));

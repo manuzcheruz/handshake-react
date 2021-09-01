@@ -88,7 +88,7 @@ const centerFetchError: (error: any) => AnyAction = (error) => {
     }
 }
 
-export const initCenterDetailFetch: (dispatch: any) => {} = (dispatch) => {
+export const initCenterDetailFetch: (dispatch?: any) => {} = (dispatch) => {
     return (dispatch: Dispatch) => {
         dispatch(centerFetchStart());
 
