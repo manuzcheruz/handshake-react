@@ -17,6 +17,10 @@ declare global {
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+// const composeEnhancers = compose(
+//   (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__() : (f: any) => f
+// );
+
 const rootReducer = combineReducers({
     auth: authReducer,
     student: studentReducer,

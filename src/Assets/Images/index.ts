@@ -56,11 +56,11 @@ export {
 
 export {
     default as apple2
-} from './apple2.jpeg';
+} from './apple.jpeg';
 
 export {
     default as apple1
-} from './apple1.jpeg';
+} from './apple.jpeg';
 
 export {
     default as appleImage

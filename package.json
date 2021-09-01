@@ -36,10 +36,8 @@
     "yup": "^0.32.9"
   },
   "scripts": {
-    "start:run": "nodemon build/index.js",
-    "start1:server": "nodemon src/server/server.js",
-    "start:build": "tsc -w",
-    "start": "concurrently yarn:start:*",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
