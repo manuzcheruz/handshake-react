@@ -297,6 +297,119 @@
     /* z-index: 1; */
 }
 
+/* Extra small small devices (phones, 400px and down) */
+@media only screen and (max-width: 400px) {
+    .section {
+        width: 100%;
+    }
 
+    .intro-wrapper {
+        margin-top: 100px;
+        margin-left: 2%;
+        margin-right: 2%;
+        width: 96vw;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: '';
+    }
+
+    .intro-wrapper .message-intro .top h5 {
+        padding: 8px;
+        border-radius: 20px;
+        font-size: 0.6rem;
+        width: 300px;
+    }
+
+    .intro-wrapper .message-intro .top .btn {
+        font-size: 0.6rem;
+        padding: 5px 10px;
+        margin-right: 10px;
+        margin-left: 0px;
+        color: white;
+        background-color: #55BC7E;
+        border-radius: 20px;
+    }
+
+    .intro-wrapper .message-intro h1 {
+        font-size: 2.2rem;
+        font-weight: bolder;
+        line-height: 20px;
+    }
+
+    .intro-wrapper .message h4 {
+        font-size: 2rem;
+        font-weight: 200;
+    }
+
+    .intro-wrapper .message-intro .search-input {
+        width: 360px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 0.3fr;
+        height: 60px;
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+            0 3px 10px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .intro-wrapper .message-intro .search-input input {
+        margin-left: 8px;
+        margin-top: 7px;
+        height: 43px;
+        background-color: grey;
+        opacity: 0.2;
+        border: none;
+        border-radius: 6px;
+        width: 230px;
+        color: black;
+    }
+
+    .intro-wrapper .message-intro .search-input input::placeholder {
+        color: black;
+        padding-right: 20px;
+    }
+
+    .intro-wrapper .message-intro .search-input select {
+        margin-left: 10px;
+        margin-top: 7px;
+        height: 43px;
+        background-color: grey;
+        opacity: 0.2;
+        border: none;
+        border-radius: 5px;
+        width: 100px;
+        color: black;
+    }
+
+    .intro-wrapper .message-intro .search-input span {
+        background-color: #55BC7E;
+        margin-top: 7px;
+        margin-left: 20px;
+        height: 53px;
+        width: 50px;
+        /* padding: 9px; */
+        border-radius: 5px;
+    }
+
+    .intro-wrapper .message-intro .trust {
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .intro-wrapper .message-intro .trust h1 {
+        color: #37383D;
+    }
+
+    .intro-wrapper .message-intro .trust .icons {
+        margin-left: 80px;
+        width: 200px;
+        height: 40px;
+        background-color: white;
+        border-radius: 5px;
+        border: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
 
 

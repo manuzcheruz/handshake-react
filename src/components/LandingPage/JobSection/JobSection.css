@@ -18,3 +18,14 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
 }
+
+@media only screen and (max-width: 400px) {
+    .job-wrapper {
+        width: 95%;
+        margin-left: 2.5%;
+    }
+
+    .job-wrapper .jobs {
+        grid-template-columns: 1fr;
+    }
+}

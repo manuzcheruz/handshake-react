@@ -38,3 +38,9 @@
     font-size: 0.9rem;
     color: grey;
 }
+
+/* @media only screen and (mx-width: 400px) {
+    .cat-card {
+        width: 80%;
+    }
+} */

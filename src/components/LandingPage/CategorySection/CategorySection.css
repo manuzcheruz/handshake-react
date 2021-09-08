@@ -27,3 +27,15 @@
     grid-template-columns: repeat(4, 1fr);
     margin-top: 40px;
 }
+
+@media only screen and (max-width: 400px) {
+    .category-wrapper {
+        margin-left: 5%;
+        width: 90%;
+    }
+
+    .category-wrapper .categories {
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
+}
