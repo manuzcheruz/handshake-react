@@ -17,7 +17,7 @@ const fields: PropsField[] = [
     {
         name: 'search',
         elementName: 'input',
-        elementType: 'text',
+        elementType: 'checkbox',
         placeholder: 'Enter job keyword'
     }
 ]

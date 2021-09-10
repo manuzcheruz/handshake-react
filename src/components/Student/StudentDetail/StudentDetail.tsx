@@ -107,15 +107,15 @@ function CompanyDetail(props: any): JSX.Element {
                                                 </div>
                                                 <div className="name">
                                                     <div className="title">
-                                                        {student.name}
+                                                        Manuz Cheru
                                                     </div>
                                                     <div className="subtitle">
                                                         <span><Briefcase height={15} /></span>
-                                                        {student.course}
+                                                        BSc Geomatic Engineering and Geospatial Information System
                                                     </div>
                                                     <div className="subtitle">
                                                         <span><School height={15} /></span>
-                                                        {student.campus}
+                                                        Dedan Kimathi University of Technology
                                                     </div>
                                                 </div>
                                             </div>

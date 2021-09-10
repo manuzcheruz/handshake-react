@@ -109,8 +109,6 @@ function Login(props: any): JSX.Element {
         }
     }
 
-    console.log(props);
-
     const onFormSubmit: (event: any) => void = event => {
         event.preventDefault();
         if (props.signup){
