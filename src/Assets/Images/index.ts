@@ -69,3 +69,7 @@ export {
 export {
     default as Micro
 } from './micro.jpg';
+
+export {
+    default as uon
+} from './uon.jpg';

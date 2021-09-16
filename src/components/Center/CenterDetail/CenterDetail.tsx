@@ -9,14 +9,9 @@ import CenterCard from '../CenterCard/CenterCard';
 import Navbar from '../../Navbar/Navbar';
 import Messaging from '../../Messaging/Messaging'
 
-// import uon1 from '../../../Assets/Images/uon1.png';
-// import uon2 from '../../../Assets/Images/uon2.png';
-// import uon3 from '../../../Assets/Images/uon3.png';
-// import uon4 from '../../../Assets/Images/uon4.png';
+import { uon1, uon2, uon3, uon4, uon } from '../../../Assets/Images';
 
-import { uon1, uon2, uon3, uon4 } from '../../../Assets/Images';
-
-import '../../Company/CompanyDetail/CompanyDetail.css'
+import '../../Company/CompanyDetail/CompanyDetail.css';
 import CenterNewsCard from '../CenterNews/CenterNewsCard';
 
 /**
@@ -89,22 +84,22 @@ function CenterDetail(props: any) {
                             <div className="profile">
                                 <div className="top">
                                     <div className="bg-image">
-                                        <img alt='' src={center.backgroundImage} height='auto' width='100%' />
+                                        <img alt='' src={uon} height='auto' width='100%' />
                                     </div>
                                     <div className="top-bottom-block">
                                         <div className="small-image-block">
                                             <div className="image">
                                                 <div className="logo">
-                                                    <img alt='' src={center.logo} height='100px' />
+                                                    <img alt='' src={Campus2} height='100px' />
                                                 </div>
                                             </div>
                                             <div className="name">
                                                 <div className="title">
-                                                    {center.name}
+                                                    Dedan Kimathi University of Technology
                                                 </div>
                                                 <div className="subtitle">
                                                     <span><Marker height={15} /></span>
-                                                    {center.location}
+                                                    Nyeri, Kenya
                                                 </div>
                                             </div>
                                         </div>

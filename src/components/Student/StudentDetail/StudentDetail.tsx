@@ -16,8 +16,8 @@ import Messaging from '../../Messaging/Messaging'
 /**
  * need index import here, later absolute one
  */
-// import appleImage from '../../../Assets/Images/mebg.png'
-// import me from '../../../Assets/Images/me.png';
+import appleImage from '../../../Assets/Images/mebg.png'
+import me from '../../../Assets/Images/me.png';
 import mem1 from '../../../Assets/Images/mem1.png';
 import mem2 from '../../../Assets/Images/mem2.png';
 import mem3 from '../../../Assets/Images/mem3.jpg';
@@ -81,6 +81,7 @@ function CompanyDetail(props: any): JSX.Element {
     } else {
         student = props.studentFromFetch
     }
+    //dangerouslySetInnerHTML={{__html: student.description}}
 
     // const resume: string = student.resume;
     const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=check%20out%20${student.name}%20profile`
@@ -96,13 +97,13 @@ function CompanyDetail(props: any): JSX.Element {
                                 <div className="profile">
                                     <div className="top">
                                         <div className="bg-image">
-                                            <img alt='' src={student.backgroundImage} height='auto' width='100%' />
+                                            <img alt='' src={appleImage} height='auto' width='100%' />
                                         </div>
                                         <div className="top-bottom-block">
                                             <div className="small-image-block">
                                                 <div className="image">
                                                     <div className="logo" style={{marginLeft: '-5px'}}>
-                                                        <img alt='' src={student.logo} height='100px' />
+                                                        <img alt='' src={me} height='100px' />
                                                     </div>
                                                 </div>
                                                 <div className="name">
@@ -153,7 +154,7 @@ function CompanyDetail(props: any): JSX.Element {
                                             <div className="title">
                                                 About <span>Me</span>
                                             </div>
-                                            <div className="content" dangerouslySetInnerHTML={{__html: student.description}}></div>
+                                            <div className="content" dangerouslySetInnerHTML={{__html: 'I am an enthusiast of technology blah blah ...'}}></div>
                                         </div>
                                         <div className="activity">
                                             <div className="title">
